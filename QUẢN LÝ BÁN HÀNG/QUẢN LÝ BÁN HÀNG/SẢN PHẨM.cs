@@ -24,6 +24,8 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 		private void SẢN_PHẨM_Load(object sender, EventArgs e)
 		{
+			// TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.NhomHang' table. You can move, or remove it, as needed.
+			this.nhomHangTableAdapter.Fill(this.nh.NhomHang);
 			// TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2.MatHang' table. You can move, or remove it, as needed.
 			this.matHangTableAdapter.Fill(this.sp.MatHang);
 

@@ -119,6 +119,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ĐĂNG NHẬP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +249,17 @@
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet5.xss">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
