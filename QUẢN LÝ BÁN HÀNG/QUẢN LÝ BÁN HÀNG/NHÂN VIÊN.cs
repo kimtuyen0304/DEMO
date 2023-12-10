@@ -180,6 +180,11 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 			}
 			catch (System.Exception) { }
 		}
+
+		private void groupBox1_Enter(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
 	

@@ -45,14 +45,15 @@
 			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.textBox8 = new System.Windows.Forms.TextBox();
-			this.btnin = new System.Windows.Forms.Button();
 			this.btnMain = new System.Windows.Forms.Button();
 			this.btnExit = new System.Windows.Forms.Button();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.button1 = new System.Windows.Forms.Button();
+			this.btnin = new System.Windows.Forms.Button();
 			this.btnSua = new System.Windows.Forms.Button();
 			this.btnXoa = new System.Windows.Forms.Button();
 			this.btnThem = new System.Windows.Forms.Button();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
@@ -203,20 +204,6 @@
 			this.textBox8.Size = new System.Drawing.Size(177, 22);
 			this.textBox8.TabIndex = 15;
 			// 
-			// btnin
-			// 
-			this.btnin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnin.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnin.ForeColor = System.Drawing.Color.Black;
-			this.btnin.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.PhotoPrint_6314;
-			this.btnin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnin.Location = new System.Drawing.Point(976, 131);
-			this.btnin.Name = "btnin";
-			this.btnin.Size = new System.Drawing.Size(137, 47);
-			this.btnin.TabIndex = 61;
-			this.btnin.Text = "In";
-			this.btnin.UseVisualStyleBackColor = false;
-			// 
 			// btnMain
 			// 
 			this.btnMain.BackColor = System.Drawing.Color.White;
@@ -247,50 +234,9 @@
 			this.btnExit.Text = "Thoát chương trình";
 			this.btnExit.UseVisualStyleBackColor = false;
 			// 
-			// btnSua
-			// 
-			this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnSua.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSua.ForeColor = System.Drawing.Color.Black;
-			this.btnSua.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._62914memo_109205;
-			this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnSua.Location = new System.Drawing.Point(823, 131);
-			this.btnSua.Name = "btnSua";
-			this.btnSua.Size = new System.Drawing.Size(137, 47);
-			this.btnSua.TabIndex = 58;
-			this.btnSua.Text = "Sửa";
-			this.btnSua.UseVisualStyleBackColor = false;
-			// 
-			// btnXoa
-			// 
-			this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnXoa.ForeColor = System.Drawing.Color.Black;
-			this.btnXoa.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.delete_file_40456;
-			this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnXoa.Location = new System.Drawing.Point(823, 57);
-			this.btnXoa.Name = "btnXoa";
-			this.btnXoa.Size = new System.Drawing.Size(137, 47);
-			this.btnXoa.TabIndex = 57;
-			this.btnXoa.Text = "Xóa";
-			this.btnXoa.UseVisualStyleBackColor = false;
-			// 
-			// btnThem
-			// 
-			this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnThem.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnThem.ForeColor = System.Drawing.Color.Black;
-			this.btnThem.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.document_add_256_icon_icons_com_75994;
-			this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnThem.Location = new System.Drawing.Point(976, 57);
-			this.btnThem.Name = "btnThem";
-			this.btnThem.Size = new System.Drawing.Size(137, 47);
-			this.btnThem.TabIndex = 56;
-			this.btnThem.Text = "Thêm";
-			this.btnThem.UseVisualStyleBackColor = false;
-			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.btnExit);
 			this.groupBox1.Controls.Add(this.btnin);
 			this.groupBox1.Controls.Add(this.textBox1);
@@ -329,6 +275,76 @@
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(1369, 230);
 			this.dataGridView1.TabIndex = 63;
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.button1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.Black;
+			this.button1.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.Save_as_37111;
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button1.Location = new System.Drawing.Point(976, 62);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(137, 47);
+			this.button1.TabIndex = 62;
+			this.button1.Text = "Lưu";
+			this.button1.UseVisualStyleBackColor = false;
+			// 
+			// btnin
+			// 
+			this.btnin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnin.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnin.ForeColor = System.Drawing.Color.Black;
+			this.btnin.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.PhotoPrint_6314;
+			this.btnin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnin.Location = new System.Drawing.Point(976, 131);
+			this.btnin.Name = "btnin";
+			this.btnin.Size = new System.Drawing.Size(137, 47);
+			this.btnin.TabIndex = 61;
+			this.btnin.Text = "In";
+			this.btnin.UseVisualStyleBackColor = false;
+			// 
+			// btnSua
+			// 
+			this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnSua.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSua.ForeColor = System.Drawing.Color.Black;
+			this.btnSua.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._62914memo_109205;
+			this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnSua.Location = new System.Drawing.Point(823, 146);
+			this.btnSua.Name = "btnSua";
+			this.btnSua.Size = new System.Drawing.Size(137, 47);
+			this.btnSua.TabIndex = 58;
+			this.btnSua.Text = "Sửa";
+			this.btnSua.UseVisualStyleBackColor = false;
+			// 
+			// btnXoa
+			// 
+			this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnXoa.ForeColor = System.Drawing.Color.Black;
+			this.btnXoa.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.delete_file_40456;
+			this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnXoa.Location = new System.Drawing.Point(823, 87);
+			this.btnXoa.Name = "btnXoa";
+			this.btnXoa.Size = new System.Drawing.Size(137, 47);
+			this.btnXoa.TabIndex = 57;
+			this.btnXoa.Text = "Xóa";
+			this.btnXoa.UseVisualStyleBackColor = false;
+			// 
+			// btnThem
+			// 
+			this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnThem.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnThem.ForeColor = System.Drawing.Color.Black;
+			this.btnThem.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.document_add_256_icon_icons_com_75994;
+			this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnThem.Location = new System.Drawing.Point(823, 21);
+			this.btnThem.Name = "btnThem";
+			this.btnThem.Size = new System.Drawing.Size(137, 47);
+			this.btnThem.TabIndex = 56;
+			this.btnThem.Text = "Thêm";
+			this.btnThem.UseVisualStyleBackColor = false;
 			// 
 			// PHIẾU_GIAO_HÀNG
 			// 
@@ -376,5 +392,6 @@
 		private System.Windows.Forms.Button btnThem;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.Button button1;
 	}
 }

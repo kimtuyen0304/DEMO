@@ -199,6 +199,7 @@
 			this.lậpĐơnĐặtHàngToolStripMenuItem.Name = "lậpĐơnĐặtHàngToolStripMenuItem";
 			this.lậpĐơnĐặtHàngToolStripMenuItem.Size = new System.Drawing.Size(230, 28);
 			this.lậpĐơnĐặtHàngToolStripMenuItem.Text = "Đơn Đặt Hàng";
+			this.lậpĐơnĐặtHàngToolStripMenuItem.Click += new System.EventHandler(this.lậpĐơnĐặtHàngToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator14
 			// 

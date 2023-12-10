@@ -183,9 +183,29 @@ namespace QUẢN_LÝ_BÁN_HÀNG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PhotoPrint_63141 {
+            get {
+                object obj = ResourceManager.GetObject("PhotoPrint_63141", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap remove_item_25316 {
             get {
                 object obj = ResourceManager.GetObject("remove-item_25316", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_as_37111 {
+            get {
+                object obj = ResourceManager.GetObject("Save-as_37111", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

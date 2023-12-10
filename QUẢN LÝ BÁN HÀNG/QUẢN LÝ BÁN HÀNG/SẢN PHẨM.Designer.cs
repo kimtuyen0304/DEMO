@@ -65,7 +65,7 @@
 			this.vATDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.maNHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.matHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2TableAdapters.MatHangTableAdapter();
-			this.btnluu = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.matHangBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sp)).BeginInit();
 			this.groupBox1.SuspendLayout();
@@ -140,7 +140,7 @@
 			this.label4.AutoSize = true;
 			this.label4.BackColor = System.Drawing.SystemColors.HighlightText;
 			this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(277, 9);
+			this.label4.Location = new System.Drawing.Point(454, 9);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(354, 35);
 			this.label4.TabIndex = 55;
@@ -149,7 +149,7 @@
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.groupBox1.Controls.Add(this.btnluu);
+			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.btnExit);
 			this.groupBox1.Controls.Add(this.btnMain);
 			this.groupBox1.Controls.Add(this.label1);
@@ -172,9 +172,9 @@
 			this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.ForeColor = System.Drawing.Color.Black;
-			this.groupBox1.Location = new System.Drawing.Point(7, 68);
+			this.groupBox1.Location = new System.Drawing.Point(7, 47);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(1175, 203);
+			this.groupBox1.Size = new System.Drawing.Size(1168, 243);
 			this.groupBox1.TabIndex = 51;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Thông tin chung";
@@ -234,6 +234,8 @@
 			this.btnxoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnxoa.ForeColor = System.Drawing.Color.Black;
+			this.btnxoa.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.remove_item_25316;
+			this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnxoa.Location = new System.Drawing.Point(748, 83);
 			this.btnxoa.Name = "btnxoa";
 			this.btnxoa.Size = new System.Drawing.Size(176, 46);
@@ -257,6 +259,8 @@
 			this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.btnthem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnthem.ForeColor = System.Drawing.Color.Black;
+			this.btnthem.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.add_item_25362;
+			this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnthem.Location = new System.Drawing.Point(748, 27);
 			this.btnthem.Name = "btnthem";
 			this.btnthem.Size = new System.Drawing.Size(176, 47);
@@ -280,6 +284,8 @@
 			this.btnsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnsua.ForeColor = System.Drawing.Color.Black;
+			this.btnsua.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._62914memo_109205;
+			this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnsua.Location = new System.Drawing.Point(748, 140);
 			this.btnsua.Name = "btnsua";
 			this.btnsua.Size = new System.Drawing.Size(176, 48);
@@ -343,7 +349,7 @@
 			// 
 			this.groupBox2.Controls.Add(this.dataGridView1);
 			this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox2.Location = new System.Drawing.Point(12, 277);
+			this.groupBox2.Location = new System.Drawing.Point(12, 296);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(1295, 320);
 			this.groupBox2.TabIndex = 54;
@@ -454,18 +460,19 @@
 			// 
 			this.matHangTableAdapter.ClearBeforeFill = true;
 			// 
-			// btnluu
+			// button1
 			// 
-			this.btnluu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnluu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnluu.ForeColor = System.Drawing.Color.Black;
-			this.btnluu.Location = new System.Drawing.Point(946, 152);
-			this.btnluu.Name = "btnluu";
-			this.btnluu.Size = new System.Drawing.Size(176, 48);
-			this.btnluu.TabIndex = 47;
-			this.btnluu.Text = "Lưu";
-			this.btnluu.UseVisualStyleBackColor = false;
-			this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.button1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.Black;
+			this.button1.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.Save_as_37111;
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button1.Location = new System.Drawing.Point(453, 190);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(137, 47);
+			this.button1.TabIndex = 63;
+			this.button1.Text = "Lưu";
+			this.button1.UseVisualStyleBackColor = false;
 			// 
 			// SẢN_PHẨM
 			// 
@@ -524,6 +531,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn hanSDDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn vATDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn maNHDataGridViewTextBoxColumn;
-		private System.Windows.Forms.Button btnluu;
+		private System.Windows.Forms.Button button1;
 	}
 }

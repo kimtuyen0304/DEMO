@@ -35,6 +35,15 @@
 			this.btnve = new System.Windows.Forms.Button();
 			this.btnthoat = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txtgc = new System.Windows.Forms.TextBox();
+			this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.khachhang = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1();
+			this.txtgt = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.btnxoa = new System.Windows.Forms.Button();
+			this.btnsua = new System.Windows.Forms.Button();
+			this.btnthem = new System.Windows.Forms.Button();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.txtsdt = new System.Windows.Forms.TextBox();
@@ -45,16 +54,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.txtkh = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.btnxoa = new System.Windows.Forms.Button();
-			this.btnsua = new System.Windows.Forms.Button();
-			this.btnthem = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.txtgt = new System.Windows.Forms.TextBox();
-			this.txtgc = new System.Windows.Forms.TextBox();
-			this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.khachhang = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1();
 			this.maKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tenKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,11 +62,12 @@
 			this.gioitinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ghichuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.khachHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1TableAdapters.KhachHangTableAdapter();
+			this.button1 = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.khachhang)).BeginInit();
+			this.groupBox2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnExit
@@ -137,6 +138,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.txtgc);
 			this.groupBox1.Controls.Add(this.txtgt);
 			this.groupBox1.Controls.Add(this.label6);
@@ -162,6 +164,103 @@
 			this.groupBox1.TabIndex = 47;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "THÔNG TIN CHUNG";
+			// 
+			// txtgc
+			// 
+			this.txtgc.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.khachHangBindingSource, "Ghichu", true));
+			this.txtgc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khachHangBindingSource, "Ghichu", true));
+			this.txtgc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtgc.Location = new System.Drawing.Point(519, 109);
+			this.txtgc.Name = "txtgc";
+			this.txtgc.Size = new System.Drawing.Size(240, 24);
+			this.txtgc.TabIndex = 55;
+			// 
+			// khachHangBindingSource
+			// 
+			this.khachHangBindingSource.DataMember = "KhachHang";
+			this.khachHangBindingSource.DataSource = this.khachhang;
+			// 
+			// khachhang
+			// 
+			this.khachhang.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1";
+			this.khachhang.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// txtgt
+			// 
+			this.txtgt.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.khachHangBindingSource, "Gioitinh", true));
+			this.txtgt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khachHangBindingSource, "Gioitinh", true));
+			this.txtgt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtgt.Location = new System.Drawing.Point(519, 73);
+			this.txtgt.Name = "txtgt";
+			this.txtgt.Size = new System.Drawing.Size(132, 24);
+			this.txtgt.TabIndex = 54;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(441, 109);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(59, 18);
+			this.label6.TabIndex = 53;
+			this.label6.Text = "Ghi chú";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(441, 76);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(62, 18);
+			this.label1.TabIndex = 52;
+			this.label1.Text = "Giới tính";
+			// 
+			// btnxoa
+			// 
+			this.btnxoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnxoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.btnxoa.Cursor = System.Windows.Forms.Cursors.Default;
+			this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnxoa.ForeColor = System.Drawing.Color.Black;
+			this.btnxoa.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.delete_delete_deleteusers_delete_male_user_maleclient_2348__1_;
+			this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnxoa.Location = new System.Drawing.Point(806, 73);
+			this.btnxoa.Name = "btnxoa";
+			this.btnxoa.Size = new System.Drawing.Size(175, 50);
+			this.btnxoa.TabIndex = 51;
+			this.btnxoa.Text = "Xóa";
+			this.btnxoa.UseVisualStyleBackColor = false;
+			this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
+			// 
+			// btnsua
+			// 
+			this.btnsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnsua.ForeColor = System.Drawing.Color.Black;
+			this.btnsua.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.businessapplication_edit_male_user_thepencil_theclient_negocio_2321;
+			this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnsua.Location = new System.Drawing.Point(805, 129);
+			this.btnsua.Name = "btnsua";
+			this.btnsua.Size = new System.Drawing.Size(176, 53);
+			this.btnsua.TabIndex = 50;
+			this.btnsua.Text = "Sửa";
+			this.btnsua.UseVisualStyleBackColor = false;
+			this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
+			// 
+			// btnthem
+			// 
+			this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnthem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnthem.ForeColor = System.Drawing.Color.Black;
+			this.btnthem.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.business_application_addmale_useradd_insert_add_user_client_2312;
+			this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnthem.Location = new System.Drawing.Point(805, 18);
+			this.btnthem.Name = "btnthem";
+			this.btnthem.Size = new System.Drawing.Size(176, 53);
+			this.btnthem.TabIndex = 49;
+			this.btnthem.Text = "Thêm ";
+			this.btnthem.UseVisualStyleBackColor = false;
+			this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
 			// 
 			// label10
 			// 
@@ -263,53 +362,6 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Chi tiết danh mục khách hàng";
 			// 
-			// btnxoa
-			// 
-			this.btnxoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnxoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.btnxoa.Cursor = System.Windows.Forms.Cursors.Default;
-			this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnxoa.ForeColor = System.Drawing.Color.Black;
-			this.btnxoa.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.delete_delete_deleteusers_delete_male_user_maleclient_2348__1_;
-			this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnxoa.Location = new System.Drawing.Point(806, 73);
-			this.btnxoa.Name = "btnxoa";
-			this.btnxoa.Size = new System.Drawing.Size(175, 50);
-			this.btnxoa.TabIndex = 51;
-			this.btnxoa.Text = "Xóa";
-			this.btnxoa.UseVisualStyleBackColor = false;
-			this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
-			// 
-			// btnsua
-			// 
-			this.btnsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnsua.ForeColor = System.Drawing.Color.Black;
-			this.btnsua.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.businessapplication_edit_male_user_thepencil_theclient_negocio_2321;
-			this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnsua.Location = new System.Drawing.Point(805, 129);
-			this.btnsua.Name = "btnsua";
-			this.btnsua.Size = new System.Drawing.Size(176, 53);
-			this.btnsua.TabIndex = 50;
-			this.btnsua.Text = "Sửa";
-			this.btnsua.UseVisualStyleBackColor = false;
-			this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
-			// 
-			// btnthem
-			// 
-			this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnthem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnthem.ForeColor = System.Drawing.Color.Black;
-			this.btnthem.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.business_application_addmale_useradd_insert_add_user_client_2312;
-			this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnthem.Location = new System.Drawing.Point(805, 14);
-			this.btnthem.Name = "btnthem";
-			this.btnthem.Size = new System.Drawing.Size(176, 53);
-			this.btnthem.TabIndex = 49;
-			this.btnthem.Text = "Thêm ";
-			this.btnthem.UseVisualStyleBackColor = false;
-			this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
-			// 
 			// dataGridView1
 			// 
 			this.dataGridView1.AutoGenerateColumns = false;
@@ -328,56 +380,6 @@
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(1097, 232);
 			this.dataGridView1.TabIndex = 0;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(441, 76);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(62, 18);
-			this.label1.TabIndex = 52;
-			this.label1.Text = "Giới tính";
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(441, 109);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(59, 18);
-			this.label6.TabIndex = 53;
-			this.label6.Text = "Ghi chú";
-			// 
-			// txtgt
-			// 
-			this.txtgt.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.khachHangBindingSource, "Gioitinh", true));
-			this.txtgt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khachHangBindingSource, "Gioitinh", true));
-			this.txtgt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtgt.Location = new System.Drawing.Point(519, 73);
-			this.txtgt.Name = "txtgt";
-			this.txtgt.Size = new System.Drawing.Size(132, 24);
-			this.txtgt.TabIndex = 54;
-			// 
-			// txtgc
-			// 
-			this.txtgc.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.khachHangBindingSource, "Ghichu", true));
-			this.txtgc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.khachHangBindingSource, "Ghichu", true));
-			this.txtgc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtgc.Location = new System.Drawing.Point(519, 109);
-			this.txtgc.Name = "txtgc";
-			this.txtgc.Size = new System.Drawing.Size(240, 24);
-			this.txtgc.TabIndex = 55;
-			// 
-			// khachHangBindingSource
-			// 
-			this.khachHangBindingSource.DataMember = "KhachHang";
-			this.khachHangBindingSource.DataSource = this.khachhang;
-			// 
-			// khachhang
-			// 
-			this.khachhang.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1";
-			this.khachhang.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// maKHDataGridViewTextBoxColumn
 			// 
@@ -431,6 +433,20 @@
 			// 
 			this.khachHangTableAdapter.ClearBeforeFill = true;
 			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.button1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.Black;
+			this.button1.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.Save_as_37111;
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button1.Location = new System.Drawing.Point(389, 141);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(111, 41);
+			this.button1.TabIndex = 63;
+			this.button1.Text = "Lưu";
+			this.button1.UseVisualStyleBackColor = false;
+			// 
 			// KHÁCH_HÀNG
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,10 +462,10 @@
 			this.Load += new System.EventHandler(this.KHÁCH_HÀNG_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.khachhang)).EndInit();
+			this.groupBox2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -490,5 +506,6 @@
 		private System.Windows.Forms.TextBox txtgt;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button button1;
 	}
 }

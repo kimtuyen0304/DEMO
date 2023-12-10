@@ -85,5 +85,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 			fr.ShowDialog();
 
 		}
+
+		private void lậpĐơnĐặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

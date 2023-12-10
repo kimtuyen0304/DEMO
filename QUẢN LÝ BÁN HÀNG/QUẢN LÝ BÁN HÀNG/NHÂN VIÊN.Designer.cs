@@ -32,6 +32,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NHÂN_VIÊN));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.txtnvl = new System.Windows.Forms.DateTimePicker();
+			this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.dlnv = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet();
 			this.btnExit = new System.Windows.Forms.Button();
 			this.btnMain = new System.Windows.Forms.Button();
 			this.btnxoa = new System.Windows.Forms.Button();
@@ -58,18 +60,18 @@
 			this.maPBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.maCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ngayvaolamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.dlnv = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet();
 			this.nhanVienTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSetTableAdapters.NhanVienTableAdapter();
+			this.button1 = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
-			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dlnv)).BeginInit();
+			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.txtnvl);
 			this.groupBox1.Controls.Add(this.btnExit);
 			this.groupBox1.Controls.Add(this.btnMain);
@@ -89,12 +91,13 @@
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.txtmnv);
 			this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(12, 76);
+			this.groupBox1.Location = new System.Drawing.Point(12, 60);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(1175, 196);
+			this.groupBox1.Size = new System.Drawing.Size(1175, 242);
 			this.groupBox1.TabIndex = 47;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "THÔNG TIN CHUNG";
+			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
 			// 
 			// txtnvl
 			// 
@@ -104,6 +107,16 @@
 			this.txtnvl.Name = "txtnvl";
 			this.txtnvl.Size = new System.Drawing.Size(200, 24);
 			this.txtnvl.TabIndex = 45;
+			// 
+			// nhanVienBindingSource
+			// 
+			this.nhanVienBindingSource.DataMember = "NhanVien";
+			this.nhanVienBindingSource.DataSource = this.dlnv;
+			// 
+			// dlnv
+			// 
+			this.dlnv.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet";
+			this.dlnv.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// btnExit
 			// 
@@ -393,19 +406,23 @@
 			this.ngayvaolamDataGridViewTextBoxColumn.Name = "ngayvaolamDataGridViewTextBoxColumn";
 			this.ngayvaolamDataGridViewTextBoxColumn.Width = 125;
 			// 
-			// nhanVienBindingSource
-			// 
-			this.nhanVienBindingSource.DataMember = "NhanVien";
-			this.nhanVienBindingSource.DataSource = this.dlnv;
-			// 
-			// dlnv
-			// 
-			this.dlnv.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet";
-			this.dlnv.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
 			// nhanVienTableAdapter
 			// 
 			this.nhanVienTableAdapter.ClearBeforeFill = true;
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.button1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.Black;
+			this.button1.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.Save_as_37111;
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button1.Location = new System.Drawing.Point(377, 189);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(137, 47);
+			this.button1.TabIndex = 63;
+			this.button1.Text = "Lưu";
+			this.button1.UseVisualStyleBackColor = false;
 			// 
 			// NHÂN_VIÊN
 			// 
@@ -421,10 +438,10 @@
 			this.Load += new System.EventHandler(this.NHÂN_VIÊN_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			this.panel1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dlnv)).EndInit();
+			this.panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -463,5 +480,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn maPBDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn maCVDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ngayvaolamDataGridViewTextBoxColumn;
+		private System.Windows.Forms.Button button1;
 	}
 }

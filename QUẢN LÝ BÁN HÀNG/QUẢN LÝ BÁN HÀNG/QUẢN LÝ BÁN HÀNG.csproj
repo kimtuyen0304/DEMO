@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HÀNG BÁN TRẢ LẠI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HÀNG BÁN TRẢ LẠI.Designer.cs">
+      <DependentUpon>HÀNG BÁN TRẢ LẠI.cs</DependentUpon>
+    </Compile>
     <Compile Include="HÓA ĐƠN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GIAO DIỆN.resx">
       <DependentUpon>GIAO DIỆN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HÀNG BÁN TRẢ LẠI.resx">
+      <DependentUpon>HÀNG BÁN TRẢ LẠI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HÓA ĐƠN.resx">
       <DependentUpon>HÓA ĐƠN.cs</DependentUpon>
@@ -312,6 +321,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PhotoPrint_6314.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PhotoPrint_63141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save-as_37111.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
