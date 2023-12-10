@@ -16,5 +16,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

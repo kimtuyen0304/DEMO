@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2TableAdapters;
+using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
 {

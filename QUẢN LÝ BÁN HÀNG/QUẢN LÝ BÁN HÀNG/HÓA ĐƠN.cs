@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using QUẢN_LÝ_BÁN_HÀNG;
 using COMExcel = Microsoft.Office.Interop.Excel;
 using QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1TableAdapters;
+using System.Drawing.Printing;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
 {
@@ -28,8 +29,6 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 			this.chiTietHoaDonTableAdapter.Fill(this.cthd.ChiTietHoaDon);
 			// TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet4.HoaDon' table. You can move, or remove it, as needed.
 			this.hoaDonTableAdapter.Fill(this.hd.HoaDon);
-
-
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)
@@ -107,22 +106,29 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 			{
 				try
 				{
-					this.chiTietHoaDonTableAdapter.Delete(txtmhd.Text);
+					chiTietHoaDonTableAdapter.Delete(txtmhd.Text);
 					MessageBox.Show("Đã xóa");
 				}
 				catch (System.Exception ex) { MessageBox.Show("Có lỗi khách hàng này" + ex.Message); }
 				try
 				{
 
-					this.chiTietHoaDonTableAdapter.Fill(this.cthd.ChiTietHoaDon);
+					chiTietHoaDonTableAdapter.Fill(this.cthd.ChiTietHoaDon);
 				}
 				catch (System.Exception) { }
 
 			}
 		}
-	}
 
-		}
+        private void btnin_Click(object sender, EventArgs e)
+        {
+			var printPreviewDialog = new PrintPreviewDialog();
+			printPreviewDialog.SetDesktopLocation(Left, Top);
+			printPreviewDialog.ShowDialog();
+
+        }
+    }
+}
 	 
 
 
