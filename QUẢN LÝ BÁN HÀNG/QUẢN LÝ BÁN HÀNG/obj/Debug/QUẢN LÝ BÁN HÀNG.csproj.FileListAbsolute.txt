@@ -1,0 +1,27 @@
+C:\Users\HP\source\repos\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.exe.config
+C:\Users\HP\source\repos\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.exe
+C:\Users\HP\source\repos\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.pdb
+C:\Users\HP\source\repos\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.resources
+C:\Users\HP\source\repos\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.exe
+C:\Users\HP\source\repos\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.pdb
+C:\Users\HP\source\repos\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.dangnhap.resources
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.exe.config
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.exe
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.pdb
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.dangnhap.resources
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.resources
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.GenerateResource.cache
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.exe
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.pdb
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.giaodien.resources
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.NHÂN_VIÊN.resources
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.KHÁCH_HÀNG.resources
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.SẢN_PHẨM.resources
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.PHIẾU_THU.resources
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.HÓA_ĐƠN.resources
+C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.ResolveComReference.cache
