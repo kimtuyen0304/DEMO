@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Security;
 using System.Text;
@@ -14,6 +15,9 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 {
 	public partial class NHÂN_VIÊN : Form
 	{
+		private bool isAddFlag = false;
+		private bool isEditFlag = false;
+
 		public NHÂN_VIÊN()
 		{
 			InitializeComponent();
@@ -28,79 +32,26 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 		private void btnthem_Click(object sender, EventArgs e)
 		{
-			txtten.Enabled = !txtten.Enabled;
-			txtmnv.Enabled = !txtmnv.Enabled;
-			txtpb.Enabled = !txtpb.Enabled;
-			txtsdt.Enabled = !txtsdt.Enabled;
-			txtmcv.Enabled = !txtmcv.Enabled;
-			txtnvl.Enabled = !txtnvl.Enabled;
-			btnsua.Enabled = !btnsua.Enabled;
-			btnxoa.Enabled = !btnxoa.Enabled;
+            Utility.EnableControl(groupBox1, true);
 
-			if (btnthem.Text == "Thêm")
-			{
-				txtmnv.Text = "";
-				txtten.Text = "";
-				txtsdt.Text = "";
-				txtpb.Text = "";
-				txtmcv.Text = "";
-				txtnvl.Text = "";
-				
-				MessageBox.Show("Nhập thông tin nhân viên mới");
-				btnthem.Text = "Lưu";
-			}
-			else
-			{
-				try
-				{
-					// Check if the record already exists
-					if (!RecordExists(txtmnv.Text.Trim()))
-					{
-						nhanVienTableAdapter.Insert(txtmnv.Text.Trim(), txtten.Text.Trim(), Int32.Parse(txtsdt.Text), txtpb.Text.Trim(), txtmcv.Text.Trim(), txtnvl.Text.Trim());
-						
-						MessageBox.Show("Đã Thêm");
-					}
-					else
-					{
-						MessageBox.Show("Nhân viên đã tồn tại. Vui lòng kiểm tra lại mã nhân viên.");
-					}
-				}
-				catch (System.Exception ex)
-				{
-					MessageBox.Show("Lỗi thêm nhân viên mới: " + ex.Message);
-				}
+			txtmnv.ResetText();
+			txtmcv.ResetText();
+			txtnvl.ResetText();
+			txtpb.ResetText();
+			txtsdt.ResetText();
+			txtten.ResetText();
 
-				try
-				{
-					this.nhanVienTableAdapter.Fill(dlnv.NhanVien);
-				}
-				catch (System.Exception) { };
-				btnthem.Text = "Thêm";
-			}
+			btnthem.Enabled = false;
+			btnsua.Enabled = false;
+			btnxoa.Enabled = false;
+			btnExit.Enabled = true;
+			btnMain.Enabled = true;
+			btnLuu.Enabled = true;
+			
+			txtmnv.Focus();
+
+			isAddFlag = true;
 		}
-
-		// Function to check if a record with the given primary key exists
-		private bool RecordExists(string primaryKey)
-		{
-			// Your logic to check if a record with the given primary key exists
-			// Return true if exists, false otherwise
-			// Example: replace this with your actual logic
-			return YourDatabaseCheckIfRecordExists(primaryKey);
-		}
-
-		// Replace this function with your actual logic to check if a record exists in the database
-		private bool YourDatabaseCheckIfRecordExists(string primaryKey)
-		{
-			// Your database query logic to check if a record with the given primary key exists
-			// Return true if exists, false otherwise
-			// Example: replace this with your actual database query logic
-			// For example, if using Entity Framework:
-			// return context.NhanVien.Any(nv => nv.MaNhanVien == primaryKey);
-
-			// For now, assuming it doesn't exist to avoid compilation errors
-			return false;
-		}
-
 
 		private void btnMain_Click(object sender, EventArgs e)
 		{
@@ -126,65 +77,94 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 		private void btnsua_Click(object sender, EventArgs e)
 		{
-			if (btnsua.Text == "Sửa")
-			{
-				MessageBox.Show("Sửa thông tin nhân viên");
-				btnsua.Text = "Lưu";
-				btnthem.Enabled = !btnsua.Enabled;
-				btnxoa.Enabled = !btnxoa.Enabled;
-			}
-			else
-			{
-				try
-				{
-					if (int.TryParse(txtsdt.Text.Trim(), out int phoneNumber))
-					{
-						nhanVienTableAdapter.Update(txtmnv.Text.Trim(), txtten.Text.Trim(), phoneNumber, txtpb.Text.Trim(), txtmcv.Text.Trim(), txtnvl.Text.Trim());
-						MessageBox.Show("Đã Sửa");
-						
-					}
-					else
-					{
-						MessageBox.Show("Thông tin không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					}
-					
-				}
-				catch (System.Exception ex)
-				{ MessageBox.Show("Lỗi sửa nhân viên mới :" + ex.Message); }
-				try
-				{
-					this.nhanVienTableAdapter.Fill(dlnv.NhanVien);
-				}
-				catch (System.Exception) { }
-				btnsua.Text = "Sửa";
-			}
+			Utility.EnableControl(groupBox1, true);
+			txtmnv.Enabled = false;
+			txtten.Focus();
+
+			isEditFlag = true;
 		}
 
 		private void btnxoa_Click(object sender, EventArgs e)
 		{
-			DialogResult ch = MessageBox.Show("Xóa nhân viên có mã " + txtmnv.Text.Trim() + " không(Y/N) ? ", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			DialogResult ch = MessageBox.Show("Bạn có chắc muốn xóa nhân viên có mã " + txtmnv.Text.Trim() + " không? ", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (ch == DialogResult.Yes)
 			{
 				try
 				{
 					nhanVienTableAdapter.Delete(txtmnv.Text.Trim());
-					MessageBox.Show("Đã xóa");
-				}
-				catch (System.Exception ex) { MessageBox.Show("Có lỗi xóa nhân viên này" + ex.Message); }
-
+					MessageBox.Show("Đã xóa nhân viên thành công!");
+                    this.nhanVienTableAdapter.Fill(dlnv.NhanVien);
+                }
+				catch (Exception ex) { MessageBox.Show("Có lỗi xóa nhân viên này" + ex.Message); }
 			}
+		}
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
 			try
 			{
-
-				this.nhanVienTableAdapter.Fill(dlnv.NhanVien);
+                if (isAddFlag)
+                {
+					if (!Utility.RecordExists(txtmnv.Text.Trim()))
+					{
+                        nhanVienTableAdapter.Insert(txtmnv.Text.Trim(), txtten.Text.Trim(), Int32.Parse(txtsdt.Text), txtpb.Text.Trim(), txtmcv.Text.Trim(), txtnvl.Text.Trim());
+                        MessageBox.Show("Thêm mới thành công!");
+                        isAddFlag = false;
+						ChangeStatus(true);
+                        this.nhanVienTableAdapter.Fill(dlnv.NhanVien);
+                        Utility.EnableControl(groupBox1, false);
+                    }
+					else
+					{
+						MessageBox.Show($"Đã tồn tại nhân viên với ID={txtmnv.Text.Trim()}. Vui lòng kiểm tra lại thông tin.","Lỗi", 
+							MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+						isAddFlag = true;
+					}
+                }
+                else if (isEditFlag)
+                {
+                    if (int.TryParse(txtsdt.Text.Trim(), out int phoneNumber))
+                    {
+                        nhanVienTableAdapter.Update(txtmnv.Text.Trim(), txtten.Text.Trim(), phoneNumber, txtpb.Text.Trim(), txtmcv.Text.Trim(), txtnvl.Text.Trim());
+                        MessageBox.Show("Cập nhật thành công!");
+						isEditFlag = false;
+						ChangeStatus(true);
+						nhanVienTableAdapter.Fill(dlnv.NhanVien);
+                        Utility.EnableControl(groupBox1, false);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thông tin không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+			catch (Exception)
+			{
+				if (isAddFlag)
+				{
+					MessageBox.Show("Thêm mới thất bại");
+					isAddFlag = true;
+				}
+				else if (isEditFlag)
+				{
+					MessageBox.Show("Cập nhật thất bại!");
+					isEditFlag = true;
+				}
 			}
-			catch (System.Exception) { }
-		}
+        }
 
-		private void groupBox1_Enter(object sender, EventArgs e)
+		private void ChangeStatus(bool status)
 		{
-
+			btnsua.Enabled = status;
+			btnthem.Enabled = status;
+			btnxoa.Enabled = status;
+			btnLuu.Enabled = !status;
 		}
-	}
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+			Utility.EnableControl(groupBox1, false);
+        }
+    }
 }
 	

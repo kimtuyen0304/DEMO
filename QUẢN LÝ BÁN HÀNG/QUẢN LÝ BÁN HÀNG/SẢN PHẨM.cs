@@ -1,4 +1,5 @@
-﻿using QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2TableAdapters;
+﻿using Microsoft.SqlServer.Server;
+using QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2TableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,9 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 {
 	public partial class SẢN_PHẨM : Form
 	{
+		private bool isAddFlag = false;
+		private bool isEditFlag = false;
+
 		public SẢN_PHẨM()
 		{
 			InitializeComponent();
@@ -27,95 +31,55 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 		private void btnxoa_Click(object sender, EventArgs e)
 		{
+			DialogResult ch = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm {tbMMH.Text.Trim()} không?", "Xác nhận",
+					MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (ch == DialogResult.Yes)
 			{
-				DialogResult ch = MessageBox.Show("Bạn có muốn xóa sản phẩm " + btnxoa.Text.Trim() + "phải không", " xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-				if (ch == DialogResult.Yes)
+				try
 				{
-					try
-					{
-						matHangTableAdapter.Delete(tbMMH.Text);
-						MessageBox.Show("Đã xóa");
-					}
-					catch (System.Exception ex) { MessageBox.Show("Có lỗi sản phẩm này" + ex.Message); }
-					try
-					{
-
-						this.matHangTableAdapter.Fill(this.sp.MatHang);
-					}
-					catch (System.Exception) { }
-
+					matHangTableAdapter.Delete(tbMMH.Text);
+					MessageBox.Show("Đã xóa mặt hàng thành công!");
+					matHangTableAdapter.Fill(this.sp.MatHang);
+				}
+				catch (Exception)
+				{
+					MessageBox.Show("Xóa mặt hàng thất bại!");
 				}
 			}
 		}
 
 		private void btnsua_Click(object sender, EventArgs e)
 		{
-			{
-				if (btnsua.Text == "Sửa")
-				{
-					MessageBox.Show("Sửa thông tin sản phẩm");
-					btnsua.Text = "Lưu";
-				}
-				else
-				{
-					try
-					{
-						// Parse DateTime values
-						DateTime nsxDate;
-						DateTime hsdDate;
+			Utility.EnableControl(groupBox1, true);
+			tbMMH.Enabled = false;
+			tbTenMH.Focus();
 
-						if (DateTime.TryParse(tbNSX.Text, out nsxDate) && DateTime.TryParse(tbHSD.Text, out hsdDate))
-						{
-							// Convert DateTime values to string with a specific format
-							string formattedNSX = nsxDate.ToString("yyyy-MM-dd");
-							string formattedHSD = hsdDate.ToString("yyyy-MM-dd");
-
-							matHangTableAdapter.Update(tbTenMH.Text.Trim(), tbMMH.Text.Trim(), Int32.Parse(textgia.Text), formattedNSX, formattedHSD, Int32.Parse(tbVAT.Text), tbNH.Text.Trim());
-							MessageBox.Show("Đã sửa");
-						}
-						else
-						{
-							MessageBox.Show("Ngày sản xuất (NSX) hoặc hạn sử dụng (HSD) không hợp lệ.");
-						}
-					}
-					catch (System.Exception ex)
-					{
-						MessageBox.Show("Lỗi sửa sản phẩm mới: " + ex.Message);
-					}
-					try
-					{
-						this.matHangTableAdapter.Fill(this.sp.MatHang);
-					}
-					catch (System.Exception) { }
-					btnsua.Text = "Sửa";
-				}
-			}
-
-
+			btnLuu.Enabled = false;
+			isEditFlag = true;
 		}
-			private void btnthem_Click(object sender, EventArgs e)
-			{
-			if (btnthem.Text == "Thêm")
-			{
-				btnExit.Enabled = true;
-				btnMain.Enabled = true;
-				btnxoa.Enabled = false;
-				btnsua.Enabled = false;
-				tbMMH.Text = "";
-				tbTenMH.Text = "";
-				textgia.Text = "";
-				tbNSX.Text = "";
-				tbHSD.Text = "";
-				tbVAT.Text = "";
-				tbNH.Text = "";
-				MessageBox.Show("Nhập thông tin sản phẩm mới");
-			}
-			}
+		private void btnthem_Click(object sender, EventArgs e)
+		{
+			Utility.EnableControl(groupBox1, true);
+
+			tbMMH.ResetText();
+			tbTenMH.ResetText();
+			textgia.ResetText();
+			tbVAT.ResetText();
+			tbNH.ResetText();
+            dtNSX.Value = DateTime.Today;
+            dtHSD.Value = DateTime.Today;
+
+            tbMMH.Focus();
+			ChangeStatus(false);
+			btnLuu.Enabled = true;
+
+			isAddFlag = true;
+		}
 
 
 		private void btnExit_Click(object sender, EventArgs e)
 		{
-			DialogResult ch = MessageBox.Show(" Thoát chương trình (Y/N)", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			DialogResult ch = MessageBox.Show(" Thoát chương trình?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			{
 				if (ch == DialogResult.Yes)
 				{
@@ -127,7 +91,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 		private void btnMain_Click(object sender, EventArgs e)
 		{
-			DialogResult ch = MessageBox.Show("Bạn có chắc chắn đóng màn hình không (Y/N)", "Xác nhận",
+			DialogResult ch = MessageBox.Show("Bạn có chắc chắn đóng màn hình không?", "Xác nhận",
 							   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (ch == DialogResult.Yes)
 			{
@@ -135,35 +99,63 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 			}
 		}
 
-		private void btnluu_Click(object sender, EventArgs e)
+		private void btnLuu_Click(object sender, EventArgs e)
 		{
-			if (btnthem.Text=="Thêm") 
+			try
 			{
+                if (isAddFlag)
+                {
+					if (!Utility.RecordExists(tbMMH.Text.Trim()))
+					{
+						matHangTableAdapter.Insert(tbTenMH.Text, tbMMH.Text.Trim(), Convert.ToInt32(textgia.Text),
+							dtNSX.Value, dtHSD.Value, Convert.ToInt32(tbVAT.Text), tbNH.Text);
+						MessageBox.Show("Thêm mới mặt hàng thành công!");
 
-				// Thực hiện thêm sản phẩm mới
-				matHangTableAdapter.Insert(tbTenMH.Text.Trim(), tbMMH.Text.Trim(), Int32.Parse(textgia.Text), DateTime.Parse(tbNSX.Text), DateTime.Parse(tbHSD.Text), Int32.Parse(tbVAT.Text), tbNH.Text.Trim());
-				MessageBox.Show("Đã thêm");
-			}
-				else
+                    }
+                }
+                else if (isEditFlag)
+                {
+					if (DateTime.TryParse(dtNSX.Value.ToString(), out DateTime nsxDate) && DateTime.TryParse(dtHSD.Value.ToString(), out DateTime hsdDate))
+					{
+						string formattedNSX = nsxDate.ToString("yyyy-MM-dd");
+						string formattedHSD = hsdDate.ToString("yyyy-MM-dd");
+
+						matHangTableAdapter.Update(tbTenMH.Text.Trim(), tbMMH.Text.Trim(), Int32.Parse(textgia.Text), formattedNSX, formattedHSD, Int32.Parse(tbVAT.Text), tbNH.Text.Trim());
+						MessageBox.Show("Cập nhật thành công!");
+						isEditFlag = false;
+						ChangeStatus(true);
+						Utility.EnableControl(groupBox1, false);
+					}
+					else
+					{
+						MessageBox.Show("Ngày sản xuất (NSX) hoặc hạn sử dụng (HSD) không hợp lệ!", "Lỗi",
+							MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+					}
+				}
+            }
+			catch (Exception)
+			{
+				if (isAddFlag)
 				{
-					try
-					{
-						
-					}
-					catch (System.Exception ex)
-					{
-						MessageBox.Show("Lỗi thêm sản phẩm mới: " + ex.Message);
-					}
+                    MessageBox.Show("Thêm mới thất bại!", "Lỗi", 
+						MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                else if (isEditFlag)
+				{
+					MessageBox.Show("Cập nhật thất bại!", "Lỗi", 
+						MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 				}
-try
-{
-	// Cập nhật dữ liệu sau khi thêm
-	this.matHangTableAdapter.Fill(this.sp.MatHang);
-}
-catch (System.Exception) { };
-btnthem.Text = "Thêm";
-				}
+			}
 		}
-	
-	}
+
+        private void ChangeStatus(bool status)
+        {
+            btnsua.Enabled = status;
+            btnthem.Enabled = status;
+            btnxoa.Enabled = status;
+            btnLuu.Enabled = !status;
+        }
+    }
+}
+
 

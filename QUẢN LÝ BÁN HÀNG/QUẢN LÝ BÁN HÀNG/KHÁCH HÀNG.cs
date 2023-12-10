@@ -1,4 +1,5 @@
 ﻿using QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1TableAdapters;
+using QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,9 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 {
 	public partial class KHÁCH_HÀNG : Form
 	{
+		private bool isAddFlag = false;
+		private bool isEditFlag = false;
+
 		public KHÁCH_HÀNG()
 		{
 			InitializeComponent();
@@ -21,141 +25,138 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 		private void KHÁCH_HÀNG_Load(object sender, EventArgs e)
 		{
             // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1.KhachHang' table. You can move, or remove it, as needed.
-            this.khachHangTableAdapter.Fill(this.khachhang.KhachHang);
-
+            khachHangTableAdapter.Fill(this.khachhang.KhachHang);
         }
 
 		private void btnExit_Click(object sender, EventArgs e)
 		{
-			DialogResult ch = MessageBox.Show(" Thoát chương trình (Y/N)", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			DialogResult ch = MessageBox.Show("Thoát chương trình?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			{
 				if (ch == DialogResult.Yes)
 				{
 					Application.Exit();
 				}
 			}
-			this.Close();
+			Close();
 		}
 
 		private void btnMain_Click(object sender, EventArgs e)
 		{
-			DialogResult ch = MessageBox.Show("Bạn có chắc chắn đóng màn hình không (Y/N)", "Xác nhận",
+			DialogResult ch = MessageBox.Show("Bạn có chắc chắn muốn đóng màn hình hiện tại không?", "Xác nhận",
 							   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (ch == DialogResult.Yes)
 			{
-				this.Close();
+				Close();
 			}
 		}
 
 		private void btnthem_Click(object sender, EventArgs e)
 		{
-			txtten.Enabled = !txtten.Enabled;
-			txtkh.Enabled = !txtkh.Enabled;
-			txtsdt.Enabled = !txtsdt.Enabled;
-			txtdiachi.Enabled = !txtdiachi.Enabled;
+			Utility.EnableControl(groupBox1, true);
 
+			btnthem.Enabled = false;
+			btnsua.Enabled = false;
+			btnxoa.Enabled = false;
+			btnMain.Enabled = true;
 
-			if (btnthem.Text == "Thêm")
-			{
-				txtkh.Text = "";
-				txtten.Text = "";
-				txtdiachi.Text = "";
-				txtsdt.Text = "";
-				txtgc.Text = "";
-				txtgt.Text = "";
-				// Vô hiệu hóa các nút khác
-				
-			
-				
-				btnsua.Enabled = false;
-				btnxoa.Enabled = false;
-				btnExit.Enabled = true;
-				btnMain.Enabled = true;
-				MessageBox.Show("Nhập thông tin khách hàng mới");
-				btnthem.Text = "Lưu";
+			txtkh.ResetText();
+			txtten.ResetText();
+			txtdiachi.ResetText();
+			txtgc.ResetText();
+			txtsdt.ResetText();
+			txtgt.ResetText();
 
-			}
-			else
-			{
-				try
-				{
-					khachHangTableAdapter.Insert(txtkh.Text.Trim(), txtten.Text.Trim(), txtsdt.Text.Trim() ,txtdiachi.Text.Trim(),txtgt.Text.Trim(),txtgc.Text.Trim() );
-					MessageBox.Show("Đã thêm");
-				}
-				catch (System.Exception ex)
-				{
-					MessageBox.Show("Lỗi thêm khách hàng mới: " + ex.Message);
-				}
+			txtkh.Focus();
 
-				try
-				{
-					// Cập nhật dữ liệu sau khi thêm
-					this.khachHangTableAdapter.Fill(khachhang.KhachHang);
-				}
-				catch (System.Exception) { };
-
-				// Bật lại các nút khi đã thêm xong
-				btnsua.Enabled = true;
-				btnxoa.Enabled = true;
-				btnExit.Enabled = true;
-				btnMain.Enabled = true;
-				btnthem.Text = "Thêm";
-			}
-		}
+			isAddFlag = true;
+        }
 
 		
 
 		private void btnxoa_Click(object sender, EventArgs e)
 		{
-			{
-				DialogResult ch = MessageBox.Show("Bạn có muốn xóa nhân viên " + btnxoa.Text.Trim() + "phải không", " xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-				if (ch == DialogResult.Yes)
-				{
-					try
-					{
-						khachHangTableAdapter.Delete(txtkh.Text);
-						MessageBox.Show("Đã xóa");
-					}
-					catch (System.Exception ex) { MessageBox.Show("Có lỗi khách hàng này" + ex.Message); }
-					try
-					{
-
-						this.khachHangTableAdapter.Fill(this.khachhang.KhachHang);
-					}
-					catch (System.Exception) { }
-
-				}
-			}
-		}
+            DialogResult ch = MessageBox.Show($"Bạn có muốn xóa khách hàng có ID = {txtkh.Text.Trim()} không?", " Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (ch == DialogResult.Yes)
+            {
+                try
+                {
+                    khachHangTableAdapter.Delete(txtkh.Text);
+                    MessageBox.Show("Đã xóa thành công!");
+                    khachHangTableAdapter.Fill(khachhang.KhachHang);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Xóa thất bại!");
+                }
+            }
+        }
 
 		private void btnsua_Click(object sender, EventArgs e)
 		{
-			if (btnsua.Text == "Sửa")
+			Utility.EnableControl(groupBox1, true);
+			txtkh.Enabled = false;
+			txtten.Focus();
+			btnLuu.Enabled = true;
+
+			isEditFlag = true;
+		}
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+			try
 			{
-				MessageBox.Show("Sửa thông tin khách hàng");
-				btnthem.Enabled = !btnsua.Enabled;
-				btnxoa.Enabled = !btnxoa.Enabled;
-				btnsua.Text = "Lưu";
-			}
-			else
-			{
-				try
+				if (isAddFlag)
+				{
+					if (!Utility.RecordExists(txtkh.Text.Trim()))
+					{
+                        khachHangTableAdapter.Insert(txtkh.Text.Trim(), txtten.Text.Trim(), txtsdt.Text.Trim(), txtdiachi.Text.Trim(), txtgt.Text.Trim(), txtgc.Text.Trim());
+                        MessageBox.Show("Thêm mới thành công!");
+                        ChangeStatus(true);
+                        isAddFlag = false;
+                        khachHangTableAdapter.Fill(khachhang.KhachHang);
+                        Utility.EnableControl(groupBox1, false);
+                    }
+					else
+					{
+                        MessageBox.Show($"Đã tồn tại khách hàng với ID={txtkh.Text.Trim()}. Vui lòng kiểm tra lại thông tin.", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        isAddFlag = true;
+                    }
+                }
+                else if (isEditFlag)
 				{
 					khachHangTableAdapter.Update(txtkh.Text.Trim(), txtten.Text.Trim(), txtsdt.Text.Trim(), txtdiachi.Text.Trim(), txtgt.Text.Trim(), txtgc.Text.Trim());
-					
-					MessageBox.Show("Đã sửa");
-					
-				}
-				catch (System.Exception ex)
-				{ MessageBox.Show("Lỗi sửa khách hàng mới:" + ex.Message); }
-				try
-				{
+					MessageBox.Show("Cập nhật thành công");
+                    ChangeStatus(true);
+					isEditFlag = false;
+                    khachHangTableAdapter.Fill(khachhang.KhachHang);
+					Utility.EnableControl(groupBox1, false);
+                }
+            }
+			catch (Exception)
+			{
+                if (isAddFlag)
+                {
+					MessageBox.Show("Thêm mới thất bại!");
+                }
+                else if (isEditFlag)
+                {
+					MessageBox.Show("Cập nhật thất bại!");
+                }
+            }
+        }
 
-					this.khachHangTableAdapter.Fill(this.khachhang.KhachHang);
-				}
-				catch (System.Exception) { }
-				btnsua.Text = "Sửa";
-			}
-		}
-	}
+        private void ChangeStatus(bool status)
+        {
+            btnsua.Enabled = status;
+            btnthem.Enabled = status;
+            btnxoa.Enabled = status;
+            btnLuu.Enabled = !status;
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+			Utility.EnableControl(groupBox1, false);
+        }
+    }
 }

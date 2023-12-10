@@ -88,6 +88,7 @@
     <Compile Include="SẢN PHẨM.Designer.cs">
       <DependentUpon>SẢN PHẨM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility.cs" />
     <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

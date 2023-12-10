@@ -25,3 +25,23 @@ C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\Q
 C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.PHIẾU_THU.resources
 C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.HÓA_ĐƠN.resources
 C:\Users\HP\Documents\8_Huynh Kim Tuyen_QLBH BBN_ 20DTK1\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.ResolveComReference.cache
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.exe.config
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.exe
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.pdb
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.AssemblyReference.cache
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.SuggestedBindingRedirects.cache
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.ResolveComReference.cache
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.giaodien.resources
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.HÀNG_BÁN_TRẢ_LẠI.resources
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.HÓA_ĐƠN.resources
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.KHÁCH_HÀNG.resources
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.NHÂN_VIÊN.resources
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.PHIẾU_GIAO_HÀNG.resources
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.PHIẾU_THU.resources
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.SẢN_PHẨM.resources
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.dangnhap.resources
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.resources
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.GenerateResource.cache
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.CoreCompileInputs.cache
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.exe
+D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.pdb
