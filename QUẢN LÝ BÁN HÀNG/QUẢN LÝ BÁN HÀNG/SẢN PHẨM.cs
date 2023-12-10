@@ -25,7 +25,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 		private void SẢN_PHẨM_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.NhomHang' table. You can move, or remove it, as needed.
-			this.nhomHangTableAdapter.Fill(this.nh.NhomHang);
+			this.nhomHangTableAdapter.Fill(this.nhomHang.NhomHang);
 			// TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2.MatHang' table. You can move, or remove it, as needed.
 			this.matHangTableAdapter.Fill(this.sp.MatHang);
 
@@ -56,7 +56,8 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 			tbMMH.Enabled = false;
 			tbTenMH.Focus();
 
-			btnLuu.Enabled = false;
+			ChangeStatus(false);
+			btnLuu.Enabled = true;
 			isEditFlag = true;
 		}
 		private void btnthem_Click(object sender, EventArgs e)
@@ -68,6 +69,9 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 			textgia.ResetText();
 			tbVAT.ResetText();
 			tbNH.ResetText();
+			tbTenNH.ResetText();
+			tbGhiChu.ResetText();
+
             dtNSX.Value = DateTime.Today;
             dtHSD.Value = DateTime.Today;
 
@@ -109,10 +113,19 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 {
 					if (!Utility.RecordExists(tbMMH.Text.Trim()))
 					{
+						if (!Utility.RecordExists(tbNH.Text.Trim()))
+						{
+                            nhomHangTableAdapter.Insert(tbNH.Text.Trim(), tbTenNH.Text, tbGhiChu.Text);
+                        }
+
 						matHangTableAdapter.Insert(tbTenMH.Text, tbMMH.Text.Trim(), Convert.ToInt32(textgia.Text),
 							dtNSX.Value, dtHSD.Value, Convert.ToInt32(tbVAT.Text), tbNH.Text);
+						
 						MessageBox.Show("Thêm mới mặt hàng thành công!");
 
+                        nhomHangTableAdapter.Fill(nhomHang.NhomHang);
+                        matHangTableAdapter.Fill(sp.MatHang);
+                        ChangeStatus(true);
                     }
                 }
                 else if (isEditFlag)
@@ -124,6 +137,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 						matHangTableAdapter.Update(tbTenMH.Text.Trim(), tbMMH.Text.Trim(), Int32.Parse(textgia.Text), formattedNSX, formattedHSD, Int32.Parse(tbVAT.Text), tbNH.Text.Trim());
 						MessageBox.Show("Cập nhật thành công!");
+						matHangTableAdapter.Fill(sp.MatHang);
 						isEditFlag = false;
 						ChangeStatus(true);
 						Utility.EnableControl(groupBox1, false);
@@ -156,6 +170,11 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             btnthem.Enabled = status;
             btnxoa.Enabled = status;
             btnLuu.Enabled = !status;
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+			Utility.EnableControl(groupBox1, false);
         }
     }
 }
