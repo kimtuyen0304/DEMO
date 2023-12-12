@@ -21,5 +21,16 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         {
 
         }
+
+		private void HÀNG_BÁN_TRẢ_LẠI_Load(object sender, EventArgs e)
+		{
+            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.MatHang' table. You can move, or remove it, as needed.
+            this.matHangTableAdapter.Fill(this.mh.MatHang);
+            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7.ChiTietHangBanTraLai' table. You can move, or remove it, as needed.
+            this.chiTietHangBanTraLaiTableAdapter.Fill(this.cthbtl.ChiTietHangBanTraLai);
+            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8.HangBanTraLai' table. You can move, or remove it, as needed.
+            this.hangBanTraLaiTableAdapter.Fill(this.hbtl.HangBanTraLai);
+
+        }
     }
 }

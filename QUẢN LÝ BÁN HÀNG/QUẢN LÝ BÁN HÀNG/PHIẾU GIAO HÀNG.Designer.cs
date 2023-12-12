@@ -45,12 +45,13 @@
 			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.textBox8 = new System.Windows.Forms.TextBox();
-			this.btnMain = new System.Windows.Forms.Button();
-			this.btnExit = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.btnxem = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
+			this.btnExit = new System.Windows.Forms.Button();
 			this.btnin = new System.Windows.Forms.Button();
+			this.btnMain = new System.Windows.Forms.Button();
 			this.btnSua = new System.Windows.Forms.Button();
 			this.btnXoa = new System.Windows.Forms.Button();
 			this.btnThem = new System.Windows.Forms.Button();
@@ -204,38 +205,9 @@
 			this.textBox8.Size = new System.Drawing.Size(177, 22);
 			this.textBox8.TabIndex = 15;
 			// 
-			// btnMain
-			// 
-			this.btnMain.BackColor = System.Drawing.Color.White;
-			this.btnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.btnMain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnMain.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.btnMain.Location = new System.Drawing.Point(1139, 50);
-			this.btnMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.btnMain.Name = "btnMain";
-			this.btnMain.Size = new System.Drawing.Size(161, 54);
-			this.btnMain.TabIndex = 59;
-			this.btnMain.Text = "Về màn hình chính";
-			this.btnMain.UseVisualStyleBackColor = false;
-			// 
-			// btnExit
-			// 
-			this.btnExit.BackColor = System.Drawing.Color.White;
-			this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.btnExit.Location = new System.Drawing.Point(1139, 131);
-			this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.btnExit.Name = "btnExit";
-			this.btnExit.Size = new System.Drawing.Size(160, 54);
-			this.btnExit.TabIndex = 60;
-			this.btnExit.Text = "Thoát chương trình";
-			this.btnExit.UseVisualStyleBackColor = false;
-			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.btnxem);
 			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.btnExit);
 			this.groupBox1.Controls.Add(this.btnin);
@@ -276,6 +248,20 @@
 			this.dataGridView1.Size = new System.Drawing.Size(1369, 230);
 			this.dataGridView1.TabIndex = 63;
 			// 
+			// btnxem
+			// 
+			this.btnxem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnxem.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnxem.ForeColor = System.Drawing.Color.Black;
+			this.btnxem.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.actions_document_print_preview_15786;
+			this.btnxem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnxem.Location = new System.Drawing.Point(966, 146);
+			this.btnxem.Name = "btnxem";
+			this.btnxem.Size = new System.Drawing.Size(137, 47);
+			this.btnxem.TabIndex = 65;
+			this.btnxem.Text = "Xem Trước";
+			this.btnxem.UseVisualStyleBackColor = false;
+			// 
 			// button1
 			// 
 			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -283,12 +269,29 @@
 			this.button1.ForeColor = System.Drawing.Color.Black;
 			this.button1.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.Save_as_37111;
 			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button1.Location = new System.Drawing.Point(976, 62);
+			this.button1.Location = new System.Drawing.Point(966, 21);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(137, 47);
 			this.button1.TabIndex = 62;
 			this.button1.Text = "Lưu";
 			this.button1.UseVisualStyleBackColor = false;
+			// 
+			// btnExit
+			// 
+			this.btnExit.BackColor = System.Drawing.Color.White;
+			this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.btnExit.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.log_out_icon_icons_com_50106;
+			this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnExit.Location = new System.Drawing.Point(1121, 129);
+			this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btnExit.Name = "btnExit";
+			this.btnExit.Size = new System.Drawing.Size(213, 62);
+			this.btnExit.TabIndex = 60;
+			this.btnExit.Text = "Thoát chương trình";
+			this.btnExit.UseVisualStyleBackColor = false;
 			// 
 			// btnin
 			// 
@@ -297,12 +300,29 @@
 			this.btnin.ForeColor = System.Drawing.Color.Black;
 			this.btnin.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.PhotoPrint_6314;
 			this.btnin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnin.Location = new System.Drawing.Point(976, 131);
+			this.btnin.Location = new System.Drawing.Point(966, 85);
 			this.btnin.Name = "btnin";
 			this.btnin.Size = new System.Drawing.Size(137, 47);
 			this.btnin.TabIndex = 61;
 			this.btnin.Text = "In";
 			this.btnin.UseVisualStyleBackColor = false;
+			// 
+			// btnMain
+			// 
+			this.btnMain.BackColor = System.Drawing.Color.White;
+			this.btnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnMain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnMain.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.btnMain.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._3643769_building_home_house_main_menu_start_113416;
+			this.btnMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnMain.Location = new System.Drawing.Point(1121, 43);
+			this.btnMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btnMain.Name = "btnMain";
+			this.btnMain.Size = new System.Drawing.Size(213, 62);
+			this.btnMain.TabIndex = 59;
+			this.btnMain.Text = "Về màn hình chính";
+			this.btnMain.UseVisualStyleBackColor = false;
 			// 
 			// btnSua
 			// 
@@ -393,5 +413,6 @@
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnxem;
 	}
 }

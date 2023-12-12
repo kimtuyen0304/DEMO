@@ -26,11 +26,22 @@ namespace QUẢN_LÝ_BÁN_HÀNG.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-OKRM6HA\\SQLEXPRESS;Initial Catalog=\"8 _ HuynhKimTuyen_ QLBH B" +
-            "BN_20DTK1\";User ID=sa;Password=123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DUONG-NGUYEN\\MSSQLSERVER03;Initial Catalog=\"8 _ HuynhKimTuyen_ QLBH B" +
+            "BN_20DTK1\";User ID=sa;Password=nduong99@")]
         public string _8___HuynhKimTuyen__QLBH_BBN_20DTK1ConnectionString {
             get {
                 return ((string)(this["_8___HuynhKimTuyen__QLBH_BBN_20DTK1ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-OKRM6HA\\SQLEXPRESS;Initial Catalog=\"8 _ HuynhKimTuyen_ QLBH B" +
+            "BN_20DTK1\";User ID=sa;Password=123")]
+        public string _8___HuynhKimTuyen__QLBH_BBN_20DTK1ConnectionString1 {
+            get {
+                return ((string)(this["_8___HuynhKimTuyen__QLBH_BBN_20DTK1ConnectionString1"]));
             }
         }
     }

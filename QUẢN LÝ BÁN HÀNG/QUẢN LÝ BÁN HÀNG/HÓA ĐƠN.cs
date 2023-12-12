@@ -25,8 +25,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 		private void HÓA_ĐƠN_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet5.ChiTietHoaDon' table. You can move, or remove it, as needed.
-			this.chiTietHoaDonTableAdapter.Fill(this.cthd.ChiTietHoaDon);
+            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.MatHang' table. You can move, or remove it, as needed.
+            this.matHangTableAdapter.Fill(this.mh.MatHang);
+            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet5.ChiTietHoaDon' table. You can move, or remove it, as needed.
+            this.chiTietHoaDonTableAdapter.Fill(this.cthd.ChiTietHoaDon);
 			// TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet4.HoaDon' table. You can move, or remove it, as needed.
 			this.hoaDonTableAdapter.Fill(this.hd.HoaDon);
 		}

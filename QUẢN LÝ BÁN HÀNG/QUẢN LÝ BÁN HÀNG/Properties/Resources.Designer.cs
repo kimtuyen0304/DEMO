@@ -63,9 +63,29 @@ namespace QUẢN_LÝ_BÁN_HÀNG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3643769_building_home_house_main_menu_start_113416 {
+            get {
+                object obj = ResourceManager.GetObject("3643769-building-home-house-main-menu-start_113416", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _62914memo_109205 {
             get {
                 object obj = ResourceManager.GetObject("62914memo_109205", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap actions_document_print_preview_15786 {
+            get {
+                object obj = ResourceManager.GetObject("actions_document_print_preview_15786", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,26 @@ namespace QUẢN_LÝ_BÁN_HÀNG.Properties {
         internal static System.Drawing.Bitmap businessapplication_edit_male_user_thepencil_theclient_negocio_2321 {
             get {
                 object obj = ResourceManager.GetObject("businessapplication_edit_male_user_thepencil_theclient_negocio_2321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap category_icon_176162 {
+            get {
+                object obj = ResourceManager.GetObject("category_icon_176162", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap copy_paste_document_file_1557 {
+            get {
+                object obj = ResourceManager.GetObject("copy_paste_document_file_1557", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +213,16 @@ namespace QUẢN_LÝ_BÁN_HÀNG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap log_out_icon_icons_com_50106 {
+            get {
+                object obj = ResourceManager.GetObject("log-out_icon-icons.com_50106", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PhotoPrint_6314 {
             get {
                 object obj = ResourceManager.GetObject("PhotoPrint_6314", resourceCulture);
@@ -186,6 +236,16 @@ namespace QUẢN_LÝ_BÁN_HÀNG.Properties {
         internal static System.Drawing.Bitmap PhotoPrint_63141 {
             get {
                 object obj = ResourceManager.GetObject("PhotoPrint_63141", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap product_document_file_1512 {
+            get {
+                object obj = ResourceManager.GetObject("product_document_file_1512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +276,26 @@ namespace QUẢN_LÝ_BÁN_HÀNG.Properties {
         internal static System.Drawing.Bitmap USER {
             get {
                 object obj = ResourceManager.GetObject("USER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warehouse_storage_unit_storehouse_icon_192428 {
+            get {
+                object obj = ResourceManager.GetObject("warehouse_storage_unit_storehouse_icon_192428", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xmag_search_find_export_locate_5984 {
+            get {
+                object obj = ResourceManager.GetObject("xmag_search_find_export_locate_5984", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -39,18 +39,12 @@
 			this.btnthoat = new System.Windows.Forms.Button();
 			this.btnve = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.btnin = new System.Windows.Forms.Button();
-			this.btnMain = new System.Windows.Forms.Button();
-			this.btnExit = new System.Windows.Forms.Button();
 			this.textpt = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.btnxoa = new System.Windows.Forms.Button();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
-			this.btnsua = new System.Windows.Forms.Button();
 			this.textmkh = new System.Windows.Forms.TextBox();
 			this.label14 = new System.Windows.Forms.Label();
-			this.btnthem = new System.Windows.Forms.Button();
 			this.textmhd = new System.Windows.Forms.TextBox();
 			this.texttien = new System.Windows.Forms.TextBox();
 			this.label11 = new System.Windows.Forms.Label();
@@ -60,7 +54,14 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.textmpt = new System.Windows.Forms.TextBox();
 			this.thuTienKhachHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet3TableAdapters.ThuTienKhachHangTableAdapter();
+			this.btnxem = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
+			this.btnin = new System.Windows.Forms.Button();
+			this.btnxoa = new System.Windows.Forms.Button();
+			this.btnsua = new System.Windows.Forms.Button();
+			this.btnthem = new System.Windows.Forms.Button();
+			this.btnExit = new System.Windows.Forms.Button();
+			this.btnMain = new System.Windows.Forms.Button();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.thuTienKhachHangBindingSource)).BeginInit();
@@ -149,10 +150,11 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.btnExit);
+			this.groupBox1.Controls.Add(this.btnMain);
+			this.groupBox1.Controls.Add(this.btnxem);
 			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.btnin);
-			this.groupBox1.Controls.Add(this.btnMain);
-			this.groupBox1.Controls.Add(this.btnExit);
 			this.groupBox1.Controls.Add(this.textpt);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.btnxoa);
@@ -173,56 +175,10 @@
 			this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(11, 17);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(1261, 236);
+			this.groupBox1.Size = new System.Drawing.Size(1299, 236);
 			this.groupBox1.TabIndex = 12;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "THÔNG TIN CHUNG";
-			// 
-			// btnin
-			// 
-			this.btnin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnin.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnin.ForeColor = System.Drawing.Color.Black;
-			this.btnin.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.PhotoPrint_6314;
-			this.btnin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnin.Location = new System.Drawing.Point(910, 84);
-			this.btnin.Name = "btnin";
-			this.btnin.Size = new System.Drawing.Size(137, 47);
-			this.btnin.TabIndex = 56;
-			this.btnin.Text = "In";
-			this.btnin.UseVisualStyleBackColor = false;
-			// 
-			// btnMain
-			// 
-			this.btnMain.BackColor = System.Drawing.Color.White;
-			this.btnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.btnMain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnMain.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.btnMain.Location = new System.Drawing.Point(1071, 66);
-			this.btnMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.btnMain.Name = "btnMain";
-			this.btnMain.Size = new System.Drawing.Size(161, 54);
-			this.btnMain.TabIndex = 51;
-			this.btnMain.Text = "Về màn hình chính";
-			this.btnMain.UseVisualStyleBackColor = false;
-			this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
-			// 
-			// btnExit
-			// 
-			this.btnExit.BackColor = System.Drawing.Color.White;
-			this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.btnExit.Location = new System.Drawing.Point(1071, 153);
-			this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.btnExit.Name = "btnExit";
-			this.btnExit.Size = new System.Drawing.Size(160, 54);
-			this.btnExit.TabIndex = 52;
-			this.btnExit.Text = "Thoát chương trình";
-			this.btnExit.UseVisualStyleBackColor = false;
-			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
 			// 
 			// textpt
 			// 
@@ -243,21 +199,6 @@
 			this.label1.TabIndex = 49;
 			this.label1.Text = "PTTT";
 			// 
-			// btnxoa
-			// 
-			this.btnxoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnxoa.ForeColor = System.Drawing.Color.Black;
-			this.btnxoa.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.delete_file_40456;
-			this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnxoa.Location = new System.Drawing.Point(730, 123);
-			this.btnxoa.Name = "btnxoa";
-			this.btnxoa.Size = new System.Drawing.Size(151, 48);
-			this.btnxoa.TabIndex = 48;
-			this.btnxoa.Text = "Xóa";
-			this.btnxoa.UseVisualStyleBackColor = false;
-			this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
-			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
@@ -275,21 +216,6 @@
 			this.label16.Size = new System.Drawing.Size(109, 18);
 			this.label16.TabIndex = 30;
 			this.label16.Text = "Mã khách hàng";
-			// 
-			// btnsua
-			// 
-			this.btnsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnsua.ForeColor = System.Drawing.Color.Black;
-			this.btnsua.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._62914memo_109205;
-			this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnsua.Location = new System.Drawing.Point(730, 179);
-			this.btnsua.Name = "btnsua";
-			this.btnsua.Size = new System.Drawing.Size(151, 48);
-			this.btnsua.TabIndex = 47;
-			this.btnsua.Text = "Sửa";
-			this.btnsua.UseVisualStyleBackColor = false;
-			this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
 			// 
 			// textmkh
 			// 
@@ -309,21 +235,6 @@
 			this.label14.Size = new System.Drawing.Size(102, 18);
 			this.label14.TabIndex = 26;
 			this.label14.Text = "Ngày chứng từ";
-			// 
-			// btnthem
-			// 
-			this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.btnthem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnthem.ForeColor = System.Drawing.Color.Black;
-			this.btnthem.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.document_add_256_icon_icons_com_75994;
-			this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnthem.Location = new System.Drawing.Point(730, 61);
-			this.btnthem.Name = "btnthem";
-			this.btnthem.Size = new System.Drawing.Size(151, 48);
-			this.btnthem.TabIndex = 46;
-			this.btnthem.Text = "Thêm ";
-			this.btnthem.UseVisualStyleBackColor = false;
-			this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
 			// 
 			// textmhd
 			// 
@@ -406,6 +317,20 @@
 			// 
 			this.thuTienKhachHangTableAdapter.ClearBeforeFill = true;
 			// 
+			// btnxem
+			// 
+			this.btnxem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnxem.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnxem.ForeColor = System.Drawing.Color.Black;
+			this.btnxem.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.actions_document_print_preview_15786;
+			this.btnxem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnxem.Location = new System.Drawing.Point(910, 123);
+			this.btnxem.Name = "btnxem";
+			this.btnxem.Size = new System.Drawing.Size(137, 47);
+			this.btnxem.TabIndex = 64;
+			this.btnxem.Text = "Xem Trước";
+			this.btnxem.UseVisualStyleBackColor = false;
+			// 
 			// button1
 			// 
 			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -413,12 +338,105 @@
 			this.button1.ForeColor = System.Drawing.Color.Black;
 			this.button1.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.Save_as_37111;
 			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button1.Location = new System.Drawing.Point(910, 149);
+			this.button1.Location = new System.Drawing.Point(910, 179);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(137, 47);
 			this.button1.TabIndex = 63;
 			this.button1.Text = "Lưu";
 			this.button1.UseVisualStyleBackColor = false;
+			// 
+			// btnin
+			// 
+			this.btnin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnin.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnin.ForeColor = System.Drawing.Color.Black;
+			this.btnin.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.PhotoPrint_6314;
+			this.btnin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnin.Location = new System.Drawing.Point(910, 61);
+			this.btnin.Name = "btnin";
+			this.btnin.Size = new System.Drawing.Size(137, 47);
+			this.btnin.TabIndex = 56;
+			this.btnin.Text = "In";
+			this.btnin.UseVisualStyleBackColor = false;
+			// 
+			// btnxoa
+			// 
+			this.btnxoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnxoa.ForeColor = System.Drawing.Color.Black;
+			this.btnxoa.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.delete_file_40456;
+			this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnxoa.Location = new System.Drawing.Point(730, 123);
+			this.btnxoa.Name = "btnxoa";
+			this.btnxoa.Size = new System.Drawing.Size(151, 48);
+			this.btnxoa.TabIndex = 48;
+			this.btnxoa.Text = "Xóa";
+			this.btnxoa.UseVisualStyleBackColor = false;
+			this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
+			// 
+			// btnsua
+			// 
+			this.btnsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnsua.ForeColor = System.Drawing.Color.Black;
+			this.btnsua.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._62914memo_109205;
+			this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnsua.Location = new System.Drawing.Point(730, 179);
+			this.btnsua.Name = "btnsua";
+			this.btnsua.Size = new System.Drawing.Size(151, 48);
+			this.btnsua.TabIndex = 47;
+			this.btnsua.Text = "Sửa";
+			this.btnsua.UseVisualStyleBackColor = false;
+			this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
+			// 
+			// btnthem
+			// 
+			this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.btnthem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnthem.ForeColor = System.Drawing.Color.Black;
+			this.btnthem.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.document_add_256_icon_icons_com_75994;
+			this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnthem.Location = new System.Drawing.Point(730, 61);
+			this.btnthem.Name = "btnthem";
+			this.btnthem.Size = new System.Drawing.Size(151, 48);
+			this.btnthem.TabIndex = 46;
+			this.btnthem.Text = "Thêm ";
+			this.btnthem.UseVisualStyleBackColor = false;
+			this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
+			// 
+			// btnExit
+			// 
+			this.btnExit.BackColor = System.Drawing.Color.White;
+			this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.btnExit.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.log_out_icon_icons_com_50106;
+			this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnExit.Location = new System.Drawing.Point(1068, 149);
+			this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btnExit.Name = "btnExit";
+			this.btnExit.Size = new System.Drawing.Size(213, 62);
+			this.btnExit.TabIndex = 66;
+			this.btnExit.Text = "Thoát chương trình";
+			this.btnExit.UseVisualStyleBackColor = false;
+			// 
+			// btnMain
+			// 
+			this.btnMain.BackColor = System.Drawing.Color.White;
+			this.btnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnMain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnMain.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.btnMain.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._3643769_building_home_house_main_menu_start_113416;
+			this.btnMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnMain.Location = new System.Drawing.Point(1068, 79);
+			this.btnMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btnMain.Name = "btnMain";
+			this.btnMain.Size = new System.Drawing.Size(213, 62);
+			this.btnMain.TabIndex = 65;
+			this.btnMain.Text = "Về màn hình chính";
+			this.btnMain.UseVisualStyleBackColor = false;
 			// 
 			// PHIẾU_THU
 			// 
@@ -448,8 +466,6 @@
 		private System.Windows.Forms.Button btnthoat;
 		private System.Windows.Forms.Button btnve;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.Button btnMain;
-		private System.Windows.Forms.Button btnExit;
 		private System.Windows.Forms.TextBox textpt;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnxoa;
@@ -473,5 +489,8 @@
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Button btnin;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnxem;
+		private System.Windows.Forms.Button btnExit;
+		private System.Windows.Forms.Button btnMain;
 	}
 }

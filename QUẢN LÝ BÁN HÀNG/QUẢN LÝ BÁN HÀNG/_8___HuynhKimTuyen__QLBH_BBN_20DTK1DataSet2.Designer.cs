@@ -999,9 +999,9 @@ namespace QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2Table
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE MatHang\r\nSET          TenMH = @TenMH, MaMH = @MaMH, Gia = @Gia, NgaySX = @" +
-                "NgaySX, HanSD = @HanSD, VAT = @VAT, MaNH = @MaNH\r\nWHERE  (MaMH = @MaMH);   \r\nSEL" +
-                "ECT TenMH, MaMH, Gia, NgaySX, HanSD, VAT, MaNH FROM MatHang WHERE (MaMH = @MaMH)" +
-                "";
+                "NgaySX, HanSD = @HanSD, VAT = @VAT, MaNH = @MaNH\r\nWHERE  (MaMH = @MaMH);    \r\nSE" +
+                "LECT TenMH, MaMH, Gia, NgaySX, HanSD, VAT, MaNH FROM MatHang WHERE (MaMH = @MaMH" +
+                ")";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenMH", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "TenMH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaMH", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "MaMH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

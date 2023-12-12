@@ -76,11 +76,23 @@
     <Compile Include="PHIẾU GIAO HÀNG.Designer.cs">
       <DependentUpon>PHIẾU GIAO HÀNG.cs</DependentUpon>
     </Compile>
+    <Compile Include="PHIẾU NHẬP KHO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PHIẾU NHẬP KHO.Designer.cs">
+      <DependentUpon>PHIẾU NHẬP KHO.cs</DependentUpon>
+    </Compile>
     <Compile Include="PHIẾU THU.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PHIẾU THU.Designer.cs">
       <DependentUpon>PHIẾU THU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PHIẾU XUẤT KHO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PHIẾU XUẤT KHO.Designer.cs">
+      <DependentUpon>PHIẾU XUẤT KHO.cs</DependentUpon>
     </Compile>
     <Compile Include="SẢN PHẨM.cs">
       <SubType>Form</SubType>
@@ -98,6 +110,47 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.cs">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2.cs">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -123,6 +176,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet9.xsd</DependentUpon>
     </Compile>
     <Compile Include="ĐĂNG NHẬP.cs">
       <SubType>Form</SubType>
@@ -156,8 +224,14 @@
     <EmbeddedResource Include="PHIẾU GIAO HÀNG.resx">
       <DependentUpon>PHIẾU GIAO HÀNG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PHIẾU NHẬP KHO.resx">
+      <DependentUpon>PHIẾU NHẬP KHO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PHIẾU THU.resx">
       <DependentUpon>PHIẾU THU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PHIẾU XUẤT KHO.resx">
+      <DependentUpon>PHIẾU XUẤT KHO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SẢN PHẨM.resx">
       <DependentUpon>SẢN PHẨM.cs</DependentUpon>
@@ -205,6 +279,83 @@
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1.xss">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet10.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet10.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet15.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet15.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet16.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet16.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet16.xsd</DependentUpon>
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2.xsc">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2.xsd</DependentUpon>
@@ -260,6 +411,39 @@
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.xss">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet9.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet9.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet9.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -344,6 +528,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Save-as_37111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_document_print_preview_15786.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643769-building-home-house-main-menu-start_113416.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-out_icon-icons.com_50106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xmag_search_find_export_locate_5984.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_paste_document_file_1557.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category_icon_176162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product_document_file_1512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse_storage_unit_storehouse_icon_192428.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

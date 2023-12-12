@@ -88,7 +88,27 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 		private void lậpĐơnĐặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			PHIẾU_GIAO_HÀNG fr = new PHIẾU_GIAO_HÀNG();
+			fr.ShowDialog();
+		}
 
+		private void hàngBánTrảLạiToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			HÀNG_BÁN_TRẢ_LẠI fr = new HÀNG_BÁN_TRẢ_LẠI();
+			fr.ShowDialog();
+		}
+
+		private void lậpPhiếuNhậpThànhPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			PHIẾU_NHẬP_KHO fr = new PHIẾU_NHẬP_KHO();
+			fr.ShowDialog();
+		}
+
+		private void lậpPhiếuXuấtThànhPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			PHIẾU_XUẤT_KHO fr = new PHIẾU_XUẤT_KHO();
+			fr.ShowDialog();
 		}
 	}
 }
+ 
