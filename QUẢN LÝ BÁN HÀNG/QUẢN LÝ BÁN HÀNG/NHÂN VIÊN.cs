@@ -65,7 +65,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 		private void btnExit_Click(object sender, EventArgs e)
 		{
-			DialogResult ch = MessageBox.Show(" Thoát chương trình (Y/N)", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			DialogResult ch = MessageBox.Show(" Thoát chương trình?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			{
 				if (ch == DialogResult.Yes)
 				{
@@ -105,7 +105,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 			{
                 if (isAddFlag)
                 {
-					if (!Utility.RecordExists(txtmnv.Text.Trim()))
+					if (!Utility.RecordExists(dlnv.NhanVien.Rows, txtmnv.Text.Trim()))
 					{
                         nhanVienTableAdapter.Insert(txtmnv.Text.Trim(), txtten.Text.Trim(), Int32.Parse(txtsdt.Text), txtpb.Text.Trim(), txtmcv.Text.Trim(), txtnvl.Text.Trim());
                         MessageBox.Show("Thêm mới thành công!");
