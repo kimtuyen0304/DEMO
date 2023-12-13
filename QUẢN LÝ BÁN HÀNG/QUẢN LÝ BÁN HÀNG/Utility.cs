@@ -1,6 +1,8 @@
 ﻿using QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2TableAdapters;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
@@ -21,21 +23,13 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             }
         }
 
-        public static bool RecordExists(DataRowCollection rows, string key1, string key2 = null)
+        public static bool RecordExists(string primaryKey)
         {
-            if(rows == null || rows.Count == 0) return false;
+            return YourDatabaseCheckIfRecordExists(primaryKey);
+        }
 
-            foreach (DataRow row in rows)
-            {
-                if (row.ItemArray[0].ToString().Trim().Equals(key1))
-                {
-                    if(key2 != null && row.ItemArray[1].ToString().Trim().Equals(key2))
-                    {
-                        return true;
-                    }
-                    return true;
-                }
-            }
+        public static bool YourDatabaseCheckIfRecordExists(string primaryKey)
+        {
             return false;
         }
 
@@ -83,6 +77,13 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                     return row;
             }
             return null;
+        }
+
+        public static SqlConnection GetConnection()
+        {
+            var connection =
+                ConfigurationManager.ConnectionStrings["QUẢN_LÝ_BÁN_HÀNG.Properties.Settings._8___HuynhKimTuyen__QLBH_BBN_20DTK1ConnectionString"].ConnectionString;
+            return new SqlConnection(connection);
         }
     }
 }

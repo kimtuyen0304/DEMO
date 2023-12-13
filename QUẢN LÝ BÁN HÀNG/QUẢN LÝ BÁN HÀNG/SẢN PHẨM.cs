@@ -100,9 +100,9 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             {
                 if (isAddFlag)
                 {
-                    if (!Utility.RecordExists(sp.MatHang.Rows, tbMMH.Text.Trim()))
+                    if (!Utility.RecordExists(tbMMH.Text.Trim()))
                     {
-                        if (!Utility.RecordExists(nhomHang.NhomHang.Rows, tbNH.Text.Trim()))
+                        if (!Utility.RecordExists(tbNH.Text.Trim()))
                         {
                             nhomHangTableAdapter.Insert(tbNH.Text.Trim(), tbTenNH.Text, tbGhiChu.Text);
                         }

@@ -97,7 +97,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             {
                 if (isAddFlag)
                 {
-                    if (!Utility.RecordExists(khachhang.KhachHang.Rows, txtkh.Text.Trim()))
+                    if (!Utility.RecordExists(txtkh.Text.Trim()))
                     {
                         khachHangTableAdapter.Insert(txtkh.Text.Trim(), txtten.Text.Trim(), txtsdt.Text.Trim(), txtdiachi.Text.Trim(), txtgt.Text.Trim(), txtgc.Text.Trim());
                         MessageBox.Show("Thêm mới thành công!");

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
+using System.Text;
 using System.Windows.Forms;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
@@ -97,10 +99,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
                 if (isAddFlag)
                 {
-                    if (!Utility.RecordExists(mh.MatHang.Rows, txtmhd.Text.Trim()))
+                    if (!Utility.RecordExists(txtmhd.Text.Trim()))
                     {
                         // Thêm hóa đơn mới
-                        this.hoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtkh.Text.Trim(), dtNgay.Text.Trim(),
+                        this.hoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtkh.Text.Trim(), dtNgay.Value.ToString(),
                             txtmkh.Text.Trim(), txtmnv.Text.Trim(), txtmpxk.Text.Trim());
 
                         MessageBox.Show("Thêm mới hóa đơn thành công!", "Thông báo", 
@@ -109,7 +111,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                         if(MessageBox.Show("Bạn có muốn thêm thông tin chi tiết hóa đơn không?", "Xác nhận", 
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            if(!Utility.RecordExists(cthd.ChiTietHoaDon.Rows, txtmhd.Text.Trim(), txtmmh.Text.Trim()))
+                            if(!Utility.RecordExists(txtmhd.Text.Trim()))
 
                             // Thêm chi tiết hóa đơn mới
                             this.chiTietHoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtmmh.Text,
@@ -254,8 +256,21 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         private void btnXem_Click(object sender, EventArgs e)
         {
             var previewDialog = new frmPreview();
-            previewDialog.DataSource = cthd.ChiTietHoaDon;
+            previewDialog.DataSource = GetDanhSachHoaDon();
             previewDialog.ShowDialog();
+        }
+
+        private DataTable GetDanhSachHoaDon()
+        {
+            var dt = new DataTable();
+            var conn = Utility.GetConnection();
+            var sql = "SELECT\r\n\tHD.MaHD\r\n   ,NV.TenNV\r\n   ,KH.TenKH\r\n   ,MH.TenMH\r\n   ,HD.Kyhieu\r\n   ,HD.NgayHD\r\n   ,CTHD.Soluong\r\n   ,CTHD.Thanhtien\r\nFROM HoaDon HD\r\nLEFT JOIN ChiTietHoaDon CTHD ON HD.MaHD = CTHD.MaHD\r\nLEFT JOIN KhachHang KH ON HD.MaKH = KH.MaKH\r\nLEFT JOIN NhanVien NV ON HD.MaNV = NV.MaNV\r\nLEFT JOIN MatHang MH ON CTHD.MaMH = MH.MaMH\r\nWHERE CTHD.Soluong IS NOT NULL\r\nORDER BY HD.MaHD";
+            var cmd = new SqlCommand(sql, conn);
+            conn.Open();
+            var dataAdapter = new SqlDataAdapter(cmd);
+            dataAdapter.Fill(dt);
+            conn.Close();
+            return dt;
         }
     }
 }

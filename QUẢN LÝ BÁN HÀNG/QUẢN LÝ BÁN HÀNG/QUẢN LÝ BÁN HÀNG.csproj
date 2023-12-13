@@ -52,6 +52,7 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -117,6 +118,16 @@
     </Compile>
     <Compile Include="PREVIEW.Designer.cs">
       <DependentUpon>PREVIEW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportHD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportHD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportHoaDon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportHoaDon.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="SẢN PHẨM.cs">
@@ -293,6 +304,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ReportHD.xsc">
+      <DependentUpon>ReportHD.xsd</DependentUpon>
+    </None>
+    <None Include="ReportHD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportHD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportHD.xss">
+      <DependentUpon>ReportHD.xsd</DependentUpon>
+    </None>
+    <None Include="ReportHoaDon.xsc">
+      <DependentUpon>ReportHoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="ReportHoaDon.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportHoaDon.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportHoaDon.xss">
+      <DependentUpon>ReportHoaDon.xsd</DependentUpon>
+    </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet.xsc">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet.xsd</DependentUpon>
     </None>
