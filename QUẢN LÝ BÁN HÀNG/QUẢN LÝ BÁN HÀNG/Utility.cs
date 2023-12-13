@@ -33,6 +33,17 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             return false;
         }
 
+        public static bool CheckExist(DataRowCollection rows, string key)
+        {
+            if(rows.Count == 0) return false;
+            foreach(DataRow row in rows)
+            {
+                if (row.ItemArray[0].ToString().Trim() == key)
+                    return true;
+            }
+            return false;
+        }
+
         public static void FocusRowById(string id, DataGridView grid)
         {
             if (grid.Rows.Count == 0) return;

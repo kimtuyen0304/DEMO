@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
@@ -109,6 +111,33 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 			PHIẾU_XUẤT_KHO fr = new PHIẾU_XUẤT_KHO();
 			fr.ShowDialog();
 		}
-	}
+
+        private void saoLưuTựĐộngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+			try
+			{
+                var conn = Utility.GetConnection();
+				var backupFolderPath = Application.StartupPath + $"../../../BACKUP/{DateTime.Today.ToString("yyyyMMdd")}";
+
+				if (!Directory.Exists(backupFolderPath))
+				{
+					Directory.CreateDirectory(backupFolderPath);
+				}
+
+				var database = "8 _ HuynhKimTuyen_ QLBH BBN_20DTK1";
+                var sql = $"BACKUP DATABASE [{database}] TO DISK='{backupFolderPath}/QLBH.bak'";
+                conn.Open();
+                var cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show($"Đã sao lưu dữ liệu thành công!\nVui lòng kiểm tra tại thư mục:\n\t{backupFolderPath}", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+			catch (Exception)
+			{
+				MessageBox.Show("Sao lưu dữ liệu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+        }
+    }
 }
  

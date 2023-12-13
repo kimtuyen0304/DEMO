@@ -8,6 +8,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
     public partial class frmPreview : Form
     {
         public DataTable DataSource;
+        public string TemplateReportPath;
 
         public frmPreview()
         {
@@ -17,9 +18,13 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         private void frmPreview_Load(object sender, EventArgs e)
         {
             rptViewer.Reset();
-            rptViewer.LocalReport.ReportPath = Application.StartupPath + "../../../ReportTemplate/DanhSachHoaDon.rdlc";
+            rptViewer.LocalReport.ReportPath = Application.StartupPath + $"../../../ReportTemplate/{TemplateReportPath}";
             var rptDataSource = new ReportDataSource("DataSet1", DataSource);
             rptViewer.LocalReport.DataSources.Clear();
+            var settings = rptViewer.GetPageSettings();
+            settings.Margins = new System.Drawing.Printing.Margins(5, 5, 2, 2);
+            settings.Landscape = true;
+            rptViewer.SetPageSettings(settings);
             rptViewer.LocalReport.DataSources.Add(rptDataSource);
             this.rptViewer.RefreshReport();
         }

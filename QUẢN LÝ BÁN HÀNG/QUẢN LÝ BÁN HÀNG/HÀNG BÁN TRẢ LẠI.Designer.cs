@@ -29,15 +29,13 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.makh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnxem = new System.Windows.Forms.Button();
-            this.btnin = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,6 +56,13 @@
             this.textmh = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgData = new System.Windows.Forms.DataGridView();
+            this.maMHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenMHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaySXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hanSDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vATDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mh = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14();
             this.chiTietHangBanTraLaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -67,13 +72,9 @@
             this.hangBanTraLaiTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8TableAdapters.HangBanTraLaiTableAdapter();
             this.chiTietHangBanTraLaiTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7TableAdapters.ChiTietHangBanTraLaiTableAdapter();
             this.matHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14TableAdapters.MatHangTableAdapter();
-            this.maMHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenMHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaySXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hanSDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vATDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maNHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matHangBindingSource)).BeginInit();
@@ -114,7 +115,7 @@
             this.makh.Location = new System.Drawing.Point(486, 28);
             this.makh.Name = "makh";
             this.makh.Size = new System.Drawing.Size(174, 24);
-            this.makh.TabIndex = 7;
+            this.makh.TabIndex = 5;
             // 
             // label3
             // 
@@ -127,9 +128,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnReset);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.btnExit);
-            this.groupBox1.Controls.Add(this.btnxem);
-            this.groupBox1.Controls.Add(this.btnin);
             this.groupBox1.Controls.Add(this.btnMain);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label8);
@@ -176,34 +178,6 @@
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
             // 
-            // btnxem
-            // 
-            this.btnxem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnxem.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxem.ForeColor = System.Drawing.Color.Black;
-            this.btnxem.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.actions_document_print_preview_15786;
-            this.btnxem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnxem.Location = new System.Drawing.Point(853, 132);
-            this.btnxem.Name = "btnxem";
-            this.btnxem.Size = new System.Drawing.Size(160, 47);
-            this.btnxem.TabIndex = 79;
-            this.btnxem.Text = "Xem Trước";
-            this.btnxem.UseVisualStyleBackColor = false;
-            // 
-            // btnin
-            // 
-            this.btnin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnin.ForeColor = System.Drawing.Color.Black;
-            this.btnin.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.PhotoPrint_6314;
-            this.btnin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnin.Location = new System.Drawing.Point(853, 73);
-            this.btnin.Name = "btnin";
-            this.btnin.Size = new System.Drawing.Size(160, 47);
-            this.btnin.TabIndex = 78;
-            this.btnin.Text = "In";
-            this.btnin.UseVisualStyleBackColor = false;
-            // 
             // btnMain
             // 
             this.btnMain.BackColor = System.Drawing.Color.White;
@@ -226,7 +200,7 @@
             this.textBox2.Location = new System.Drawing.Point(142, 99);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(210, 24);
-            this.textBox2.TabIndex = 35;
+            this.textBox2.TabIndex = 3;
             // 
             // label8
             // 
@@ -244,7 +218,7 @@
             this.textBox1.Location = new System.Drawing.Point(142, 63);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(210, 24);
-            this.textBox1.TabIndex = 33;
+            this.textBox1.TabIndex = 2;
             // 
             // label7
             // 
@@ -304,7 +278,7 @@
             this.btnsua.ForeColor = System.Drawing.Color.Black;
             this.btnsua.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._62914memo_109205;
             this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsua.Location = new System.Drawing.Point(690, 132);
+            this.btnsua.Location = new System.Drawing.Point(856, 73);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(160, 47);
             this.btnsua.TabIndex = 3;
@@ -317,7 +291,7 @@
             this.diengiai.Location = new System.Drawing.Point(486, 64);
             this.diengiai.Name = "diengiai";
             this.diengiai.Size = new System.Drawing.Size(174, 24);
-            this.diengiai.TabIndex = 5;
+            this.diengiai.TabIndex = 6;
             // 
             // label6
             // 
@@ -334,7 +308,7 @@
             this.manv.Location = new System.Drawing.Point(486, 97);
             this.manv.Name = "manv";
             this.manv.Size = new System.Drawing.Size(174, 24);
-            this.manv.TabIndex = 9;
+            this.manv.TabIndex = 7;
             // 
             // label5
             // 
@@ -368,7 +342,7 @@
             this.txtn.Location = new System.Drawing.Point(142, 132);
             this.txtn.Name = "txtn";
             this.txtn.Size = new System.Drawing.Size(210, 24);
-            this.txtn.TabIndex = 6;
+            this.txtn.TabIndex = 4;
             this.txtn.Value = new System.DateTime(2023, 7, 12, 0, 0, 0, 0);
             // 
             // label2
@@ -386,7 +360,7 @@
             this.textmh.Location = new System.Drawing.Point(142, 29);
             this.textmh.Name = "textmh";
             this.textmh.Size = new System.Drawing.Size(210, 24);
-            this.textmh.TabIndex = 4;
+            this.textmh.TabIndex = 1;
             // 
             // label1
             // 
@@ -400,14 +374,14 @@
             // dtgData
             // 
             this.dtgData.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maMHDataGridViewTextBoxColumn,
@@ -424,48 +398,6 @@
             this.dtgData.RowTemplate.Height = 24;
             this.dtgData.Size = new System.Drawing.Size(1194, 377);
             this.dtgData.TabIndex = 29;
-            // 
-            // matHangBindingSource
-            // 
-            this.matHangBindingSource.DataMember = "MatHang";
-            this.matHangBindingSource.DataSource = this.mh;
-            // 
-            // mh
-            // 
-            this.mh.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14";
-            this.mh.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // chiTietHangBanTraLaiBindingSource
-            // 
-            this.chiTietHangBanTraLaiBindingSource.DataMember = "ChiTietHangBanTraLai";
-            this.chiTietHangBanTraLaiBindingSource.DataSource = this.cthbtl;
-            // 
-            // cthbtl
-            // 
-            this.cthbtl.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7";
-            this.cthbtl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hangBanTraLaiBindingSource
-            // 
-            this.hangBanTraLaiBindingSource.DataMember = "HangBanTraLai";
-            this.hangBanTraLaiBindingSource.DataSource = this.hbtl;
-            // 
-            // hbtl
-            // 
-            this.hbtl.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8";
-            this.hbtl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hangBanTraLaiTableAdapter
-            // 
-            this.hangBanTraLaiTableAdapter.ClearBeforeFill = true;
-            // 
-            // chiTietHangBanTraLaiTableAdapter
-            // 
-            this.chiTietHangBanTraLaiTableAdapter.ClearBeforeFill = true;
-            // 
-            // matHangTableAdapter
-            // 
-            this.matHangTableAdapter.ClearBeforeFill = true;
             // 
             // maMHDataGridViewTextBoxColumn
             // 
@@ -522,6 +454,74 @@
             this.maNHDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maNHDataGridViewTextBoxColumn.Name = "maNHDataGridViewTextBoxColumn";
             this.maNHDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // matHangBindingSource
+            // 
+            this.matHangBindingSource.DataMember = "MatHang";
+            this.matHangBindingSource.DataSource = this.mh;
+            // 
+            // mh
+            // 
+            this.mh.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14";
+            this.mh.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // chiTietHangBanTraLaiBindingSource
+            // 
+            this.chiTietHangBanTraLaiBindingSource.DataMember = "ChiTietHangBanTraLai";
+            this.chiTietHangBanTraLaiBindingSource.DataSource = this.cthbtl;
+            // 
+            // cthbtl
+            // 
+            this.cthbtl.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7";
+            this.cthbtl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hangBanTraLaiBindingSource
+            // 
+            this.hangBanTraLaiBindingSource.DataMember = "HangBanTraLai";
+            this.hangBanTraLaiBindingSource.DataSource = this.hbtl;
+            // 
+            // hbtl
+            // 
+            this.hbtl.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8";
+            this.hbtl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hangBanTraLaiTableAdapter
+            // 
+            this.hangBanTraLaiTableAdapter.ClearBeforeFill = true;
+            // 
+            // chiTietHangBanTraLaiTableAdapter
+            // 
+            this.chiTietHangBanTraLaiTableAdapter.ClearBeforeFill = true;
+            // 
+            // matHangTableAdapter
+            // 
+            this.matHangTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(982, 131);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(100, 30);
+            this.btnReset.TabIndex = 65;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(876, 131);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 30);
+            this.btnSearch.TabIndex = 64;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(690, 134);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(176, 24);
+            this.txtSearch.TabIndex = 63;
             // 
             // HÀNG_BÁN_TRẢ_LẠI
             // 
@@ -584,8 +584,6 @@
 		private _8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14TableAdapters.MatHangTableAdapter matHangTableAdapter;
 		private System.Windows.Forms.Button btnExit;
 		private System.Windows.Forms.Button btnMain;
-		private System.Windows.Forms.Button btnxem;
-		private System.Windows.Forms.Button btnin;
         private System.Windows.Forms.DataGridViewTextBoxColumn maMHDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenMHDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giaDataGridViewTextBoxColumn;
@@ -593,5 +591,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hanSDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vATDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNHDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

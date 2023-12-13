@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -164,6 +165,27 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
 			Utility.EnableControl(groupBox1, false);
+			txtSearch.Enabled = true;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+			DataTable dt = new DataTable();
+			var conn = Utility.GetConnection();
+			var sql = $"SELECT * FROM NhanVien WHERE MaNV='{txtSearch.Text}' OR TenNV LIKE '%{txtSearch.Text}%' OR SDT LIKE '%{txtSearch.Text}%'";
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			conn.Open();
+			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+			adapter.Fill(dt);
+			conn.Close();
+
+			dataGridView1.DataSource = dt;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+			dataGridView1.DataSource = dlnv.NhanVien;
+			txtSearch.ResetText();
         }
     }
 }

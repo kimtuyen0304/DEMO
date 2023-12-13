@@ -296,6 +296,7 @@
       <DependentUpon>PREVIEW.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportTemplate\DanhSachHoaDon.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\DanhSachPhieuThu.rdlc" />
     <EmbeddedResource Include="SẢN PHẨM.resx">
       <DependentUpon>SẢN PHẨM.cs</DependentUpon>
     </EmbeddedResource>
@@ -697,6 +698,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BACKUP\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

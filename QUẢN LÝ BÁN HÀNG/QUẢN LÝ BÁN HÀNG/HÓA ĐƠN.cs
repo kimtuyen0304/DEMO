@@ -107,33 +107,43 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 {
                     if (!Utility.RecordExists(txtmhd.Text.Trim()))
                     {
-                        // Thêm hóa đơn mới
-                        this.hoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtkh.Text.Trim(), dtNgay.Value.ToString(),
-                            txtmkh.Text.Trim(), txtmnv.Text.Trim(), txtmpxk.Text.Trim());
-
-                        MessageBox.Show("Thêm mới hóa đơn thành công!", "Thông báo", 
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        if(MessageBox.Show("Bạn có muốn thêm thông tin chi tiết hóa đơn không?", "Xác nhận", 
-                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if(!Utility.CheckExist(pxk.PhieuXuatKho.Rows, txtmpxk.Text.Trim()))
                         {
-                            if(!Utility.RecordExists(txtmhd.Text.Trim()))
-
-                            // Thêm chi tiết hóa đơn mới
-                            this.chiTietHoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtmmh.Text,
-                                Int32.Parse(txtsl.Text), Int32.Parse(txtthanhtien.Text));
-
-                            MessageBox.Show("Thêm mới chi tiết hóa đơn thành công!", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"Phiếu xuất kho với mã {txtmpxk.Text.Trim()} không tồn tại!", "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtmpxk.Focus();
                         }
+                        else
+                        {
+                            // Thêm hóa đơn mới
+                            this.hoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtkh.Text.Trim(), dtNgay.Value.ToString(),
+                                txtmkh.Text.Trim(), txtmnv.Text.Trim(), txtmpxk.Text.Trim());
 
-                        isAddFlag = false;
+                            MessageBox.Show("Thêm mới hóa đơn thành công!", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        hoaDonTableAdapter.Fill(hd.HoaDon);
-                        chiTietHoaDonTableAdapter.Fill(cthd.ChiTietHoaDon);
+                            if (MessageBox.Show("Bạn có muốn thêm thông tin chi tiết hóa đơn không?", "Xác nhận",
+                                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                if (!Utility.RecordExists(txtmhd.Text.Trim()))
 
-                        ChangeStatus(true);
-                        Utility.EnableControl(groupBox1, false);
+                                    // Thêm chi tiết hóa đơn mới
+                                    this.chiTietHoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtmmh.Text,
+                                        Int32.Parse(txtsl.Text), Int32.Parse(txtthanhtien.Text));
+
+                                MessageBox.Show("Thêm mới chi tiết hóa đơn thành công!", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+
+                            isAddFlag = false;
+
+                            hoaDonTableAdapter.Fill(hd.HoaDon);
+                            chiTietHoaDonTableAdapter.Fill(cthd.ChiTietHoaDon);
+
+                            ChangeStatus(true);
+                            Utility.EnableControl(groupBox1, false);
+                            btnXem.Enabled = true;
+                        }
                     }
                     else
                     {
@@ -164,6 +174,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
                         ChangeStatus(true);
                         Utility.EnableControl(groupBox1, false);
+                        btnXem.Enabled = true;
                     }
                     else
                     {
@@ -263,6 +274,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         {
             var previewDialog = new frmPreview();
             previewDialog.DataSource = GetDanhSachHoaDon();
+            previewDialog.TemplateReportPath = "DanhSachHoaDon.rdlc";
             previewDialog.ShowDialog();
         }
 
