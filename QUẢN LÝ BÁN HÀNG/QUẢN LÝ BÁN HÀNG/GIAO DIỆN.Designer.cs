@@ -82,6 +82,7 @@
             this.phụcHồiDữLiệuToolStripMenuItem.Name = "phụcHồiDữLiệuToolStripMenuItem";
             this.phụcHồiDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.phụcHồiDữLiệuToolStripMenuItem.Text = "Phục Hồi Dữ Liệu";
+            this.phụcHồiDữLiệuToolStripMenuItem.Click += new System.EventHandler(this.phụcHồiDữLiệuToolStripMenuItem_Click);
             // 
             // saoLưuTựĐộngToolStripMenuItem
             // 

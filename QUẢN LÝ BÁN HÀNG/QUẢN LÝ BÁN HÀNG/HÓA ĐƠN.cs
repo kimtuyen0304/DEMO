@@ -10,6 +10,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
     {
         private bool isAddFlag = false;
         private bool isEditFlag = false;
+        private const string tableChiTietHoaDon = "ChiTietHoaHon";
+        private const string keyChiTietHoaDon = "MaMH";
+        private const string tableHoaDon = "HoaDon";
+        private const string key = "MaHD";
 
         public HÓA_ĐƠN()
         {
@@ -105,7 +109,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
                 if (isAddFlag)
                 {
-                    if (!Utility.RecordExists(txtmhd.Text.Trim()))
+                    if (!Utility.RecordExists(tableHoaDon, key, txtmhd.Text.Trim()))
                     {
                         if(!Utility.CheckExist(pxk.PhieuXuatKho.Rows, txtmpxk.Text.Trim()))
                         {
@@ -125,7 +129,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                             if (MessageBox.Show("Bạn có muốn thêm thông tin chi tiết hóa đơn không?", "Xác nhận",
                                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                if (!Utility.RecordExists(txtmhd.Text.Trim()))
+                                if (!Utility.RecordExists(tableChiTietHoaDon, key, txtmhd.Text.Trim(), keyChiTietHoaDon, txtmmh.Text.Trim()))
 
                                     // Thêm chi tiết hóa đơn mới
                                     this.chiTietHoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtmmh.Text,

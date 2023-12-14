@@ -13,17 +13,14 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 {
 	public partial class dangnhap : Form
 	{
-		
-		private readonly string adminketoan = "ketoan";
-		private readonly string ketoanpassword = "123";
-		private readonly string adminkinhdoanh = "kinhdoanh";
-		private readonly string kinhdoanhpassword = "456";
-		private readonly string adminbanhang = "banhang";
-		private readonly string banhangpassword = "789";
+		private Dictionary<string, string> accounts = new Dictionary<string, string>();
 
 		public dangnhap()
 		{
 			InitializeComponent();
+			accounts.Add("ketoan", "123");
+			accounts.Add("kinhdoanh", "456");
+			accounts.Add("banhang", "789");
 		}
 
 		private void btndangnhap_Click(object sender, EventArgs e)
@@ -36,7 +33,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 			{
 				MessageBox.Show("Đăng Nhập Thành Công");
 			giaodien f = new giaodien();
-				f.Show();
+				f.ShowDialog();
 				this.Hide();
 
 			}
@@ -48,14 +45,17 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 		}
 
-			private bool kiemtradangnhap(string username, string password)
+		private bool kiemtradangnhap(string username, string password)
+		{
+			foreach(string key in accounts.Keys)
 			{
-				if ((username == adminketoan && password == ketoanpassword) ||
-					   (username == adminkinhdoanh && password == kinhdoanhpassword) ||
-					   (username == adminbanhang && password == banhangpassword))
-				{ return true; }
-				return false;
+				if(key == username && accounts[key] == password)
+				{
+					return true;
+				}
 			}
+			return false;
+		}
 
     } 
 } 

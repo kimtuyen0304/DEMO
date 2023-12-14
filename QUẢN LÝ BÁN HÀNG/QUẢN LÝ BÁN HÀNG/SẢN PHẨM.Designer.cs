@@ -35,8 +35,6 @@
             this.sp = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnMain = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.tbGhiChu = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,6 +55,8 @@
             this.tbTenMH = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbMMH = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnMain = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtgData2 = new System.Windows.Forms.DataGridView();
             this.maNHDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +74,9 @@
             this.maNHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhomHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet6TableAdapters.NhomHangTableAdapter();
             this.matHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2TableAdapters.MatHangTableAdapter();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.matHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -128,8 +131,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.tbGhiChu);
+            this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.tbTenNH);
             this.groupBox1.Controls.Add(this.dtHSD);
@@ -159,39 +165,6 @@
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnExit.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.log_out_icon_icons_com_50106;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(1029, 8);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(160, 47);
-            this.btnExit.TabIndex = 62;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = false;
-            // 
-            // btnMain
-            // 
-            this.btnMain.BackColor = System.Drawing.Color.White;
-            this.btnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMain.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMain.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._3643769_building_home_house_main_menu_start_113416;
-            this.btnMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMain.Location = new System.Drawing.Point(863, 9);
-            this.btnMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMain.Name = "btnMain";
-            this.btnMain.Size = new System.Drawing.Size(160, 47);
-            this.btnMain.TabIndex = 61;
-            this.btnMain.Text = "Trang chủ";
-            this.btnMain.UseVisualStyleBackColor = false;
-            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
             // 
             // label8
             // 
@@ -408,6 +381,40 @@
             this.tbMMH.Size = new System.Drawing.Size(213, 24);
             this.tbMMH.TabIndex = 4;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExit.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.log_out_icon_icons_com_50106;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(1029, 8);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(160, 47);
+            this.btnExit.TabIndex = 62;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnMain
+            // 
+            this.btnMain.BackColor = System.Drawing.Color.White;
+            this.btnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMain.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMain.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._3643769_building_home_house_main_menu_start_113416;
+            this.btnMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMain.Location = new System.Drawing.Point(863, 9);
+            this.btnMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMain.Name = "btnMain";
+            this.btnMain.Size = new System.Drawing.Size(160, 47);
+            this.btnMain.TabIndex = 61;
+            this.btnMain.Text = "Trang chủ";
+            this.btnMain.UseVisualStyleBackColor = false;
+            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dtgData2);
@@ -562,6 +569,34 @@
             // 
             this.matHangTableAdapter.ClearBeforeFill = true;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(25, 165);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(100, 30);
+            this.btnReset.TabIndex = 65;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(131, 165);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 30);
+            this.btnSearch.TabIndex = 64;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(254, 171);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(213, 24);
+            this.txtSearch.TabIndex = 63;
+            // 
             // SẢN_PHẨM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -575,7 +610,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SẢN_PHẨM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SẢN_PHẨM";
+            this.Text = "SẢN PHẨM";
             this.Load += new System.EventHandler(this.SẢN_PHẨM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.matHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp)).EndInit();
@@ -637,5 +672,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn ghichuDataGridViewTextBoxColumn;
 		private System.Windows.Forms.Button btnExit;
 		private System.Windows.Forms.Button btnMain;
-	}
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+    }
 }

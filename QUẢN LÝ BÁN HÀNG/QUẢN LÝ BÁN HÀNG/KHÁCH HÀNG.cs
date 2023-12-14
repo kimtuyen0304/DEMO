@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
@@ -93,11 +95,31 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            SaveHandler();
+        }
+
+        private void ChangeStatus(bool status)
+        {
+            btnsua.Enabled = status;
+            btnthem.Enabled = status;
+            btnxoa.Enabled = status;
+            btnLuu.Enabled = !status;
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            Utility.EnableControl(groupBox1, false);
+            txtSearch.Enabled = true;
+            txtSearch.ResetText();
+        }
+
+        private void SaveHandler()
+        {
             try
             {
                 if (isAddFlag)
                 {
-                    if (!Utility.RecordExists(txtkh.Text.Trim()))
+                    if (!Utility.RecordExists("KhachHang", "MaKH", txtkh.Text.Trim()))
                     {
                         khachHangTableAdapter.Insert(txtkh.Text.Trim(), txtten.Text.Trim(), txtsdt.Text.Trim(), txtdiachi.Text.Trim(), txtgt.Text.Trim(), txtgc.Text.Trim());
                         MessageBox.Show("Thêm mới thành công!");
@@ -136,17 +158,37 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             }
         }
 
-        private void ChangeStatus(bool status)
+        private void KHÁCH_HÀNG_FormClosing(object sender, FormClosingEventArgs e)
         {
-            btnsua.Enabled = status;
-            btnthem.Enabled = status;
-            btnxoa.Enabled = status;
-            btnLuu.Enabled = !status;
+            if (isAddFlag || isEditFlag)
+            {
+                if (MessageBox.Show("Bạn có muốn lưu dữ liệu trước khi đóng màn hình không?", "Xác nhận",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SaveHandler();
+                }
+            }
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            Utility.EnableControl(groupBox1, false);
+            DataTable dt = new DataTable();
+            var conn = Utility.GetConnection();
+            var sql = $"SELECT * FROM KhachHang WHERE MaKH='{txtSearch.Text}' OR TenKH LIKE '%{txtSearch.Text}%' " +
+                $"OR SDT LIKE '%{txtSearch.Text}%' OR Diachi LIKE '%{txtSearch.Text}%' OR Gioitinh LIKE '%{txtSearch.Text}%'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            conn.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            conn.Close();
+
+            dataGridView1.DataSource = dt;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = khachhang.KhachHang;
+            txtSearch.ResetText();
         }
     }
 }

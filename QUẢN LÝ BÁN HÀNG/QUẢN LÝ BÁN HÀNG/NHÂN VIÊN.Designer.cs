@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NHÂN_VIÊN));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnMain = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.txtnvl = new System.Windows.Forms.DateTimePicker();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dlnv = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.txtnvl = new System.Windows.Forms.DateTimePicker();
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
@@ -52,6 +53,8 @@
             this.txtten = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtmnv = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnMain = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -62,9 +65,6 @@
             this.maCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayvaolamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhanVienTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSetTableAdapters.NhanVienTableAdapter();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dlnv)).BeginInit();
@@ -102,37 +102,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN CHUNG";
             // 
-            // btnExit
+            // btnReset
             // 
-            this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnExit.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.log_out_icon_icons_com_50106;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(1060, 4);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(176, 53);
-            this.btnExit.TabIndex = 64;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnReset.Location = new System.Drawing.Point(1048, 148);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(100, 30);
+            this.btnReset.TabIndex = 39;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // btnMain
+            // btnSearch
             // 
-            this.btnMain.BackColor = System.Drawing.Color.White;
-            this.btnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnMain.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnMain.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._3643769_building_home_house_main_menu_start_113416;
-            this.btnMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMain.Location = new System.Drawing.Point(878, 4);
-            this.btnMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMain.Name = "btnMain";
-            this.btnMain.Size = new System.Drawing.Size(176, 53);
-            this.btnMain.TabIndex = 63;
-            this.btnMain.Text = "Trang chủ";
-            this.btnMain.UseVisualStyleBackColor = false;
+            this.btnSearch.Location = new System.Drawing.Point(942, 148);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 30);
+            this.btnSearch.TabIndex = 38;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.nhanVienBindingSource, "MaNV", true));
+            this.txtSearch.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "MaNV", true));
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(756, 151);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(176, 24);
+            this.txtSearch.TabIndex = 37;
+            // 
+            // nhanVienBindingSource
+            // 
+            this.nhanVienBindingSource.DataMember = "NhanVien";
+            this.nhanVienBindingSource.DataSource = this.dlnv;
+            // 
+            // dlnv
+            // 
+            this.dlnv.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet";
+            this.dlnv.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnLuu
             // 
@@ -157,16 +165,6 @@
             this.txtnvl.Name = "txtnvl";
             this.txtnvl.Size = new System.Drawing.Size(200, 24);
             this.txtnvl.TabIndex = 10;
-            // 
-            // nhanVienBindingSource
-            // 
-            this.nhanVienBindingSource.DataMember = "NhanVien";
-            this.nhanVienBindingSource.DataSource = this.dlnv;
-            // 
-            // dlnv
-            // 
-            this.dlnv.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet";
-            this.dlnv.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnxoa
             // 
@@ -334,6 +332,40 @@
             this.txtmnv.Size = new System.Drawing.Size(240, 24);
             this.txtmnv.TabIndex = 6;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExit.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.log_out_icon_icons_com_50106;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(1060, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(176, 53);
+            this.btnExit.TabIndex = 64;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnMain
+            // 
+            this.btnMain.BackColor = System.Drawing.Color.White;
+            this.btnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnMain.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMain.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources._3643769_building_home_house_main_menu_start_113416;
+            this.btnMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMain.Location = new System.Drawing.Point(878, 4);
+            this.btnMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMain.Name = "btnMain";
+            this.btnMain.Size = new System.Drawing.Size(176, 53);
+            this.btnMain.TabIndex = 63;
+            this.btnMain.Text = "Trang chủ";
+            this.btnMain.UseVisualStyleBackColor = false;
+            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -429,36 +461,6 @@
             // 
             this.nhanVienTableAdapter.ClearBeforeFill = true;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.nhanVienBindingSource, "MaNV", true));
-            this.txtSearch.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nhanVienBindingSource, "MaNV", true));
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(756, 151);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(176, 24);
-            this.txtSearch.TabIndex = 37;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(942, 148);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 30);
-            this.btnSearch.TabIndex = 38;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(1048, 148);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(100, 30);
-            this.btnReset.TabIndex = 39;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // NHÂN_VIÊN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -474,6 +476,7 @@
             this.Name = "NHÂN_VIÊN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "NHÂN_VIÊN";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NHÂN_VIÊN_FormClosing);
             this.Load += new System.EventHandler(this.NHÂN_VIÊN_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

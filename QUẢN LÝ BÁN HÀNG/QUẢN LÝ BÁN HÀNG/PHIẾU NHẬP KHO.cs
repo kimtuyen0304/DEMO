@@ -24,7 +24,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet10.PhieuNhapKho' table. You can move, or remove it, as needed.
             this.phieuNhapKhoTableAdapter.Fill(this.pnk.PhieuNhapKho);
             // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet9.ChiTietPhieuNhapKho' table. You can move, or remove it, as needed.
-            this.chiTietPhieuNhapKhoTableAdapter.Fill(this.ctpnk.ChiTietPhieuNhapKho);
+            //this.chiTietPhieuNhapKhoTableAdapter.Fill(this.ctpnk.ChiTietPhieuNhapKho);
 
         }
     }

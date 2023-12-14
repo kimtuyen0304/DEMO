@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
@@ -7,6 +9,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
     {
         private bool isAddFlag = false;
         private bool isEditFlag = false;
+        private const string tableSP = "MatHang";
+        private const string keySP = "MaMH";
+        private const string tableNH = "NhomHang";
+        private const string keyNH = "MaNH";
 
         public SẢN_PHẨM()
         {
@@ -44,6 +50,9 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             Utility.EnableControl(groupBox1, true);
             tbMMH.Enabled = false;
             tbTenMH.Focus();
+            txtSearch.Enabled = false;
+            btnSearch.Enabled = false;
+            btnReset.Enabled = false;
 
             ChangeStatus(false);
             btnLuu.Enabled = true;
@@ -65,8 +74,12 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             dtHSD.Value = DateTime.Today;
 
             tbMMH.Focus();
+
             ChangeStatus(false);
             btnLuu.Enabled = true;
+            txtSearch.Enabled = false;
+            btnSearch.Enabled = false;
+            btnReset.Enabled = false;
 
             isAddFlag = true;
         }
@@ -96,13 +109,36 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            SaveHandler();
+        }
+
+        private void ChangeStatus(bool status)
+        {
+            btnsua.Enabled = status;
+            btnthem.Enabled = status;
+            btnxoa.Enabled = status;
+            btnLuu.Enabled = !status;
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            Utility.EnableControl(groupBox1, false);
+            Utility.FocusRowById(tbNH.Text.Trim(), dtgData2);
+            txtSearch.Enabled = true;
+            txtSearch.ResetText();
+            btnReset.Enabled = true;
+            btnSearch.Enabled = true;
+        }
+
+        private void SaveHandler()
+        {
             try
             {
                 if (isAddFlag)
                 {
-                    if (!Utility.RecordExists(tbMMH.Text.Trim()))
+                    if (!Utility.RecordExists(tableSP, keySP, tbMMH.Text.Trim()))
                     {
-                        if (!Utility.RecordExists(tbNH.Text.Trim()))
+                        if (!Utility.RecordExists(tableNH, keyNH, tbNH.Text.Trim()))
                         {
                             nhomHangTableAdapter.Insert(tbNH.Text.Trim(), tbTenNH.Text, tbGhiChu.Text);
                         }
@@ -153,18 +189,24 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             }
         }
 
-        private void ChangeStatus(bool status)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            btnsua.Enabled = status;
-            btnthem.Enabled = status;
-            btnxoa.Enabled = status;
-            btnLuu.Enabled = !status;
+            DataTable dt = new DataTable();
+            var conn = Utility.GetConnection();
+            var sql = $"SELECT * FROM MatHang WHERE MaMH='{txtSearch.Text}' OR TenMH LIKE '%{txtSearch.Text}%'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            conn.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            conn.Close();
+
+            dtgData1.DataSource = dt;
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
-            Utility.EnableControl(groupBox1, false);
-            Utility.FocusRowById(tbNH.Text.Trim(), dtgData2);
+            dtgData1.DataSource = sp.MatHang;
+            txtSearch.ResetText();
         }
     }
 }
