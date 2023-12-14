@@ -151,7 +151,7 @@
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.Location = new System.Drawing.Point(955, 32);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(176, 53);
+            this.btnLuu.Size = new System.Drawing.Size(160, 47);
             this.btnLuu.TabIndex = 12;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
@@ -177,7 +177,7 @@
             this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnxoa.Location = new System.Drawing.Point(756, 91);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(176, 53);
+            this.btnxoa.Size = new System.Drawing.Size(160, 47);
             this.btnxoa.TabIndex = 2;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = false;
@@ -192,7 +192,7 @@
             this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsua.Location = new System.Drawing.Point(955, 90);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(176, 53);
+            this.btnsua.Size = new System.Drawing.Size(160, 47);
             this.btnsua.TabIndex = 3;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = false;
@@ -207,7 +207,7 @@
             this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnthem.Location = new System.Drawing.Point(755, 32);
             this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(176, 53);
+            this.btnthem.Size = new System.Drawing.Size(160, 47);
             this.btnthem.TabIndex = 1;
             this.btnthem.Text = "Thêm ";
             this.btnthem.UseVisualStyleBackColor = false;
@@ -343,7 +343,7 @@
             this.btnExit.Location = new System.Drawing.Point(1060, 4);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(176, 53);
+            this.btnExit.Size = new System.Drawing.Size(160, 47);
             this.btnExit.TabIndex = 64;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -360,7 +360,7 @@
             this.btnMain.Location = new System.Drawing.Point(878, 4);
             this.btnMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMain.Name = "btnMain";
-            this.btnMain.Size = new System.Drawing.Size(176, 53);
+            this.btnMain.Size = new System.Drawing.Size(160, 47);
             this.btnMain.TabIndex = 63;
             this.btnMain.Text = "Trang chủ";
             this.btnMain.UseVisualStyleBackColor = false;
