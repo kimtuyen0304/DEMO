@@ -55,7 +55,8 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         public static void FocusRowById(string id, DataGridView grid)
         {
-            if (grid.Rows.Count == 0) return;
+            if (grid.Rows == null || grid.Rows.Count == 0) return;
+
             for(int i = 0;i<grid.Rows.Count;i++)
             {
                 if (grid.Rows[i].Cells[0].Value.ToString().Trim().Equals(id))

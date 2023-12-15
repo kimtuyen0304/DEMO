@@ -29,7 +29,10 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtKH = new System.Windows.Forms.TextBox();
+            this.phieuGiaoHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pgh = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21();
             this.txtMaPGH = new System.Windows.Forms.TextBox();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
@@ -46,6 +49,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtNguoiGH = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.dtNgayGH = new System.Windows.Forms.DateTimePicker();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -54,9 +60,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.phieuGiaoHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21TableAdapters.PhieuGiaoHangTableAdapter();
             this.maPGHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maHDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,13 +69,10 @@
             this.tenNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayGiaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nguoiGiaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuGiaoHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pgh = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21();
-            this.phieuGiaoHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21TableAdapters.PhieuGiaoHangTableAdapter();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuGiaoHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pgh)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKH
@@ -84,6 +85,16 @@
             this.txtKH.Size = new System.Drawing.Size(200, 22);
             this.txtKH.TabIndex = 0;
             this.txtKH.TabStop = false;
+            // 
+            // phieuGiaoHangBindingSource
+            // 
+            this.phieuGiaoHangBindingSource.DataMember = "PhieuGiaoHang";
+            this.phieuGiaoHangBindingSource.DataSource = this.pgh;
+            // 
+            // pgh
+            // 
+            this.pgh.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21";
+            this.pgh.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtMaPGH
             // 
@@ -265,6 +276,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(1049, 157);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(100, 30);
+            this.btnReset.TabIndex = 65;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(1049, 121);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 30);
+            this.btnSearch.TabIndex = 64;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(823, 124);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(220, 24);
+            this.txtSearch.TabIndex = 63;
+            // 
             // dtNgayGH
             // 
             this.dtNgayGH.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.phieuGiaoHangBindingSource, "NgayGiao", true));
@@ -372,6 +411,14 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maPGHDataGridViewTextBoxColumn,
@@ -392,111 +439,81 @@
             this.dataGridView1.TabIndex = 63;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // btnReset
+            // phieuGiaoHangTableAdapter
             // 
-            this.btnReset.Location = new System.Drawing.Point(1049, 157);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(100, 30);
-            this.btnReset.TabIndex = 65;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(1049, 121);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 30);
-            this.btnSearch.TabIndex = 64;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(823, 124);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(220, 24);
-            this.txtSearch.TabIndex = 63;
+            this.phieuGiaoHangTableAdapter.ClearBeforeFill = true;
             // 
             // maPGHDataGridViewTextBoxColumn
             // 
             this.maPGHDataGridViewTextBoxColumn.DataPropertyName = "MaPGH";
-            this.maPGHDataGridViewTextBoxColumn.HeaderText = "MaPGH";
+            this.maPGHDataGridViewTextBoxColumn.HeaderText = "Mã phiếu giao hàng";
             this.maPGHDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maPGHDataGridViewTextBoxColumn.Name = "maPGHDataGridViewTextBoxColumn";
-            this.maPGHDataGridViewTextBoxColumn.Width = 125;
+            this.maPGHDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maPGHDataGridViewTextBoxColumn.Width = 170;
             // 
             // maHDDataGridViewTextBoxColumn
             // 
             this.maHDDataGridViewTextBoxColumn.DataPropertyName = "MaHD";
-            this.maHDDataGridViewTextBoxColumn.HeaderText = "MaHD";
+            this.maHDDataGridViewTextBoxColumn.HeaderText = "Mã hóa đơn";
             this.maHDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maHDDataGridViewTextBoxColumn.Name = "maHDDataGridViewTextBoxColumn";
+            this.maHDDataGridViewTextBoxColumn.ReadOnly = true;
             this.maHDDataGridViewTextBoxColumn.Width = 125;
             // 
             // maKHDataGridViewTextBoxColumn
             // 
             this.maKHDataGridViewTextBoxColumn.DataPropertyName = "MaKH";
-            this.maKHDataGridViewTextBoxColumn.HeaderText = "MaKH";
+            this.maKHDataGridViewTextBoxColumn.HeaderText = "Mã khách hàng";
             this.maKHDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maKHDataGridViewTextBoxColumn.Name = "maKHDataGridViewTextBoxColumn";
-            this.maKHDataGridViewTextBoxColumn.Width = 125;
+            this.maKHDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maKHDataGridViewTextBoxColumn.Width = 150;
             // 
             // maNVDataGridViewTextBoxColumn
             // 
             this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
-            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "Mã nhân viên";
             this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
+            this.maNVDataGridViewTextBoxColumn.ReadOnly = true;
             this.maNVDataGridViewTextBoxColumn.Width = 125;
             // 
             // tenKHDataGridViewTextBoxColumn
             // 
             this.tenKHDataGridViewTextBoxColumn.DataPropertyName = "TenKH";
-            this.tenKHDataGridViewTextBoxColumn.HeaderText = "TenKH";
+            this.tenKHDataGridViewTextBoxColumn.HeaderText = "Tên khách hàng";
             this.tenKHDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenKHDataGridViewTextBoxColumn.Name = "tenKHDataGridViewTextBoxColumn";
-            this.tenKHDataGridViewTextBoxColumn.Width = 125;
+            this.tenKHDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenKHDataGridViewTextBoxColumn.Width = 200;
             // 
             // tenNVDataGridViewTextBoxColumn
             // 
             this.tenNVDataGridViewTextBoxColumn.DataPropertyName = "TenNV";
-            this.tenNVDataGridViewTextBoxColumn.HeaderText = "TenNV";
+            this.tenNVDataGridViewTextBoxColumn.HeaderText = "Tên nhân viên";
             this.tenNVDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenNVDataGridViewTextBoxColumn.Name = "tenNVDataGridViewTextBoxColumn";
-            this.tenNVDataGridViewTextBoxColumn.Width = 125;
+            this.tenNVDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenNVDataGridViewTextBoxColumn.Width = 200;
             // 
             // ngayGiaoDataGridViewTextBoxColumn
             // 
             this.ngayGiaoDataGridViewTextBoxColumn.DataPropertyName = "NgayGiao";
-            this.ngayGiaoDataGridViewTextBoxColumn.HeaderText = "NgayGiao";
+            this.ngayGiaoDataGridViewTextBoxColumn.HeaderText = "Ngày giao";
             this.ngayGiaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.ngayGiaoDataGridViewTextBoxColumn.Name = "ngayGiaoDataGridViewTextBoxColumn";
+            this.ngayGiaoDataGridViewTextBoxColumn.ReadOnly = true;
             this.ngayGiaoDataGridViewTextBoxColumn.Width = 125;
             // 
             // nguoiGiaoDataGridViewTextBoxColumn
             // 
             this.nguoiGiaoDataGridViewTextBoxColumn.DataPropertyName = "NguoiGiao";
-            this.nguoiGiaoDataGridViewTextBoxColumn.HeaderText = "NguoiGiao";
+            this.nguoiGiaoDataGridViewTextBoxColumn.HeaderText = "Người giao hàng";
             this.nguoiGiaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nguoiGiaoDataGridViewTextBoxColumn.Name = "nguoiGiaoDataGridViewTextBoxColumn";
-            this.nguoiGiaoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // phieuGiaoHangBindingSource
-            // 
-            this.phieuGiaoHangBindingSource.DataMember = "PhieuGiaoHang";
-            this.phieuGiaoHangBindingSource.DataSource = this.pgh;
-            // 
-            // pgh
-            // 
-            this.pgh.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21";
-            this.pgh.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // phieuGiaoHangTableAdapter
-            // 
-            this.phieuGiaoHangTableAdapter.ClearBeforeFill = true;
+            this.nguoiGiaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nguoiGiaoDataGridViewTextBoxColumn.Width = 200;
             // 
             // PHIẾU_GIAO_HÀNG
             // 
@@ -512,11 +529,11 @@
             this.Name = "PHIẾU_GIAO_HÀNG";
             this.Text = "PHIẾU_GIAO_HÀNG";
             this.Load += new System.EventHandler(this.PHIẾU_GIAO_HÀNG_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.phieuGiaoHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pgh)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuGiaoHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pgh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,6 +569,9 @@
         private System.Windows.Forms.BindingSource phieuGiaoHangBindingSource;
         private _8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21TableAdapters.PhieuGiaoHangTableAdapter phieuGiaoHangTableAdapter;
         private System.Windows.Forms.DateTimePicker dtNgayGH;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn maPGHDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maHDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maKHDataGridViewTextBoxColumn;
@@ -560,8 +580,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayGiaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nguoiGiaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearch;
     }
 }

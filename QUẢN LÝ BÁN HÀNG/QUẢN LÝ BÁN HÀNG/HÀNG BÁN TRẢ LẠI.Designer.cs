@@ -29,10 +29,12 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.makh = new System.Windows.Forms.TextBox();
+            this.hangBanTraLaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hbtl = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnReset = new System.Windows.Forms.Button();
@@ -59,8 +61,6 @@
             this.mh = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14();
             this.chiTietHangBanTraLaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cthbtl = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7();
-            this.hangBanTraLaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hbtl = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8();
             this.hangBanTraLaiTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8TableAdapters.HangBanTraLaiTableAdapter();
             this.chiTietHangBanTraLaiTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7TableAdapters.ChiTietHangBanTraLaiTableAdapter();
             this.matHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14TableAdapters.MatHangTableAdapter();
@@ -70,14 +70,14 @@
             this.ngaytraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diengiaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ghichuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.hangBanTraLaiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hbtl)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietHangBanTraLaiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cthbtl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hangBanTraLaiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hbtl)).BeginInit();
             this.SuspendLayout();
             // 
             // button6
@@ -113,6 +113,16 @@
             this.makh.Name = "makh";
             this.makh.Size = new System.Drawing.Size(210, 24);
             this.makh.TabIndex = 2;
+            // 
+            // hangBanTraLaiBindingSource
+            // 
+            this.hangBanTraLaiBindingSource.DataMember = "HangBanTraLai";
+            this.hangBanTraLaiBindingSource.DataSource = this.hbtl;
+            // 
+            // hbtl
+            // 
+            this.hbtl.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8";
+            this.hbtl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -377,14 +387,14 @@
             // 
             this.dtgData.AllowUserToAddRows = false;
             this.dtgData.AutoGenerateColumns = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maHBTLDataGridViewTextBoxColumn,
@@ -423,16 +433,6 @@
             this.cthbtl.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7";
             this.cthbtl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // hangBanTraLaiBindingSource
-            // 
-            this.hangBanTraLaiBindingSource.DataMember = "HangBanTraLai";
-            this.hangBanTraLaiBindingSource.DataSource = this.hbtl;
-            // 
-            // hbtl
-            // 
-            this.hbtl.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8";
-            this.hbtl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // hangBanTraLaiTableAdapter
             // 
             this.hangBanTraLaiTableAdapter.ClearBeforeFill = true;
@@ -448,16 +448,16 @@
             // maHBTLDataGridViewTextBoxColumn
             // 
             this.maHBTLDataGridViewTextBoxColumn.DataPropertyName = "MaHBTL";
-            this.maHBTLDataGridViewTextBoxColumn.HeaderText = "MaHBTL";
+            this.maHBTLDataGridViewTextBoxColumn.HeaderText = "Mã hàng bán trả lại";
             this.maHBTLDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maHBTLDataGridViewTextBoxColumn.Name = "maHBTLDataGridViewTextBoxColumn";
             this.maHBTLDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maHBTLDataGridViewTextBoxColumn.Width = 125;
+            this.maHBTLDataGridViewTextBoxColumn.Width = 150;
             // 
             // maNVDataGridViewTextBoxColumn
             // 
             this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
-            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "Mã nhân viên";
             this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
             this.maNVDataGridViewTextBoxColumn.ReadOnly = true;
@@ -466,7 +466,7 @@
             // maKHDataGridViewTextBoxColumn
             // 
             this.maKHDataGridViewTextBoxColumn.DataPropertyName = "MaKH";
-            this.maKHDataGridViewTextBoxColumn.HeaderText = "MaKH";
+            this.maKHDataGridViewTextBoxColumn.HeaderText = "Mã khách hàng";
             this.maKHDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maKHDataGridViewTextBoxColumn.Name = "maKHDataGridViewTextBoxColumn";
             this.maKHDataGridViewTextBoxColumn.ReadOnly = true;
@@ -475,7 +475,7 @@
             // ngaytraDataGridViewTextBoxColumn
             // 
             this.ngaytraDataGridViewTextBoxColumn.DataPropertyName = "Ngaytra";
-            this.ngaytraDataGridViewTextBoxColumn.HeaderText = "Ngaytra";
+            this.ngaytraDataGridViewTextBoxColumn.HeaderText = "Ngày trả";
             this.ngaytraDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.ngaytraDataGridViewTextBoxColumn.Name = "ngaytraDataGridViewTextBoxColumn";
             this.ngaytraDataGridViewTextBoxColumn.ReadOnly = true;
@@ -484,7 +484,7 @@
             // diengiaiDataGridViewTextBoxColumn
             // 
             this.diengiaiDataGridViewTextBoxColumn.DataPropertyName = "Diengiai";
-            this.diengiaiDataGridViewTextBoxColumn.HeaderText = "Diengiai";
+            this.diengiaiDataGridViewTextBoxColumn.HeaderText = "Diễn giải";
             this.diengiaiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.diengiaiDataGridViewTextBoxColumn.Name = "diengiaiDataGridViewTextBoxColumn";
             this.diengiaiDataGridViewTextBoxColumn.ReadOnly = true;
@@ -493,7 +493,7 @@
             // ghichuDataGridViewTextBoxColumn
             // 
             this.ghichuDataGridViewTextBoxColumn.DataPropertyName = "Ghichu";
-            this.ghichuDataGridViewTextBoxColumn.HeaderText = "Ghichu";
+            this.ghichuDataGridViewTextBoxColumn.HeaderText = "Ghi chú";
             this.ghichuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.ghichuDataGridViewTextBoxColumn.Name = "ghichuDataGridViewTextBoxColumn";
             this.ghichuDataGridViewTextBoxColumn.ReadOnly = true;
@@ -511,6 +511,8 @@
             this.Text = "HÀNG_BÁN_TRẢ_LẠI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HÀNG_BÁN_TRẢ_LẠI_FormClosing);
             this.Load += new System.EventHandler(this.HÀNG_BÁN_TRẢ_LẠI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.hangBanTraLaiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hbtl)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgData)).EndInit();
@@ -518,8 +520,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietHangBanTraLaiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cthbtl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hangBanTraLaiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hbtl)).EndInit();
             this.ResumeLayout(false);
 
 		}
