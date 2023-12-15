@@ -1,28 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
 {
-	public partial class PHIẾU_GIAO_HÀNG : Form
-	{
-		private bool isAddFlag = false;
-		private bool isEditFlag = false;
+    public partial class PHIẾU_GIAO_HÀNG : Form
+    {
+        private bool isAddFlag = false;
+        private bool isEditFlag = false;
 
-		public PHIẾU_GIAO_HÀNG()
-		{
-			InitializeComponent();
-		}
+        public PHIẾU_GIAO_HÀNG()
+        {
+            InitializeComponent();
+        }
 
-		private void PHIẾU_GIAO_HÀNG_Load(object sender, EventArgs e)
-		{
+        private void PHIẾU_GIAO_HÀNG_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.ChiTietPhieuGiaoHang' table. You can move, or remove it, as needed.
+            this.chiTietPhieuGiaoHangTableAdapter.Fill(this.ctpgh.ChiTietPhieuGiaoHang);
             // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21.PhieuGiaoHang' table. You can move, or remove it, as needed.
             this.phieuGiaoHangTableAdapter.Fill(this.pgh.PhieuGiaoHang);
         }
@@ -39,6 +35,8 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             txtNV.ResetText();
             txtNguoiGH.ResetText();
             dtNgayGH.Value = DateTime.Today;
+            txtMaMH.ResetText();
+            txtSoLuong.ResetText();
 
             btnThem.Enabled = false;
             btnSua.Enabled = false;
@@ -80,9 +78,9 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                     MessageBox.Show("Đã xóa nhân viên thành công!");
                     phieuGiaoHangTableAdapter.Fill(pgh.PhieuGiaoHang);
                 }
-                catch (Exception ex) 
-                { 
-                    MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -108,14 +106,14 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 {
                     if (!Utility.RecordExists("PhieuGiaoHang", "MaPGH", txtMaPGH.Text.Trim()))
                     {
-                        if(!Utility.RecordExists("HoaDon", "MaHD", txtMaHD.Text.Trim()))
+                        if (!Utility.RecordExists("HoaDon", "MaHD", txtMaHD.Text.Trim()))
                         {
                             MessageBox.Show("Mã hóa đơn không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtMaHD.Focus();
                             return;
                         }
 
-                        if(!Utility.RecordExists("KhachHang", "MaKH", txtMaKH.Text.Trim()))
+                        if (!Utility.RecordExists("KhachHang", "MaKH", txtMaKH.Text.Trim()))
                         {
                             MessageBox.Show("Mã khách hàng không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtMaKH.Focus();
@@ -133,6 +131,27 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                             txtMaKH.Text.Trim(), txtMaNV.Text.Trim(), dtNgayGH.Value, txtNguoiGH.Text);
 
                         MessageBox.Show("Thêm mới thành công!");
+
+                        if(MessageBox.Show("Bạn có muốn thêm dữ liệu vào bảng chi tiết không?", "Xác nhận",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            if(!Utility.RecordExists("MatHang", "MaMH", txtMaMH.Text.Trim()))
+                            {
+                                MessageBox.Show($"Mặt hàng với mã {txtMaMH.Text.Trim()} không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtMaMH.Focus();
+                                return;
+                            }
+
+                            if(!int.TryParse(txtSoLuong.Text, out int soLuong) || soLuong < 0)
+                            {
+                                MessageBox.Show("Số lượng không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtSoLuong.Focus();
+                                return;
+                            }
+
+                            chiTietPhieuGiaoHangTableAdapter.Insert(txtMaMH.Text.Trim(), txtMaPGH.Text.Trim(), soLuong);
+                            MessageBox.Show("Thêm dữ liệu vào bảng chi tiết thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                         isAddFlag = false;
                         ChangeStatus(true);
                         this.phieuGiaoHangTableAdapter.Fill(pgh.PhieuGiaoHang);
@@ -169,8 +188,29 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
                     phieuGiaoHangTableAdapter.Update(txtKH.Text, txtNV.Text, txtMaPGH.Text.Trim(), txtMaHD.Text.Trim(),
                             txtMaKH.Text.Trim(), txtMaNV.Text.Trim(), dtNgayGH.Value.ToString(), txtNguoiGH.Text);
-                    
+
                     MessageBox.Show("Cập nhật thành công!");
+
+                    if(MessageBox.Show("Bạn có muốn cập nhật dữ liệu bảng chi tiết không?", "Xác nhận", 
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (!Utility.RecordExists("MatHang", "MaMH", txtMaMH.Text.Trim()))
+                        {
+                            MessageBox.Show($"Mặt hàng với mã {txtMaMH.Text.Trim()} không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtMaMH.Focus();
+                            return;
+                        }
+
+                        if (!int.TryParse(txtSoLuong.Text, out int soLuong) || soLuong < 0)
+                        {
+                            MessageBox.Show("Số lượng không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtSoLuong.Focus();
+                            return;
+                        }
+
+                        chiTietPhieuGiaoHangTableAdapter.Update(txtMaMH.Text.Trim(), txtMaPGH.Text.Trim(), soLuong);
+                        MessageBox.Show("Cập nhật dữ liệu vào bảng chi tiết thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     isEditFlag = false;
                     ChangeStatus(true);
                     phieuGiaoHangTableAdapter.Fill(pgh.PhieuGiaoHang);
@@ -197,6 +237,17 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             txtSearch.ResetText();
             btnSearch.Enabled = true;
             btnReset.Enabled = true;
+            var dt = GetDataChiTiet(txtMaPGH.Text);
+            if(dt.Rows.Count > 0)
+            {
+                txtMaMH.Text = dt.Rows[0].ItemArray[1].ToString();
+                txtSoLuong.Text = dt.Rows[0].ItemArray[2].ToString();
+            }
+            else
+            {
+                txtMaMH.Text = string.Empty;
+                txtSoLuong.Text = string.Empty;
+            }
         }
 
         private void btnMain_Click(object sender, EventArgs e)
@@ -252,7 +303,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             var adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
 
-            if(dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 txtKH.Text = dt.Rows[0].ItemArray[0].ToString();
             }
@@ -276,6 +327,19 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             }
 
             conn.Close();
+        }
+
+        private DataTable GetDataChiTiet(string id)
+        {
+            DataTable dt = new DataTable();
+            var conn = Utility.GetConnection();
+            conn.Open();
+            var sql = $"SELECT * FROM ChiTietPhieuGiaoHang WHERE MaPGH='{id}'";
+            var cmd = new SqlCommand(sql, conn);
+            var adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            conn.Close();
+            return dt;
         }
     }
 }

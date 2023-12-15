@@ -36,14 +36,14 @@
             this.rptViewer.Location = new System.Drawing.Point(12, 12);
             this.rptViewer.Name = "rptViewer";
             this.rptViewer.ServerReport.BearerToken = null;
-            this.rptViewer.Size = new System.Drawing.Size(758, 729);
+            this.rptViewer.Size = new System.Drawing.Size(1427, 729);
             this.rptViewer.TabIndex = 0;
             // 
             // frmPreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 753);
+            this.ClientSize = new System.Drawing.Size(1451, 753);
             this.Controls.Add(this.rptViewer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmPreview";

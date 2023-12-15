@@ -37,6 +37,10 @@
             this.hbtl = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMaMH = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -57,6 +61,12 @@
             this.textmh = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgData = new System.Windows.Forms.DataGridView();
+            this.maHBTLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaytraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diengiaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ghichuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mh = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14();
             this.chiTietHangBanTraLaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -64,12 +74,6 @@
             this.hangBanTraLaiTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8TableAdapters.HangBanTraLaiTableAdapter();
             this.chiTietHangBanTraLaiTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7TableAdapters.ChiTietHangBanTraLaiTableAdapter();
             this.matHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14TableAdapters.MatHangTableAdapter();
-            this.maHBTLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaytraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diengiaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ghichuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.hangBanTraLaiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hbtl)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -135,6 +139,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMaMH);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtSoLuong);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtSearch);
@@ -164,6 +172,44 @@
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN CHUNG";
+            // 
+            // txtMaMH
+            // 
+            this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.chiTietHangBanTraLaiBindingSource, "MaMH", true));
+            this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.chiTietHangBanTraLaiBindingSource, "MaMH", true));
+            this.txtMaMH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.txtMaMH.Location = new System.Drawing.Point(486, 92);
+            this.txtMaMH.Name = "txtMaMH";
+            this.txtMaMH.Size = new System.Drawing.Size(174, 24);
+            this.txtMaMH.TabIndex = 66;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(368, 97);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 16);
+            this.label7.TabIndex = 69;
+            this.label7.Text = "Mã mặt hàng";
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.chiTietHangBanTraLaiBindingSource, "Soluongtra", true));
+            this.txtSoLuong.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.chiTietHangBanTraLaiBindingSource, "Soluongtra", true));
+            this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.txtSoLuong.Location = new System.Drawing.Point(486, 122);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(174, 24);
+            this.txtSoLuong.TabIndex = 67;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(368, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 16);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "Số lượng";
             // 
             // btnReset
             // 
@@ -358,7 +404,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 122);
+            this.label2.Location = new System.Drawing.Point(7, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 2;
@@ -377,7 +423,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 34);
+            this.label1.Location = new System.Drawing.Point(6, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 16);
             this.label1.TabIndex = 0;
@@ -412,38 +458,6 @@
             this.dtgData.Size = new System.Drawing.Size(1194, 377);
             this.dtgData.TabIndex = 29;
             this.dtgData.SelectionChanged += new System.EventHandler(this.dtgData_SelectionChanged);
-            // 
-            // matHangBindingSource
-            // 
-            this.matHangBindingSource.DataMember = "MatHang";
-            this.matHangBindingSource.DataSource = this.mh;
-            // 
-            // mh
-            // 
-            this.mh.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14";
-            this.mh.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // chiTietHangBanTraLaiBindingSource
-            // 
-            this.chiTietHangBanTraLaiBindingSource.DataMember = "ChiTietHangBanTraLai";
-            this.chiTietHangBanTraLaiBindingSource.DataSource = this.cthbtl;
-            // 
-            // cthbtl
-            // 
-            this.cthbtl.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7";
-            this.cthbtl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hangBanTraLaiTableAdapter
-            // 
-            this.hangBanTraLaiTableAdapter.ClearBeforeFill = true;
-            // 
-            // chiTietHangBanTraLaiTableAdapter
-            // 
-            this.chiTietHangBanTraLaiTableAdapter.ClearBeforeFill = true;
-            // 
-            // matHangTableAdapter
-            // 
-            this.matHangTableAdapter.ClearBeforeFill = true;
             // 
             // maHBTLDataGridViewTextBoxColumn
             // 
@@ -498,6 +512,38 @@
             this.ghichuDataGridViewTextBoxColumn.Name = "ghichuDataGridViewTextBoxColumn";
             this.ghichuDataGridViewTextBoxColumn.ReadOnly = true;
             this.ghichuDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // matHangBindingSource
+            // 
+            this.matHangBindingSource.DataMember = "MatHang";
+            this.matHangBindingSource.DataSource = this.mh;
+            // 
+            // mh
+            // 
+            this.mh.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet14";
+            this.mh.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // chiTietHangBanTraLaiBindingSource
+            // 
+            this.chiTietHangBanTraLaiBindingSource.DataMember = "ChiTietHangBanTraLai";
+            this.chiTietHangBanTraLaiBindingSource.DataSource = this.cthbtl;
+            // 
+            // cthbtl
+            // 
+            this.cthbtl.DataSetName = "_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet7";
+            this.cthbtl.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hangBanTraLaiTableAdapter
+            // 
+            this.hangBanTraLaiTableAdapter.ClearBeforeFill = true;
+            // 
+            // chiTietHangBanTraLaiTableAdapter
+            // 
+            this.chiTietHangBanTraLaiTableAdapter.ClearBeforeFill = true;
+            // 
+            // matHangTableAdapter
+            // 
+            this.matHangTableAdapter.ClearBeforeFill = true;
             // 
             // HÀNG_BÁN_TRẢ_LẠI
             // 
@@ -566,5 +612,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaytraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diengiaiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ghichuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txtMaMH;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -10,7 +10,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
     {
         private bool isAddFlag = false;
         private bool isEditFlag = false;
-        private const string tableChiTietHoaDon = "ChiTietHoaHon";
+        private const string tableChiTietHoaDon = "ChiTietHoaDon";
         private const string keyChiTietHoaDon = "MaMH";
         private const string tableHoaDon = "HoaDon";
         private const string key = "MaHD";
@@ -130,13 +130,20 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 if (!Utility.RecordExists(tableChiTietHoaDon, key, txtmhd.Text.Trim(), keyChiTietHoaDon, txtmmh.Text.Trim()))
-
+                                {
+                                    if(!Utility.RecordExists("MatHang", "MaMH", txtmmh.Text.Trim()))
+                                    {
+                                        MessageBox.Show($"Mặt hàng với mã {txtmmh.Text.Trim()} không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        txtmmh.Focus();
+                                        return;
+                                    }
                                     // Thêm chi tiết hóa đơn mới
-                                    this.chiTietHoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtmmh.Text,
+                                    this.chiTietHoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtmmh.Text.Trim(),
                                         Int32.Parse(txtsl.Text), Int32.Parse(txtthanhtien.Text));
 
-                                MessageBox.Show("Thêm mới chi tiết hóa đơn thành công!", "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Thêm mới chi tiết hóa đơn thành công!", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }   
                             }
 
                             isAddFlag = false;
@@ -219,9 +226,19 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             var row = Utility.GetDataById(cthd.ChiTietHoaDon.Rows, txtmhd.Text.Trim());
             if(row != null)
             {
-                txtmmh.Text = row.ItemArray[1].ToString().Trim();
-                txtsl.Text = row.ItemArray[2].ToString().Trim();
-                txtthanhtien.Text = row.ItemArray[3].ToString().Trim();
+                var dt = GetDataChiTietHoaDon(txtmhd.Text);
+                if(dt != null && dt.Rows.Count > 0)
+                {
+                    txtmmh.Text = dt.Rows[0].ItemArray[1].ToString().Trim();
+                    txtsl.Text = dt.Rows[0].ItemArray[2].ToString().Trim();
+                    txtthanhtien.Text = dt.Rows[0].ItemArray[3].ToString().Trim();
+                }
+                else
+                {
+                    txtmmh.Text = string.Empty;
+                    txtsl.Text = string.Empty;
+                    txtthanhtien.Text = string.Empty;
+                }
             }
         }
 
@@ -234,6 +251,19 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 }
             }
             return 0;
+        }
+
+        private DataTable GetDataChiTietHoaDon(string id)
+        {
+            var dt = new DataTable();
+            var conn = Utility.GetConnection();
+            var sql = $"SELECT * FROM {tableChiTietHoaDon} WHERE {key}='{id}'";
+            conn.Open();
+            var cmd = new SqlCommand(sql, conn);
+            var adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            conn.Close();
+            return dt;
         }
 
         private void txtmmh_KeyDown(object sender, KeyEventArgs e)
@@ -286,8 +316,25 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         {
             var dt = new DataTable();
             var conn = Utility.GetConnection();
-            var sql = "SELECT\r\n\tHD.MaHD\r\n   ,NV.TenNV\r\n   ,KH.TenKH\r\n   ,MH.TenMH\r\n   ,HD.Kyhieu\r\n   ,HD.NgayHD\r\n   ,CTHD.Soluong\r\n   ,CTHD.Thanhtien\r\nFROM HoaDon HD\r\nLEFT JOIN ChiTietHoaDon CTHD ON HD.MaHD = CTHD.MaHD\r\nLEFT JOIN KhachHang KH ON HD.MaKH = KH.MaKH\r\nLEFT JOIN NhanVien NV ON HD.MaNV = NV.MaNV\r\nLEFT JOIN MatHang MH ON CTHD.MaMH = MH.MaMH\r\nWHERE CTHD.Soluong IS NOT NULL\r\nORDER BY HD.MaHD";
-            var cmd = new SqlCommand(sql, conn);
+            var sql = new StringBuilder();
+            sql.Append(" SELECT");
+            sql.Append("    HD.MaHD");
+            sql.Append("   ,NV.TenNV");
+            sql.Append("   ,KH.TenKH");
+            sql.Append("   ,MH.TenMH");
+            sql.Append("   ,HD.KyHieu");
+            sql.Append("   ,CONVERT(DATE, HD.NgayHD) AS NgayHD");
+            sql.Append("   ,CTHD.Soluong");
+            sql.Append("   ,CTHD.Thanhtien");
+            sql.Append(" FROM HoaDon HD");
+            sql.Append("    LEFT JOIN ChiTietHoaDon CTHD ON HD.MaHD = CTHD.MaHD");
+            sql.Append("    LEFT JOIN KhachHang KH ON HD.MaKH = KH.MaKH");
+            sql.Append("    LEFT JOIN NhanVien NV ON HD.MaNV = NV.MaNV");
+            sql.Append("    LEFT JOIN MatHang MH ON CTHD.MaMH = MH.MaMH");
+            sql.Append(" WHERE CTHD.Soluong IS NOT NULL");
+            sql.Append(" ORDER BY HD.MaHD");
+
+            var cmd = new SqlCommand(sql.ToString(), conn);
             conn.Open();
             var dataAdapter = new SqlDataAdapter(cmd);
             dataAdapter.Fill(dt);

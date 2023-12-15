@@ -221,6 +221,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -514,6 +519,17 @@
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21.xss">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.xsd</DependentUpon>
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet3.xsc">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet3.xsd</DependentUpon>

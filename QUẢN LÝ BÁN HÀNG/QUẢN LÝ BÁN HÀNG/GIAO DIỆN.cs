@@ -120,6 +120,11 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                     Directory.CreateDirectory(backupFolderPath);
                 }
 
+                if (!Directory.Exists($"{backupFolderPath}/{DateTime.Today.ToString("yyyyMMdd")}"))
+                {
+                    Directory.CreateDirectory($"{backupFolderPath}/{DateTime.Today.ToString("yyyyMMdd")}");
+                }
+
                 var sql = $"BACKUP DATABASE [{oDatabaseName}] TO DISK=" +
                     $"'{backupFolderPath}/{DateTime.Today.ToString("yyyyMMdd")}/{nDatabaseName}'";
                 conn.Open();
