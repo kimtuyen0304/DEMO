@@ -113,27 +113,40 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         {
             try
             {
-                var conn = Utility.GetConnection();
-
-                if (!Directory.Exists(backupFolderPath))
+                var saveFileDialog = new SaveFileDialog()
                 {
-                    Directory.CreateDirectory(backupFolderPath);
-                }
+                    FileName = "QLBH",
+                    CheckPathExists = true,
+                    DefaultExt = "bak",
+                    Filter = "Backup Database(*.bak)|*.bak"
+                };
 
-                if (!Directory.Exists($"{backupFolderPath}/{DateTime.Today.ToString("yyyyMMdd")}"))
+                if(saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    Directory.CreateDirectory($"{backupFolderPath}/{DateTime.Today.ToString("yyyyMMdd")}");
-                }
+                    var conn = Utility.GetConnection();
+                    
+                    if(saveFileDialog.FileName != null && !string.IsNullOrEmpty(saveFileDialog.FileName))
+                    {
+                        var folder = Path.GetDirectoryName(saveFileDialog.FileName);
+                        Utility.AddDirectorySecurity(folder, "Everyone",
+                                System.Security.AccessControl.FileSystemRights.FullControl,
+                                System.Security.AccessControl.AccessControlType.Allow);
 
-                var sql = $"BACKUP DATABASE [{oDatabaseName}] TO DISK=" +
-                    $"'{backupFolderPath}/{DateTime.Today.ToString("yyyyMMdd")}/{nDatabaseName}'";
-                conn.Open();
-                var cmd = new SqlCommand(sql, conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show($"Đã sao lưu dữ liệu thành công!\nVui lòng kiểm tra tại thư mục:" +
-                    $"\n\t{backupFolderPath}/{DateTime.Today.ToString("yyyyMMdd")}", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var sql = $"BACKUP DATABASE [{oDatabaseName}] TO DISK=" +
+                        $"'{saveFileDialog.FileName}'";
+                        conn.Open();
+                        var cmd = new SqlCommand(sql, conn);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show($"Đã sao lưu dữ liệu thành công!\nVui lòng kiểm tra tại thư mục:" +
+                            $"\n\t{saveFileDialog.FileName}", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tên file không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             catch (Exception)
             {
@@ -145,9 +158,16 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         {
             try
             {
-                Utility.RestoreDatabase(backupFolderPath, oDatabaseName, nDatabaseName);
-                MessageBox.Show("Phục hồi dữ liệu thành công!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var openFileDialog = new OpenFileDialog()
+                {
+                    Filter = "Backup database (*.bak)|*.bak"
+                };
+                if(openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Utility.RestoreDatabase(openFileDialog.FileName, oDatabaseName, nDatabaseName);
+                    MessageBox.Show("Phục hồi dữ liệu thành công!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception)
             {

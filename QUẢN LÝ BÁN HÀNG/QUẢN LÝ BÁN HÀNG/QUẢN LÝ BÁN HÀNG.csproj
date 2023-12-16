@@ -54,6 +54,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -119,15 +121,15 @@
     <Compile Include="PREVIEW.Designer.cs">
       <DependentUpon>PREVIEW.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportHD.Designer.cs">
+    <Compile Include="Report_HoaDon.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ReportHD.xsd</DependentUpon>
+      <DependentUpon>Report_HoaDon.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ReportHoaDon.Designer.cs">
+    <Compile Include="Report_PhieuThu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ReportHoaDon.xsd</DependentUpon>
+      <DependentUpon>Report_PhieuThu.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="SẢN PHẨM.cs">
@@ -305,8 +307,8 @@
     <EmbeddedResource Include="PREVIEW.resx">
       <DependentUpon>PREVIEW.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportTemplate\DanhSachHoaDon.rdlc" />
-    <EmbeddedResource Include="ReportTemplate\DanhSachPhieuThu.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\HoaDon.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\PhieuThu.rdlc" />
     <EmbeddedResource Include="SẢN PHẨM.resx">
       <DependentUpon>SẢN PHẨM.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,27 +335,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ReportHD.xsc">
-      <DependentUpon>ReportHD.xsd</DependentUpon>
+    <None Include="Report_HoaDon.xsc">
+      <DependentUpon>Report_HoaDon.xsd</DependentUpon>
     </None>
-    <None Include="ReportHD.xsd">
+    <None Include="Report_HoaDon.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ReportHD.Designer.cs</LastGenOutput>
+      <LastGenOutput>Report_HoaDon.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ReportHD.xss">
-      <DependentUpon>ReportHD.xsd</DependentUpon>
+    <None Include="Report_HoaDon.xss">
+      <DependentUpon>Report_HoaDon.xsd</DependentUpon>
     </None>
-    <None Include="ReportHoaDon.xsc">
-      <DependentUpon>ReportHoaDon.xsd</DependentUpon>
+    <None Include="Report_PhieuThu.xsc">
+      <DependentUpon>Report_PhieuThu.xsd</DependentUpon>
     </None>
-    <None Include="ReportHoaDon.xsd">
+    <None Include="Report_PhieuThu.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ReportHoaDon.Designer.cs</LastGenOutput>
+      <LastGenOutput>Report_PhieuThu.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ReportHoaDon.xss">
-      <DependentUpon>ReportHoaDon.xsd</DependentUpon>
+    <None Include="Report_PhieuThu.xss">
+      <DependentUpon>Report_PhieuThu.xsd</DependentUpon>
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet.xsc">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet.xsd</DependentUpon>
@@ -731,8 +733,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BACKUP\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

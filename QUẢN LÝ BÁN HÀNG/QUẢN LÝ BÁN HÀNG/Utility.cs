@@ -1,12 +1,13 @@
-﻿using QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2TableAdapters;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Windows.Forms;
+using System.DirectoryServices;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
 {
@@ -31,7 +32,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             var dt = new DataTable();
             var conn = GetConnection();
             var sql = $"SELECT * FROM {table} WHERE {column1}='{key1}'";
-            if(column2 != null && key2 != null)
+            if (column2 != null && key2 != null)
             {
                 sql += $" AND {column2}='{key2}'";
             }
@@ -44,8 +45,8 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         public static bool CheckExist(DataRowCollection rows, string key)
         {
-            if(rows.Count == 0) return false;
-            foreach(DataRow row in rows)
+            if (rows.Count == 0) return false;
+            foreach (DataRow row in rows)
             {
                 if (row.ItemArray[0].ToString().Trim() == key)
                     return true;
@@ -53,37 +54,12 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             return false;
         }
 
-        public static void FocusRowById(string id, DataGridView grid)
-        {
-            if (grid.Rows == null || grid.Rows.Count == 0) return;
-
-            for(int i = 0;i<grid.Rows.Count;i++)
-            {
-                if (grid.Rows[i].Cells[0].Value.ToString().Trim().Equals(id))
-                {
-                    grid.Rows[i].Selected = true;
-                    return;
-                }
-            }
-        }
-
-        public static DataGridViewColumn GetColumn(DataGridView grid, string columnName)
-        {
-            if (columnName == null) return null;
-            foreach(DataGridViewColumn column in grid.Columns)
-            {
-                if(column.HeaderText.Equals(columnName)) 
-                    return column;
-            }
-            return null;
-        }
-
         public static bool Validate(object obj)
         {
             var tmp = obj.ToString();
-            foreach(char c in tmp)
+            foreach (char c in tmp)
             {
-                if(!char.IsDigit(c)) 
+                if (!char.IsDigit(c))
                     return false;
             }
             return true;
@@ -91,10 +67,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         public static DataRow GetDataById(DataRowCollection rows, string id)
         {
-            if(rows.Count == 0) return null;
-            foreach(DataRow row in rows)
+            if (rows.Count == 0) return null;
+            foreach (DataRow row in rows)
             {
-                if (row.ItemArray[0].ToString().Trim().Equals(id)) 
+                if (row.ItemArray[0].ToString().Trim().Equals(id))
                     return row;
             }
             return null;
@@ -129,7 +105,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             var cmd = new SqlCommand(sql, conn);
             var adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
-            if(dt.Rows.Count <= 0)
+            if (dt.Rows.Count <= 0)
             {
                 sql = $"USE master DROP DATABASE IF EXISTS [{oDatabaseName}] RESTORE DATABASE [{oDatabaseName}] FROM DISK = " +
                 $"'{GetLastestBackup(backupFolderPath)}/{nDatabaseName}'";
@@ -137,6 +113,14 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 cmd.ExecuteNonQuery();
             }
             conn.Close();
+        }
+
+        public static void AddDirectorySecurity(string DirectoryName, string Account, FileSystemRights Rights, AccessControlType ControlType)
+        {
+            DirectoryInfo dInfo = new DirectoryInfo(DirectoryName);
+            DirectorySecurity dSecurity = dInfo.GetAccessControl();
+            dSecurity.AddAccessRule(new FileSystemAccessRule(Account, Rights, ControlType));
+            dInfo.SetAccessControl(dSecurity);
         }
     }
 }

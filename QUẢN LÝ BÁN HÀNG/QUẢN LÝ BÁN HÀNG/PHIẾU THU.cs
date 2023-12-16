@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -191,10 +192,56 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         private void btnxem_Click(object sender, EventArgs e)
         {
             var preview = new frmPreview();
-            preview.DataSource = pt.ThuTienKhachHang;
-            preview.TemplateReportPath = "DanhSachPhieuThu.rdlc";
+            preview.DataSource = GetPhieuThu();
+            preview.Parameters = SetReportParameters();
+            preview.TemplateReportPath = "PhieuThu.rdlc";
             preview.ShowDialog();
         }
-	}
+
+        private DataTable GetPhieuThu()
+        {
+            var dt = new DataTable();
+            var conn = Utility.GetConnection();
+            var sql = "GetDataReportPhieuThu";
+
+            var cmd = new SqlCommand(sql, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id", textmpt.Text.Trim());
+            conn.Open();
+            var dataAdapter = new SqlDataAdapter(cmd);
+            dataAdapter.Fill(dt);
+            conn.Close();
+            return dt;
+        }
+
+        private ReportParameterCollection SetReportParameters()
+        {
+            var dt = GetPhieuThu();
+            var parameters = new ReportParameterCollection();
+            parameters.Add(new ReportParameter("NgayXuatPhieu", DateTime.Today.Date.ToString()));
+            parameters.Add(new ReportParameter("DonViBanHang", "CÔNG TY TNHH BBN"));
+            parameters.Add(new ReportParameter("DiachiCongTy", "Số 30 Đường S7, Phường Tây Thạnh, Quận Tân Phú, Thành phố Hồ Chí Minh"));
+            parameters.Add(new ReportParameter("MaSoThue", "0313424688"));
+            parameters.Add(new ReportParameter("DienThoaiCongTy", "0938054590"));
+            parameters.Add(new ReportParameter("NguoiXuatPhieu", "Huỳnh Kim Tuyền"));
+            parameters.Add(new ReportParameter("TongTien", GetTotal(dt).ToString()));
+            parameters.Add(new ReportParameter("MaPhieuThu", dt.Rows[0].ItemArray[0].ToString()));
+            parameters.Add(new ReportParameter("KhachHang", dt.Rows[0].ItemArray[1].ToString()));
+            parameters.Add(new ReportParameter("DiachiKhachHang", dt.Rows[0].ItemArray[2].ToString()));
+            parameters.Add(new ReportParameter("DienThoaiKhachHang", dt.Rows[0].ItemArray[3].ToString()));
+            return parameters;
+        }
+
+        private float GetTotal(DataTable dt)
+        {
+            float total = 0;
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row.ItemArray[8] != null && !string.IsNullOrEmpty(row.ItemArray[8].ToString()))
+                    total += float.Parse(row.ItemArray[8].ToString());
+            }
+            return total;
+        }
+    }
 }
 

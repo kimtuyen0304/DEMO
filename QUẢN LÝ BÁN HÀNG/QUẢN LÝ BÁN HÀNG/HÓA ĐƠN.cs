@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
@@ -310,34 +311,21 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         private void btnXem_Click(object sender, EventArgs e)
         {
             var previewDialog = new frmPreview();
-            previewDialog.DataSource = GetDanhSachHoaDon();
-            previewDialog.TemplateReportPath = "DanhSachHoaDon.rdlc";
+            previewDialog.DataSource = GetHoaDon();
+            previewDialog.Parameters = SetReportParameters();
+            previewDialog.TemplateReportPath = "HoaDon.rdlc";
             previewDialog.ShowDialog();
         }
 
-        private DataTable GetDanhSachHoaDon()
+        private DataTable GetHoaDon()
         {
             var dt = new DataTable();
             var conn = Utility.GetConnection();
-            var sql = new StringBuilder();
-            sql.Append(" SELECT");
-            sql.Append("    HD.MaHD");
-            sql.Append("   ,NV.TenNV");
-            sql.Append("   ,KH.TenKH");
-            sql.Append("   ,MH.TenMH");
-            sql.Append("   ,HD.KyHieu");
-            sql.Append("   ,CONVERT(DATE, HD.NgayHD) AS NgayHD");
-            sql.Append("   ,CTHD.Soluong");
-            sql.Append("   ,CTHD.Thanhtien");
-            sql.Append(" FROM HoaDon HD");
-            sql.Append("    LEFT JOIN ChiTietHoaDon CTHD ON HD.MaHD = CTHD.MaHD");
-            sql.Append("    LEFT JOIN KhachHang KH ON HD.MaKH = KH.MaKH");
-            sql.Append("    LEFT JOIN NhanVien NV ON HD.MaNV = NV.MaNV");
-            sql.Append("    LEFT JOIN MatHang MH ON CTHD.MaMH = MH.MaMH");
-            sql.Append(" WHERE CTHD.Soluong IS NOT NULL");
-            sql.Append(" ORDER BY HD.MaHD");
+            var sql = "GetDataReportHoaDon";
 
-            var cmd = new SqlCommand(sql.ToString(), conn);
+            var cmd = new SqlCommand(sql, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id", txtmhd.Text.Trim());
             conn.Open();
             var dataAdapter = new SqlDataAdapter(cmd);
             dataAdapter.Fill(dt);
@@ -345,7 +333,35 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             return dt;
         }
 
-		private void btnSearch_Click(object sender, EventArgs e)
+        private ReportParameterCollection SetReportParameters()
+        {
+            var dt = GetHoaDon();
+            var parameters = new ReportParameterCollection();
+            parameters.Add(new ReportParameter("NgayHoaDon", DateTime.Today.Date.ToString()));
+            parameters.Add(new ReportParameter("DonViBanHang", "CÔNG TY TNHH BBN"));
+            parameters.Add(new ReportParameter("DiachiCongTy", "Số 30 Đường S7, Phường Tây Thạnh, Quận Tân Phú, Thành phố Hồ Chí Minh"));
+            parameters.Add(new ReportParameter("MaSoThue", "0313424688"));
+            parameters.Add(new ReportParameter("DienThoaiCongTy", "0938054590"));
+            parameters.Add(new ReportParameter("NguoiBanHang", "Huỳnh Kim Tuyền"));
+            parameters.Add(new ReportParameter("TongTien", GetTotal(dt).ToString()));
+            parameters.Add(new ReportParameter("KhachHang", dt.Rows[0].ItemArray[5].ToString()));
+            parameters.Add(new ReportParameter("DiachiKhachHang", dt.Rows[0].ItemArray[6].ToString()));
+            parameters.Add(new ReportParameter("DienThoaiKhachHang", dt.Rows[0].ItemArray[7].ToString()));
+            return parameters;
+        }
+
+        private float GetTotal(DataTable dt)
+        {
+            float total = 0;
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row.ItemArray[4] != null && !string.IsNullOrEmpty(row.ItemArray[4].ToString()))
+                    total += float.Parse(row.ItemArray[4].ToString());
+            }
+            return total;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
 		{
 			DataTable dt = new DataTable();
 			var conn = Utility.GetConnection();

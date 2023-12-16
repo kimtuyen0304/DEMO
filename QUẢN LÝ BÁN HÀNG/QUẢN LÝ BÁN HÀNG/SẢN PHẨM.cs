@@ -123,7 +123,6 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             Utility.EnableControl(groupBox1, false);
-            Utility.FocusRowById(tbNH.Text.Trim(), dtgData2);
             txtSearch.Enabled = true;
             txtSearch.ResetText();
             btnReset.Enabled = true;
