@@ -66,6 +66,12 @@
             this.hoaDonTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet4TableAdapters.HoaDonTableAdapter();
             this.chiTietHoaDonTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet5TableAdapters.ChiTietHoaDonTableAdapter();
             this.dtgData = new System.Windows.Forms.DataGridView();
+            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPXK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kyhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kh = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet20();
             this.matHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -79,12 +85,12 @@
             this.nv = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet19();
             this.nhanVienTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet19TableAdapters.NhanVienTableAdapter();
             this.khachHangTableAdapter = new QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet20TableAdapters.KhachHangTableAdapter();
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPXK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kyhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maHDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kyhieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayHDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maPXKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietHoaDonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cthd)).BeginInit();
@@ -481,6 +487,7 @@
             // 
             // dtgData
             // 
+            this.dtgData.AllowUserToAddRows = false;
             this.dtgData.AutoGenerateColumns = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -497,9 +504,16 @@
             this.MaNV,
             this.MaPXK,
             this.Kyhieu,
-            this.NgayHD});
+            this.NgayHD,
+            this.maHDDataGridViewTextBoxColumn,
+            this.kyhieuDataGridViewTextBoxColumn,
+            this.ngayHDDataGridViewTextBoxColumn,
+            this.maKHDataGridViewTextBoxColumn,
+            this.maNVDataGridViewTextBoxColumn,
+            this.maPXKDataGridViewTextBoxColumn});
             this.dtgData.DataSource = this.hoaDonBindingSource;
             this.dtgData.Location = new System.Drawing.Point(1, 270);
+            this.dtgData.MultiSelect = false;
             this.dtgData.Name = "dtgData";
             this.dtgData.ReadOnly = true;
             this.dtgData.RowHeadersWidth = 51;
@@ -508,6 +522,60 @@
             this.dtgData.Size = new System.Drawing.Size(1602, 324);
             this.dtgData.TabIndex = 19;
             this.dtgData.SelectionChanged += new System.EventHandler(this.dtgData_SelectionChanged);
+            // 
+            // MaHD
+            // 
+            this.MaHD.DataPropertyName = "MaHD";
+            this.MaHD.HeaderText = "Mã hóa đơn";
+            this.MaHD.MinimumWidth = 6;
+            this.MaHD.Name = "MaHD";
+            this.MaHD.ReadOnly = true;
+            this.MaHD.Width = 125;
+            // 
+            // MaKH
+            // 
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã khách hàng";
+            this.MaKH.MinimumWidth = 6;
+            this.MaKH.Name = "MaKH";
+            this.MaKH.ReadOnly = true;
+            this.MaKH.Width = 150;
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã nhân viên";
+            this.MaNV.MinimumWidth = 6;
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            this.MaNV.Width = 125;
+            // 
+            // MaPXK
+            // 
+            this.MaPXK.DataPropertyName = "MaPXK";
+            this.MaPXK.HeaderText = "Mã phiếu xuất kho";
+            this.MaPXK.MinimumWidth = 6;
+            this.MaPXK.Name = "MaPXK";
+            this.MaPXK.ReadOnly = true;
+            this.MaPXK.Width = 150;
+            // 
+            // Kyhieu
+            // 
+            this.Kyhieu.DataPropertyName = "Kyhieu";
+            this.Kyhieu.HeaderText = "Ký hiệu";
+            this.Kyhieu.MinimumWidth = 6;
+            this.Kyhieu.Name = "Kyhieu";
+            this.Kyhieu.ReadOnly = true;
+            this.Kyhieu.Width = 125;
+            // 
+            // NgayHD
+            // 
+            this.NgayHD.DataPropertyName = "NgayHD";
+            this.NgayHD.HeaderText = "Ngày hóa đơn";
+            this.NgayHD.MinimumWidth = 6;
+            this.NgayHD.Name = "NgayHD";
+            this.NgayHD.ReadOnly = true;
+            this.NgayHD.Width = 125;
             // 
             // khachHangBindingSource
             // 
@@ -576,59 +644,59 @@
             // 
             this.khachHangTableAdapter.ClearBeforeFill = true;
             // 
-            // MaHD
+            // maHDDataGridViewTextBoxColumn
             // 
-            this.MaHD.DataPropertyName = "MaHD";
-            this.MaHD.HeaderText = "Mã hóa đơn";
-            this.MaHD.MinimumWidth = 6;
-            this.MaHD.Name = "MaHD";
-            this.MaHD.ReadOnly = true;
-            this.MaHD.Width = 125;
+            this.maHDDataGridViewTextBoxColumn.DataPropertyName = "MaHD";
+            this.maHDDataGridViewTextBoxColumn.HeaderText = "MaHD";
+            this.maHDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maHDDataGridViewTextBoxColumn.Name = "maHDDataGridViewTextBoxColumn";
+            this.maHDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maHDDataGridViewTextBoxColumn.Width = 125;
             // 
-            // MaKH
+            // kyhieuDataGridViewTextBoxColumn
             // 
-            this.MaKH.DataPropertyName = "MaKH";
-            this.MaKH.HeaderText = "Mã khách hàng";
-            this.MaKH.MinimumWidth = 6;
-            this.MaKH.Name = "MaKH";
-            this.MaKH.ReadOnly = true;
-            this.MaKH.Width = 150;
+            this.kyhieuDataGridViewTextBoxColumn.DataPropertyName = "Kyhieu";
+            this.kyhieuDataGridViewTextBoxColumn.HeaderText = "Kyhieu";
+            this.kyhieuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kyhieuDataGridViewTextBoxColumn.Name = "kyhieuDataGridViewTextBoxColumn";
+            this.kyhieuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.kyhieuDataGridViewTextBoxColumn.Width = 125;
             // 
-            // MaNV
+            // ngayHDDataGridViewTextBoxColumn
             // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã nhân viên";
-            this.MaNV.MinimumWidth = 6;
-            this.MaNV.Name = "MaNV";
-            this.MaNV.ReadOnly = true;
-            this.MaNV.Width = 125;
+            this.ngayHDDataGridViewTextBoxColumn.DataPropertyName = "NgayHD";
+            this.ngayHDDataGridViewTextBoxColumn.HeaderText = "NgayHD";
+            this.ngayHDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngayHDDataGridViewTextBoxColumn.Name = "ngayHDDataGridViewTextBoxColumn";
+            this.ngayHDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ngayHDDataGridViewTextBoxColumn.Width = 125;
             // 
-            // MaPXK
+            // maKHDataGridViewTextBoxColumn
             // 
-            this.MaPXK.DataPropertyName = "MaPXK";
-            this.MaPXK.HeaderText = "Mã phiếu xuất kho";
-            this.MaPXK.MinimumWidth = 6;
-            this.MaPXK.Name = "MaPXK";
-            this.MaPXK.ReadOnly = true;
-            this.MaPXK.Width = 150;
+            this.maKHDataGridViewTextBoxColumn.DataPropertyName = "MaKH";
+            this.maKHDataGridViewTextBoxColumn.HeaderText = "MaKH";
+            this.maKHDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maKHDataGridViewTextBoxColumn.Name = "maKHDataGridViewTextBoxColumn";
+            this.maKHDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maKHDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Kyhieu
+            // maNVDataGridViewTextBoxColumn
             // 
-            this.Kyhieu.DataPropertyName = "Kyhieu";
-            this.Kyhieu.HeaderText = "Ký hiệu";
-            this.Kyhieu.MinimumWidth = 6;
-            this.Kyhieu.Name = "Kyhieu";
-            this.Kyhieu.ReadOnly = true;
-            this.Kyhieu.Width = 125;
+            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
+            this.maNVDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maNVDataGridViewTextBoxColumn.Width = 125;
             // 
-            // NgayHD
+            // maPXKDataGridViewTextBoxColumn
             // 
-            this.NgayHD.DataPropertyName = "NgayHD";
-            this.NgayHD.HeaderText = "Ngày hóa đơn";
-            this.NgayHD.MinimumWidth = 6;
-            this.NgayHD.Name = "NgayHD";
-            this.NgayHD.ReadOnly = true;
-            this.NgayHD.Width = 125;
+            this.maPXKDataGridViewTextBoxColumn.DataPropertyName = "MaPXK";
+            this.maPXKDataGridViewTextBoxColumn.HeaderText = "MaPXK";
+            this.maPXKDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maPXKDataGridViewTextBoxColumn.Name = "maPXKDataGridViewTextBoxColumn";
+            this.maPXKDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maPXKDataGridViewTextBoxColumn.Width = 125;
             // 
             // HÓA_ĐƠN
             // 
@@ -722,5 +790,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPXK;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kyhieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maHDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kyhieuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayHDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maKHDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maPXKDataGridViewTextBoxColumn;
     }
 }
