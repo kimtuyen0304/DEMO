@@ -195,6 +195,6 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             preview.TemplateReportPath = "DanhSachPhieuThu.rdlc";
             preview.ShowDialog();
         }
-    }
+	}
 }
 

@@ -240,7 +240,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                     txtthanhtien.Text = string.Empty;
                 }
             }
-        }
+			Utility.EnableControl(groupBox1, false);
+			txtSearch.Enabled = true;
+			txtSearch.ResetText();
+		}
 
         private double GetUnitPrice()
         {
@@ -341,7 +344,28 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             conn.Close();
             return dt;
         }
-    }
+
+		private void btnSearch_Click(object sender, EventArgs e)
+		{
+			DataTable dt = new DataTable();
+			var conn = Utility.GetConnection();
+			var sql = $"SELECT * FROM KhachHang WHERE MaKH='{txtSearch.Text}' OR TenKH LIKE '%{txtSearch.Text}%' " +
+				$"OR SDT LIKE '%{txtSearch.Text}%' OR Diachi LIKE '%{txtSearch.Text}%' OR Gioitinh LIKE '%{txtSearch.Text}%'";
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			conn.Open();
+			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+			adapter.Fill(dt);
+			conn.Close();
+
+			dtgData.DataSource = dt;
+		}
+
+		private void btnReset_Click(object sender, EventArgs e)
+		{
+			dtgData.DataSource = hd.HoaDon;
+			txtSearch.ResetText();
+		}
+	}
 }
 
 
