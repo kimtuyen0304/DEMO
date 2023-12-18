@@ -34,5 +34,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             rptViewer.LocalReport.DataSources.Add(rptDataSource);
             this.rptViewer.RefreshReport();
         }
-    }
+
+		private void rptViewer_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

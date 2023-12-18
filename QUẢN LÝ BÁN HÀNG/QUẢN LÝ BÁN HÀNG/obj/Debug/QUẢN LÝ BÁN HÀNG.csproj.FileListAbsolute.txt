@@ -101,3 +101,78 @@ D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_H�
 D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.PHIẾU_XUẤT_KHO.resources
 D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.CopyComplete
 D:\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.frmPreview.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.exe.config
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.exe
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\QUẢN LÝ BÁN HÀNG.pdb
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\EnvDTE.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\stdole.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.ResolveComReference.cache
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.giaodien.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.HÀNG_BÁN_TRẢ_LẠI.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.HÓA_ĐƠN.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.KHÁCH_HÀNG.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.NHÂN_VIÊN.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.PHIẾU_GIAO_HÀNG.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.PHIẾU_NHẬP_KHO.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.PHIẾU_THU.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.PHIẾU_XUẤT_KHO.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.frmPreview.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.SẢN_PHẨM.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.dangnhap.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.resources
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.csproj.CopyComplete
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.exe
+C:\Users\HP\Documents\GitHub\DEMO\QUẢN LÝ BÁN HÀNG\QUẢN LÝ BÁN HÀNG\obj\Debug\QUẢN LÝ BÁN HÀNG.pdb

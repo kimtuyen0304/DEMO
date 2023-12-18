@@ -223,6 +223,26 @@ namespace QUẢN_LÝ_BÁN_HÀNG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap login_icon_176905 {
+            get {
+                object obj = ResourceManager.GetObject("login_icon_176905", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo__BBN_copyright_600x600 {
+            get {
+                object obj = ResourceManager.GetObject("logo_ BBN copyright-600x600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PhotoPrint_6314 {
             get {
                 object obj = ResourceManager.GetObject("PhotoPrint_6314", resourceCulture);

@@ -85,6 +85,11 @@
     <Compile Include="KHÁCH HÀNG.Designer.cs">
       <DependentUpon>KHÁCH HÀNG.cs</DependentUpon>
     </Compile>
+    <Compile Include="mathang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mathang.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NHÂN VIÊN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,11 +164,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xsd</DependentUpon>
     </Compile>
-    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd</DependentUpon>
-    </Compile>
     <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -227,6 +227,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet23.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet23.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet24.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet25.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet25.xsd</DependentUpon>
     </Compile>
     <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -325,6 +340,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="mathang.xsc">
+      <DependentUpon>mathang.xsd</DependentUpon>
+    </None>
+    <None Include="mathang.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mathang.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mathang.xss">
+      <DependentUpon>mathang.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -400,17 +426,6 @@
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xss">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsc">
-      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd</DependentUpon>
-    </None>
-    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xss">
-      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd</DependentUpon>
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.xsc">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.xsd</DependentUpon>
@@ -532,6 +547,39 @@
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.xss">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet23.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet23.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet23.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet23.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet24.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet24.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet24.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet24.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet25.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet25.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet25.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet25.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet25.xsd</DependentUpon>
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet3.xsc">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet3.xsd</DependentUpon>
@@ -719,6 +767,8 @@
     <None Include="Resources\warehouse_storage_unit_storehouse_icon_192428.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\login_icon_176905.png" />
+    <None Include="Resources\logo_ BBN copyright-600x600.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

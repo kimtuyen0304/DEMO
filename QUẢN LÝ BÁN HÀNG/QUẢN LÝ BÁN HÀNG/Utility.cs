@@ -98,7 +98,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         public static void RestoreDatabase(string backupFolderPath, string oDatabaseName, string nDatabaseName)
         {
-            var conn = new SqlConnection("Data Source=DUONG-NGUYEN\\MSSQLSERVER03;Initial Catalog=master;User ID=sa;Password=123");
+            var conn = new SqlConnection("Data Source=DESKTOP-OKRM6HA\\SQLEXPRESS;Initial Catalog=master;User ID=sa;Password=123");
             conn.Open();
             var dt = new DataTable();
             var sql = $"SELECT name FROM master.dbo.sysdatabases WHERE name = '{oDatabaseName}'";

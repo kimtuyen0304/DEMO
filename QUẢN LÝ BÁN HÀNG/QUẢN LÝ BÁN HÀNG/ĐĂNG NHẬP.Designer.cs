@@ -36,8 +36,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.btndangnhap = new System.Windows.Forms.Button();
 			this.txtmk = new System.Windows.Forms.TextBox();
+			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pictureBox2
@@ -82,7 +84,7 @@
 			this.label1.AutoSize = true;
 			this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(461, 78);
+			this.label1.Location = new System.Drawing.Point(483, 75);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(262, 45);
 			this.label1.TabIndex = 53;
@@ -93,7 +95,7 @@
 			this.btndangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
 			this.btndangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btndangnhap.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.btndangnhap.Location = new System.Drawing.Point(491, 324);
+			this.btndangnhap.Location = new System.Drawing.Point(491, 315);
 			this.btndangnhap.Name = "btndangnhap";
 			this.btndangnhap.Size = new System.Drawing.Size(219, 84);
 			this.btndangnhap.TabIndex = 50;
@@ -111,6 +113,16 @@
 			this.txtmk.Size = new System.Drawing.Size(280, 40);
 			this.txtmk.TabIndex = 49;
 			// 
+			// pictureBox4
+			// 
+			this.pictureBox4.Image = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.logo__BBN_copyright_600x600;
+			this.pictureBox4.Location = new System.Drawing.Point(1, 0);
+			this.pictureBox4.Name = "pictureBox4";
+			this.pictureBox4.Size = new System.Drawing.Size(170, 133);
+			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox4.TabIndex = 57;
+			this.pictureBox4.TabStop = false;
+			// 
 			// dangnhap
 			// 
 			this.AcceptButton = this.btndangnhap;
@@ -118,6 +130,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::QUẢN_LÝ_BÁN_HÀNG.Properties.Resources.bk;
 			this.ClientSize = new System.Drawing.Size(1150, 543);
+			this.Controls.Add(this.pictureBox4);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.tentk);
@@ -130,6 +143,7 @@
 			this.Text = "Đăng Nhập";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -144,6 +158,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btndangnhap;
 		private System.Windows.Forms.TextBox txtmk;
+		private System.Windows.Forms.PictureBox pictureBox4;
 	}
 }
 

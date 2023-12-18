@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rptViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SuspendLayout();
-            // 
-            // rptViewer
-            // 
-            this.rptViewer.Location = new System.Drawing.Point(12, 12);
-            this.rptViewer.Name = "rptViewer";
-            this.rptViewer.ServerReport.BearerToken = null;
-            this.rptViewer.Size = new System.Drawing.Size(1427, 827);
-            this.rptViewer.TabIndex = 0;
-            // 
-            // frmPreview
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1451, 851);
-            this.Controls.Add(this.rptViewer);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "frmPreview";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Preview";
-            this.Load += new System.EventHandler(this.frmPreview_Load);
-            this.ResumeLayout(false);
+			this.rptViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+			this.SuspendLayout();
+			// 
+			// rptViewer
+			// 
+			this.rptViewer.Location = new System.Drawing.Point(12, 12);
+			this.rptViewer.Name = "rptViewer";
+			this.rptViewer.ServerReport.BearerToken = null;
+			this.rptViewer.Size = new System.Drawing.Size(1427, 827);
+			this.rptViewer.TabIndex = 0;
+			this.rptViewer.Load += new System.EventHandler(this.rptViewer_Load);
+			// 
+			// frmPreview
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(1451, 851);
+			this.Controls.Add(this.rptViewer);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.Name = "frmPreview";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.Text = "Preview";
+			this.Load += new System.EventHandler(this.frmPreview_Load);
+			this.ResumeLayout(false);
 
         }
 

@@ -19,11 +19,11 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
 		private void PHIẾU_XUẤT_KHO_Load(object sender, EventArgs e)
 		{
-            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet16.MatHang' table. You can move, or remove it, as needed.
-            this.matHangTableAdapter.Fill(this.mh.MatHang);
-            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.PhieuXuatKho' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet25.MatHang' table. You can move, or remove it, as needed.
+            this.matHangTableAdapter.Fill(this.mathang.MatHang);
+            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet24.PhieuXuatKho' table. You can move, or remove it, as needed.
             this.phieuXuatKhoTableAdapter.Fill(this.pxk.PhieuXuatKho);
-            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.ChiTietPhieuXuatKho' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the '_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet23.ChiTietPhieuXuatKho' table. You can move, or remove it, as needed.
             this.chiTietPhieuXuatKhoTableAdapter.Fill(this.ctpxk.ChiTietPhieuXuatKho);
 
         }
