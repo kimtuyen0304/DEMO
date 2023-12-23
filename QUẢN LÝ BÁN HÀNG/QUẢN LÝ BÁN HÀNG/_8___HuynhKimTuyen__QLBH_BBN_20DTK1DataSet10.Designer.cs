@@ -1015,10 +1015,10 @@ SELECT MaPNK, TenNV, MaNV, Makho, Createby FROM PhieuNhapKho WHERE (MaPNK = @MaP
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
         public virtual int Delete(string MaPNK) {
             if ((MaPNK == null)) {
-                throw new global::System.ArgumentNullException("Original_MaPNK");
+                throw new global::System.ArgumentNullException("MaPNK");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_MaPNK));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(MaPNK));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 

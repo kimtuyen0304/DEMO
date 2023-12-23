@@ -96,6 +96,11 @@
     <Compile Include="NHÂN VIÊN.Designer.cs">
       <DependentUpon>NHÂN VIÊN.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhieuNhapKho.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuNhapKho.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PHIẾU GIAO HÀNG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +168,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd</DependentUpon>
     </Compile>
     <Compile Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -352,6 +362,17 @@
       <DependentUpon>mathang.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="PhieuNhapKho.xsc">
+      <DependentUpon>PhieuNhapKho.xsd</DependentUpon>
+    </None>
+    <None Include="PhieuNhapKho.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PhieuNhapKho.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PhieuNhapKho.xss">
+      <DependentUpon>PhieuNhapKho.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -426,6 +447,17 @@
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xss">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsc">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xss">
+      <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet12.xsd</DependentUpon>
     </None>
     <None Include="_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.xsc">
       <DependentUpon>_8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet13.xsd</DependentUpon>

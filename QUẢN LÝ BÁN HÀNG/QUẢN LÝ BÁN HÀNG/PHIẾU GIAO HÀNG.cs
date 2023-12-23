@@ -128,7 +128,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                         }
 
                         phieuGiaoHangTableAdapter.Insert(txtKH.Text, txtNV.Text, txtMaPGH.Text.Trim(), txtMaHD.Text.Trim(),
-                            txtMaKH.Text.Trim(), txtMaNV.Text.Trim(), dtNgayGH.Value, txtNguoiGH.Text, Utility.CurrentUser.Id);
+                            txtMaKH.Text.Trim(), txtMaNV.Text.Trim(), dtNgayGH.Value.ToString(), txtNguoiGH.Text, Utility.CurrentUser.Id);
 
                         MessageBox.Show("Thêm mới thành công!");
 

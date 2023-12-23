@@ -153,7 +153,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                     {
                         if (!Utility.RecordExists(tableNH, keyNH, tbNH.Text.Trim()))
                         {
-                            nhomHangTableAdapter.Insert(tbNH.Text.Trim(), tbTenNH.Text, tbGhiChu.Text);
+                            nhomHangTableAdapter.Insert(tbNH.Text.Trim(), tbTenNH.Text, tbGhiChu.Text, Utility.CurrentUser.Id);
                         }
 
                         matHangTableAdapter.Insert(tbTenMH.Text, tbMMH.Text.Trim(), Convert.ToInt32(textgia.Text),

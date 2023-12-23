@@ -1009,7 +1009,7 @@ SELECT MaPNK, MaMH, TenMH, Soluong, NgayNK FROM ChiTietPhieuNhapKho WHERE (MaMH 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MaPNK, string MaMH, string TenMH, global::System.Nullable<int> Soluong, global::System.Nullable<global::System.DateTime> NgayNK) {
+        public virtual int Insert(string MaPNK, string MaMH, string TenMH, int Soluong, global::System.Nullable<global::System.DateTime> NgayNK) {
             if ((MaPNK == null)) {
                 throw new global::System.ArgumentNullException("MaPNK");
             }
@@ -1028,8 +1028,8 @@ SELECT MaPNK, MaMH, TenMH, Soluong, NgayNK FROM ChiTietPhieuNhapKho WHERE (MaMH 
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(TenMH));
             }
-            if ((Soluong.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Soluong.Value));
+            if ((Soluong >= 0)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Soluong));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;

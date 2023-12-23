@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -167,6 +168,31 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 }
             }
             return false;
+        }
+
+        public static string ExecQuery(string sql)
+        {
+            try
+            {
+                var dt = new DataTable();
+                var conn = GetConnection();
+                conn.Open();
+                var cmd = new SqlCommand(sql, conn);
+                var adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                conn.Close();
+
+                if (dt.Rows.Count > 0)
+                {
+                    return dt.Rows[0].ItemArray[0].ToString();
+                }
+            }
+            catch (Exception) 
+            {
+                return string.Empty;
+            }
+
+            return string.Empty;
         }
     }
 }

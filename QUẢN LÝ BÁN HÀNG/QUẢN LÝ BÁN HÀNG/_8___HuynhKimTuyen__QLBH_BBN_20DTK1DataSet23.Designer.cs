@@ -1109,7 +1109,7 @@ SELECT MaPXK, MaMH, TenMH, Soluong, NgayXK, NgayDH FROM ChiTietPhieuXuatKho WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MaPXK, string MaMH, string TenMH, global::System.Nullable<int> Soluong, global::System.Nullable<global::System.DateTime> NgayXK, string NgayDH) {
+        public virtual int Update(string MaPXK, string MaMH, string TenMH, global::System.Nullable<int> Soluong, global::System.Nullable<global::System.DateTime> NgayXK, global::System.Nullable<global::System.DateTime> NgayDH) {
             if ((MaPXK == null)) {
                 throw new global::System.ArgumentNullException("MaPXK");
             }
@@ -1140,11 +1140,13 @@ SELECT MaPXK, MaMH, TenMH, Soluong, NgayXK, NgayDH FROM ChiTietPhieuXuatKho WHER
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((NgayDH == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((NgayDH.HasValue == true))
+            {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(NgayDH.Value));
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(NgayDH));
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
