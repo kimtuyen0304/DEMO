@@ -1116,7 +1116,7 @@ SELECT MaPT, Sotien, Ngaythu, PTTT, MaKH, MaNV, MaHD FROM ThuTienKhachHang WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MaPT, global::System.Nullable<int> Sotien, string Ngaythu, string PTTT, string MaKH, string MaNV, string MaHD) {
+        public virtual int Insert(string MaPT, global::System.Nullable<int> Sotien, string Ngaythu, string PTTT, string MaKH, string MaNV, string MaHD, string CreateBy) {
             if ((MaPT == null)) {
                 throw new global::System.ArgumentNullException("MaPT");
             }

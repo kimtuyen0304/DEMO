@@ -34,5 +34,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 		{
 
 		}
-	}
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

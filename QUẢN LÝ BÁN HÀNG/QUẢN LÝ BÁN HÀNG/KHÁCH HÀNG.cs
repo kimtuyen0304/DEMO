@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Application = System.Windows.Forms.Application;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
 {
@@ -67,7 +68,8 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
-            DialogResult ch = MessageBox.Show($"Bạn có muốn xóa khách hàng có ID = {txtkh.Text.Trim()} không?", " Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult ch = MessageBox.Show($"Bạn có muốn xóa khách hàng có ID = {txtkh.Text.Trim()} không?", " Xác nhận",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ch == DialogResult.Yes)
             {
                 try
@@ -111,6 +113,20 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             Utility.EnableControl(groupBox1, false);
             txtSearch.Enabled = true;
             txtSearch.ResetText();
+
+            btnLuu.Enabled = false;
+            btnthem.Enabled = true;
+
+            if (Utility.CheckPermission("KhachHang", "MaKH", txtkh.Text.Trim()))
+            {
+                btnsua.Enabled = true;
+                btnxoa.Enabled = true;
+            }
+            else
+            {
+                btnsua.Enabled = false;
+                btnxoa.Enabled = false;
+            }
         }
 
         private void SaveHandler()
@@ -121,7 +137,8 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 {
                     if (!Utility.RecordExists("KhachHang", "MaKH", txtkh.Text.Trim()))
                     {
-                        khachHangTableAdapter.Insert(txtkh.Text.Trim(), txtten.Text.Trim(), txtsdt.Text.Trim(), txtdiachi.Text.Trim(), txtgt.Text.Trim(), txtgc.Text.Trim());
+                        khachHangTableAdapter.Insert(txtkh.Text.Trim(), txtten.Text.Trim(), txtsdt.Text.Trim(), 
+                            txtdiachi.Text.Trim(), txtgt.Text.Trim(), txtgc.Text.Trim(), Utility.CurrentUser.Id);
                         MessageBox.Show("Thêm mới thành công!");
                         ChangeStatus(true);
                         isAddFlag = false;

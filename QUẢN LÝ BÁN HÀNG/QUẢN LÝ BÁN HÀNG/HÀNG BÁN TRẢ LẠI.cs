@@ -139,7 +139,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                         }
 
                         hangBanTraLaiTableAdapter.Insert(textmh.Text.Trim(), dtNgay.Value, diengiai.Text,
-                            ghichu.Text, manv.Text.Trim(), makh.Text.Trim());
+                            ghichu.Text, manv.Text.Trim(), makh.Text.Trim(), Utility.CurrentUser.Id);
 
                         MessageBox.Show("Thêm mới thành công!", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -284,6 +284,20 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             {
                 txtMaMH.Text = string.Empty;
                 txtSoLuong.Text = string.Empty;
+            }
+
+            btnLuu.Enabled = false;
+            btnthem.Enabled = true;
+
+            if (Utility.CheckPermission("HangBanTraLai", "MaHBTL", textmh.Text.Trim()))
+            {
+                btnsua.Enabled = true;
+                btnxoa.Enabled = true;
+            }
+            else
+            {
+                btnsua.Enabled = false;
+                btnxoa.Enabled = false;
             }
         }
 

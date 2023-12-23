@@ -913,9 +913,8 @@ namespace QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8Table
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[HangBanTraLai] ([MaHBTL], [Ngaytra], [Diengiai], [Ghichu], [Ma" +
-                "NV], [MaKH]) VALUES (@MaHBTL, @Ngaytra, @Diengiai, @Ghichu, @MaNV, @MaKH);\r\nSELE" +
-                "CT MaHBTL, Ngaytra, Diengiai, Ghichu, MaNV, MaKH FROM HangBanTraLai WHERE (MaHBT" +
-                "L = @MaHBTL)";
+                "NV], [MaKH], [CreateBy]) VALUES (@MaHBTL, @Ngaytra, @Diengiai, @Ghichu, @MaNV, @" +
+                "MaKH, @CreateBy);";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaHBTL", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaHBTL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ngaytra", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ngaytra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -923,6 +922,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet8Table
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ghichu", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ghichu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaNV", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaNV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaKH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaKH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreateBy", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE HangBanTraLai
@@ -1039,7 +1039,7 @@ SELECT MaHBTL, Ngaytra, Diengiai, Ghichu, MaNV, MaKH FROM HangBanTraLai WHERE (M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MaHBTL, global::System.Nullable<global::System.DateTime> Ngaytra, string Diengiai, string Ghichu, string MaNV, string MaKH) {
+        public virtual int Insert(string MaHBTL, global::System.Nullable<global::System.DateTime> Ngaytra, string Diengiai, string Ghichu, string MaNV, string MaKH, string CreateBy) {
             if ((MaHBTL == null)) {
                 throw new global::System.ArgumentNullException("MaHBTL");
             }
@@ -1075,6 +1075,12 @@ SELECT MaHBTL, Ngaytra, Diengiai, Ghichu, MaNV, MaKH FROM HangBanTraLai WHERE (M
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(MaKH));
+            }
+            if ((CreateBy == null)) {
+                throw new global::System.ArgumentNullException("CreateBy");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(CreateBy));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

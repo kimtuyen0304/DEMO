@@ -986,8 +986,8 @@ namespace QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2Table
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[MatHang] ([TenMH], [MaMH], [Gia], [NgaySX], [HanSD], [VAT], [M" +
-                "aNH]) VALUES (@TenMH, @MaMH, @Gia, @NgaySX, @HanSD, @VAT, @MaNH);\r\nSELECT TenMH," +
-                " MaMH, Gia, NgaySX, HanSD, VAT, MaNH FROM MatHang WHERE (MaMH = @MaMH)";
+                "aNH], [CreateBy]) VALUES (@TenMH, @MaMH, @Gia, @NgaySX, @HanSD, @VAT, @MaNH, @Cr" +
+                "eateBy);";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenMH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenMH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaMH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaMH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -996,6 +996,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2Table
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HanSD", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HanSD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VAT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VAT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaNH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaNH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreateBy", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE MatHang\r\nSET          TenMH = @TenMH, MaMH = @MaMH, Gia = @Gia, NgaySX = @" +
@@ -1113,7 +1114,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2Table
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TenMH, string MaMH, global::System.Nullable<int> Gia, global::System.Nullable<global::System.DateTime> NgaySX, global::System.Nullable<global::System.DateTime> HanSD, global::System.Nullable<int> VAT, string MaNH) {
+        public virtual int Insert(string TenMH, string MaMH, global::System.Nullable<int> Gia, global::System.Nullable<global::System.DateTime> NgaySX, global::System.Nullable<global::System.DateTime> HanSD, global::System.Nullable<int> VAT, string MaNH, string CreateBy) {
             if ((TenMH == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1155,6 +1156,12 @@ namespace QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2Table
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(MaNH));
+            }
+            if ((CreateBy == null)) {
+                throw new global::System.ArgumentNullException("CreateBy");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(CreateBy));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

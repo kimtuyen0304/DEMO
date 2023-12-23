@@ -19,9 +19,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
+            Utility.CurrentUser = null;
             dangnhap fr = new dangnhap();
             fr.ShowDialog();
-            this.Close();
         }
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)

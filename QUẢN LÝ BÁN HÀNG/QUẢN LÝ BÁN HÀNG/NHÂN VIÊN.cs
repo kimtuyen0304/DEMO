@@ -118,6 +118,25 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             txtSearch.ResetText();
             btnSearch.Enabled = true;
             btnReset.Enabled = true;
+
+            if (Utility.CheckPermission("NhanVien", "MaNV", txtmnv.Text.Trim()))
+            {
+                btnthem.Enabled = true;
+
+                if (Utility.CurrentUser.Role == 0)
+                {
+                    btnxoa.Enabled = true;
+                    btnsua.Enabled = true;
+                    btnLuu.Enabled = false;
+                }
+            }
+            else
+            {
+                btnthem.Enabled = false;
+                btnxoa.Enabled = false;
+                btnsua.Enabled = false;
+                btnLuu.Enabled = false;
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -160,7 +179,8 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 {
                     if (!Utility.RecordExists("NhanVien", "MaNV", txtmnv.Text.Trim()))
                     {
-                        nhanVienTableAdapter.Insert(txtmnv.Text.Trim(), txtten.Text.Trim(), Int32.Parse(txtsdt.Text), txtpb.Text.Trim(), txtmcv.Text.Trim(), txtnvl.Text.Trim());
+                        nhanVienTableAdapter.Insert(txtmnv.Text.Trim(), txtten.Text.Trim(), Int32.Parse(txtsdt.Text), 
+                            txtpb.Text.Trim(), txtmcv.Text.Trim(), txtnvl.Text.Trim(), Utility.CurrentUser.Id);
                         MessageBox.Show("Thêm mới thành công!");
                         isAddFlag = false;
                         ChangeStatus(true);

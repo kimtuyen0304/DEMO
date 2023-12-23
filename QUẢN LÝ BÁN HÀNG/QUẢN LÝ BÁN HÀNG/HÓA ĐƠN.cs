@@ -2,8 +2,8 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 using System.Windows.Forms;
+using Application = System.Windows.Forms.Application;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
 {
@@ -61,7 +61,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult ch = MessageBox.Show("Bạn có muốn xóa hóa đơn " + txtmhd.Text.Trim() + " phải không?", " Xác nhận", 
+            DialogResult ch = MessageBox.Show("Bạn có muốn xóa hóa đơn " + txtmhd.Text.Trim() + " phải không?", " Xác nhận",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ch == DialogResult.Yes)
             {
@@ -71,14 +71,14 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                     hoaDonTableAdapter.Delete(txtmhd.Text);
 
                     MessageBox.Show("Đã xóa hóa đơn thành công!");
-                    
+
                     chiTietHoaDonTableAdapter.Fill(this.cthd.ChiTietHoaDon);
                     hoaDonTableAdapter.Fill(hd.HoaDon);
                 }
-                catch (Exception) 
-                { 
+                catch (Exception)
+                {
                     MessageBox.Show("Xóa hóa đơn thất bại!", "Lỗi",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -112,7 +112,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 {
                     if (!Utility.RecordExists(tableHoaDon, key, txtmhd.Text.Trim()))
                     {
-                        if(!Utility.CheckExist(pxk.PhieuXuatKho.Rows, txtmpxk.Text.Trim()))
+                        if (!Utility.CheckExist(pxk.PhieuXuatKho.Rows, txtmpxk.Text.Trim()))
                         {
                             MessageBox.Show($"Phiếu xuất kho với mã {txtmpxk.Text.Trim()} không tồn tại!", "Lỗi",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -122,7 +122,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                         {
                             // Thêm hóa đơn mới
                             this.hoaDonTableAdapter.Insert(txtmhd.Text.Trim(), txtkh.Text.Trim(), dtNgay.Value.ToString(),
-                                txtmkh.Text.Trim(), txtmnv.Text.Trim(), txtmpxk.Text.Trim());
+                                txtmkh.Text.Trim(), txtmnv.Text.Trim(), txtmpxk.Text.Trim(), Utility.CurrentUser.Id);
 
                             MessageBox.Show("Thêm mới hóa đơn thành công!", "Thông báo",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -132,7 +132,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                             {
                                 if (!Utility.RecordExists(tableChiTietHoaDon, key, txtmhd.Text.Trim(), keyChiTietHoaDon, txtmmh.Text.Trim()))
                                 {
-                                    if(!Utility.RecordExists("MatHang", "MaMH", txtmmh.Text.Trim()))
+                                    if (!Utility.RecordExists("MatHang", "MaMH", txtmmh.Text.Trim()))
                                     {
                                         MessageBox.Show($"Mặt hàng với mã {txtmmh.Text.Trim()} không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         txtmmh.Focus();
@@ -144,7 +144,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
                                     MessageBox.Show("Thêm mới chi tiết hóa đơn thành công!", "Thông báo",
                                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }   
+                                }
                             }
 
                             isAddFlag = false;
@@ -159,7 +159,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                     }
                     else
                     {
-                        MessageBox.Show($"Đã tòn tại hóa đơn có ID = {txtmhd.Text.Trim()}", "Lỗi", 
+                        MessageBox.Show($"Đã tòn tại hóa đơn có ID = {txtmhd.Text.Trim()}", "Lỗi",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -171,14 +171,14 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                     MessageBox.Show("Cập nhật hóa đơn thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    if(double.TryParse(txtsl.Text, out double soLuong))
+                    if (double.TryParse(txtsl.Text, out double soLuong))
                     {
-                        chiTietHoaDonTableAdapter.Update(txtmhd.Text.Trim(), txtmmh.Text.Trim(), 
+                        chiTietHoaDonTableAdapter.Update(txtmhd.Text.Trim(), txtmmh.Text.Trim(),
                             soLuong, Convert.ToInt32(txtthanhtien.Text));
 
                         MessageBox.Show("Cập nhật chi tiết hóa đơn thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
+
                         isEditFlag = false;
 
                         hoaDonTableAdapter.Fill(hd.HoaDon);
@@ -202,7 +202,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 {
                     MessageBox.Show("Thêm mới thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if(isEditFlag)
+                else if (isEditFlag)
                 {
                     MessageBox.Show("Cập nhật thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -225,10 +225,10 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         {
             Utility.EnableControl(groupBox1, false);
             var row = Utility.GetDataById(cthd.ChiTietHoaDon.Rows, txtmhd.Text.Trim());
-            if(row != null)
+            if (row != null)
             {
                 var dt = GetDataChiTietHoaDon(txtmhd.Text);
-                if(dt != null && dt.Rows.Count > 0)
+                if (dt != null && dt.Rows.Count > 0)
                 {
                     txtmmh.Text = dt.Rows[0].ItemArray[1].ToString().Trim();
                     txtsl.Text = dt.Rows[0].ItemArray[2].ToString().Trim();
@@ -241,16 +241,31 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                     txtthanhtien.Text = string.Empty;
                 }
             }
-			Utility.EnableControl(groupBox1, false);
-			txtSearch.Enabled = true;
-			txtSearch.ResetText();
-		}
+            Utility.EnableControl(groupBox1, false);
+            txtSearch.Enabled = true;
+            txtSearch.ResetText();
+
+            btnLuu.Enabled = false;
+            btnThem.Enabled = true;
+
+            if (Utility.CheckPermission("HoaDon", "MaHD", txtmhd.Text.Trim()))
+            {
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+            }
+            else
+            {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+            }
+        }
 
         private double GetUnitPrice()
         {
-            foreach(DataRow row in mh.MatHang.Rows)
+            foreach (DataRow row in mh.MatHang.Rows)
             {
-                if (row.ItemArray[1].ToString().Trim().Equals(txtmmh.Text)){
+                if (row.ItemArray[1].ToString().Trim().Equals(txtmmh.Text))
+                {
                     return Convert.ToDouble(row.ItemArray[2]);
                 }
             }
@@ -272,7 +287,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         private void txtmmh_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
             {
                 txtthanhtien.Text = (Convert.ToDouble(txtsl.Text) * GetUnitPrice()).ToString();
             }
@@ -297,7 +312,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult ch = MessageBox.Show(" Thoát chương trình?", "Xác nhận", 
+            DialogResult ch = MessageBox.Show(" Thoát chương trình?", "Xác nhận",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             {
                 if (ch == DialogResult.Yes)
@@ -362,26 +377,26 @@ namespace QUẢN_LÝ_BÁN_HÀNG
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-		{
-			DataTable dt = new DataTable();
-			var conn = Utility.GetConnection();
-			var sql = $"SELECT * FROM KhachHang WHERE MaKH='{txtSearch.Text}' OR TenKH LIKE '%{txtSearch.Text}%' " +
-				$"OR SDT LIKE '%{txtSearch.Text}%' OR Diachi LIKE '%{txtSearch.Text}%' OR Gioitinh LIKE '%{txtSearch.Text}%'";
-			SqlCommand cmd = new SqlCommand(sql, conn);
-			conn.Open();
-			SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-			adapter.Fill(dt);
-			conn.Close();
+        {
+            DataTable dt = new DataTable();
+            var conn = Utility.GetConnection();
+            var sql = $"SELECT * FROM KhachHang WHERE MaKH='{txtSearch.Text}' OR TenKH LIKE '%{txtSearch.Text}%' " +
+                $"OR SDT LIKE '%{txtSearch.Text}%' OR Diachi LIKE '%{txtSearch.Text}%' OR Gioitinh LIKE '%{txtSearch.Text}%'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            conn.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            conn.Close();
 
-			dtgData.DataSource = dt;
-		}
+            dtgData.DataSource = dt;
+        }
 
-		private void btnReset_Click(object sender, EventArgs e)
-		{
-			dtgData.DataSource = hd.HoaDon;
-			txtSearch.ResetText();
-		}
-	}
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            dtgData.DataSource = hd.HoaDon;
+            txtSearch.ResetText();
+        }
+    }
 }
 
 

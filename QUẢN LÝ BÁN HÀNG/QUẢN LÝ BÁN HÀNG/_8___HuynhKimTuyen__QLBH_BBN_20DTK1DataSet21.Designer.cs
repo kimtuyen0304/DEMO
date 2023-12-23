@@ -1081,7 +1081,7 @@ SELECT TenKH, TenNV, MaPGH, MaHD, MaKH, MaNV, NgayGiao, NguoiGiao FROM PhieuGiao
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TenKH, string TenNV, string MaPGH, string MaHD, string MaKH, string MaNV, System.DateTime NgayGiao, string NguoiGiao) {
+        public virtual int Insert(string TenKH, string TenNV, string MaPGH, string MaHD, string MaKH, string MaNV, System.DateTime NgayGiao, string NguoiGiao, string CreateBy) {
             if ((TenKH == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }

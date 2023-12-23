@@ -1069,7 +1069,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet4Table
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MaHD, string Kyhieu, string NgayHD, string MaKH, string MaNV, string MaPXK) {
+        public virtual int Insert(string MaHD, string Kyhieu, string NgayHD, string MaKH, string MaNV, string MaPXK, string CreateBy) {
             if ((MaHD == null)) {
                 throw new global::System.ArgumentNullException("MaHD");
             }

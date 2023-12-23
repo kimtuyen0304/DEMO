@@ -127,6 +127,20 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             txtSearch.ResetText();
             btnReset.Enabled = true;
             btnSearch.Enabled = true;
+
+            btnLuu.Enabled = false;
+            btnthem.Enabled = true;
+
+            if (Utility.CheckPermission("MatHang", "MaMH", tbMMH.Text.Trim()))
+            {
+                btnsua.Enabled = true;
+                btnxoa.Enabled = true;
+            }
+            else
+            {
+                btnsua.Enabled = false;
+                btnxoa.Enabled = false;
+            }
         }
 
         private void SaveHandler()
@@ -143,7 +157,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                         }
 
                         matHangTableAdapter.Insert(tbTenMH.Text, tbMMH.Text.Trim(), Convert.ToInt32(textgia.Text),
-                            dtNSX.Value, dtHSD.Value, Convert.ToInt32(tbVAT.Text), tbNH.Text);
+                            dtNSX.Value, dtHSD.Value, Convert.ToInt32(tbVAT.Text), tbNH.Text, Utility.CurrentUser.Id);
 
                         MessageBox.Show("Thêm mới mặt hàng thành công!");
 

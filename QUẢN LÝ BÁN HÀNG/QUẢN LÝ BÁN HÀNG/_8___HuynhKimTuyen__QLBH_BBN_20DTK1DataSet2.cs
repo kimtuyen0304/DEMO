@@ -2,9 +2,9 @@
 {
 
 
-	partial class _8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2
-	{
-	}
+    partial class _8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2
+    {
+    }
 }
 
 namespace QUẢN_LÝ_BÁN_HÀNG._8___HuynhKimTuyen__QLBH_BBN_20DTK1DataSet2TableAdapters {

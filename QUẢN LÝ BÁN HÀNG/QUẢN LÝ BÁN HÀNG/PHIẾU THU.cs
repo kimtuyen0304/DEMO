@@ -109,7 +109,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                 if (isAddFlag)
                 {
                     thuTienKhachHangTableAdapter.Insert(textmpt.Text.Trim(), Int32.Parse(texttien.Text),
-                        dtChungTu.Value.ToString().Trim(), textpt.Text.Trim(), textmkh.Text.Trim(), textmnv.Text.Trim(), textmhd.Text.Trim());
+                        dtChungTu.Value.ToString().Trim(), textpt.Text.Trim(), textmkh.Text.Trim(), textmnv.Text.Trim(), textmhd.Text.Trim(), Utility.CurrentUser.Id);
                     MessageBox.Show("Thêm mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     ChangeStatus(true);
@@ -167,6 +167,20 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             Utility.EnableControl(groupBox1, false);
             txtSearch.Enabled = true;
             txtSearch.ResetText();
+
+            btnLuu.Enabled = false;
+            btnthem.Enabled = true;
+
+            if (Utility.CheckPermission("ThuTienKhachHang", "MaPT", textmpt.Text.Trim()))
+            {
+                btnsua.Enabled = true;
+                btnxoa.Enabled = true;
+            }
+            else
+            {
+                btnsua.Enabled = false;
+                btnxoa.Enabled = false;
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

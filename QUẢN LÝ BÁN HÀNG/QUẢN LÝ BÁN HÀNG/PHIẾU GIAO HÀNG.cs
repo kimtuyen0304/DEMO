@@ -128,7 +128,7 @@ namespace QUẢN_LÝ_BÁN_HÀNG
                         }
 
                         phieuGiaoHangTableAdapter.Insert(txtKH.Text, txtNV.Text, txtMaPGH.Text.Trim(), txtMaHD.Text.Trim(),
-                            txtMaKH.Text.Trim(), txtMaNV.Text.Trim(), dtNgayGH.Value, txtNguoiGH.Text);
+                            txtMaKH.Text.Trim(), txtMaNV.Text.Trim(), dtNgayGH.Value, txtNguoiGH.Text, Utility.CurrentUser.Id);
 
                         MessageBox.Show("Thêm mới thành công!");
 
@@ -247,6 +247,20 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             {
                 txtMaMH.Text = string.Empty;
                 txtSoLuong.Text = string.Empty;
+            }
+
+            btnLuu.Enabled = false;
+            btnThem.Enabled = true;
+
+            if (Utility.CheckPermission("PhieuGiaoHang", "MaPGH", txtMaPGH.Text.Trim()))
+            {
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+            }
+            else
+            {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
             }
         }
 
