@@ -9,12 +9,11 @@ namespace QUẢN_LÝ_BÁN_HÀNG
     {
         private const string oDatabaseName = "8 _ HuynhKimTuyen_ QLBH BBN_20DTK1";
         private const string nDatabaseName = "QLBH.bak";
-        private string backupFolderPath = Application.StartupPath.Split(new string[]{"\\bin" }, StringSplitOptions.None)[0] + "\\BACKUP";
 
         public giaodien()
         {
             InitializeComponent();
-            Utility.RestoreDatabase(backupFolderPath, oDatabaseName, nDatabaseName);
+            Utility.CreateStoreProcedure();
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)

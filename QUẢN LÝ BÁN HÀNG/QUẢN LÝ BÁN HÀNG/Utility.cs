@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Security.AccessControl;
+using System.Text;
 using System.Windows.Forms;
 
 namespace QUẢN_LÝ_BÁN_HÀNG
@@ -193,6 +194,63 @@ namespace QUẢN_LÝ_BÁN_HÀNG
             }
 
             return string.Empty;
+        }
+
+        public static void CreateStoreProcedure()
+        {
+            try
+            {
+                var conn = GetConnection();
+                conn.Open();
+                var sql = new StringBuilder();
+                sql.Append(" CREATE OR ALTER PROC GetDataReportHoaDon(@id nchar(10))");
+                sql.Append(" AS");
+                sql.Append(" BEGIN");
+                sql.Append("    SELECT");
+                sql.Append("        TenMH");
+                sql.Append("       ,Soluong");
+                sql.Append("       ,Gia");
+                sql.Append("       ,VAT");
+                sql.Append("       ,Thanhtien");
+                sql.Append("       ,TenKH");
+                sql.Append("       ,Diachi");
+                sql.Append("       ,SDT");
+                sql.Append("       ,ROW_NUMBER() OVER(ORDER BY HD.MaHD) AS STT");
+                sql.Append("    FROM HoaDon HD");
+                sql.Append("    LEFT JOIN ChiTietHoaDon CTHD ON HD.MaHD=CTHD.MaHD");
+                sql.Append("    LEFT JOIN MatHang MH ON CTHD.MaMH=MH.MaMH");
+                sql.Append("    LEFT JOIN KhachHang KH ON HD.MaKH=KH.MaKH");
+                sql.Append("    WHERE HD.MaHD=@id");
+                sql.Append(" END");
+                var cmd = new SqlCommand(sql.ToString(), conn);
+                cmd.ExecuteNonQuery();
+
+                sql = new StringBuilder();
+                sql.Append(" CREATE OR ALTER PROC GetDataReportPhieuThu(@id nchar(10))");
+                sql.Append(" AS");
+                sql.Append(" BEGIN");
+                sql.Append("    SELECT");
+                sql.Append("        MaPT");
+                sql.Append("       ,TenKH");
+                sql.Append("       ,Diachi");
+                sql.Append("       ,KH.SDT");
+                sql.Append("       ,TenNV");
+                sql.Append("       ,PTTT");
+                sql.Append("       ,NgayHD");
+                sql.Append("       ,Ngaythu");
+                sql.Append("       ,Sotien");
+                sql.Append("       ,ROW_NUMBER() OVER(ORDER BY MaPT) AS STT");
+                sql.Append("    FROM ThuTienKhachHang TTKH");
+                sql.Append("    LEFT JOIN KhachHang KH ON TTKH.MaKH=KH.MaKH");
+                sql.Append("    LEFT JOIN HoaDon HD ON TTKH.MaHD=HD.MaHD");
+                sql.Append("    LEFT JOIN NhanVien NV ON TTKH.MaNV=NV.MaNV");
+                sql.Append("    WHERE MaPT = @id");
+                sql.Append(" END");
+                cmd = new SqlCommand(sql.ToString(), conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception) { }
         }
     }
 }
